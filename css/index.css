@@ -121,105 +121,6 @@ nav#nav>aside#redes-oxivit>aside#menu-oxivit>button>span {
     position:relative;
 }
 
-nav#whatsapp {
-    height:7%;
-    width:auto;
-    position:fixed;
-    bottom:50px;
-    right:10px;
-    z-index:3;
-    background:none;
-    border-radius:10px;
-    display:flex;
-    flex-flow:column;
-    transition:0s;
-}
-
-nav#whatsapp>header {
-    height:35px;
-    width:35px;
-    display:flex;
-    flex-flow:row;
-    flex-wrap:wrap;
-    width:100%;
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
-    background:none;
-    border-bottom:none;
-}
-
-nav#whatsapp>header>button {
-    flex:1;
-}
-
-nav#whatsapp>header>p {
-    margin:0;
-    flex:3;
-    display:none;
-    justify-content:center;
-    align-items:center;
-}
-
-nav#whatsapp>header>button {
-    display:none;
-    justify-content:center;
-    align-items:center;
-    border:none;
-    background:none;
-    padding:0;
-    height:100%;
-    width:auto;
-}
-
-nav#whatsapp>header>button#maximizar {
-    display:flex;
-}
-
-nav#whatsapp>header>button>figure {
-    display:flex;
-    align-items:center;
-    height:100%;
-    width:auto;
-    margin:0;
-}
-
-nav#whatsapp>header>button>figure>img {
-    height:80%;
-    width:auto;
-    border-radius:10px;
-}
-
-nav#whatsapp>main {
-    display:none;
-    height:86.19%;
-}
-
-nav#whatsapp>footer {
-    display:none;
-    flex-flow:row;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-}
-
-nav#whatsapp>footer>input {
-    width:80%;
-    border-bottom-left-radius:10px;
-    border-bottom:none;
-    border-left:none;
-}
-
-nav#whatsapp>footer>input:focus-visible {
-    outline:none;
-}
-
-nav#whatsapp>footer>button {
-    border-bottom-right-radius:10px;
-    border-right:none;
-    border-left:none;
-    position:relative;
-    top:1px;
-}
-
 section#menu-celular {
     height:100%;
     width:100%;
@@ -452,9 +353,12 @@ section#productos-oxivit>main>section>section>article.productos {
     transition: 1s all;
 }
 
-section#productos-oxivit>main>section>section>article.productos form {
-    display: flex;
-    justify-content: center;
+section#productos-oxivit>main>section>section>article>section form {
+    align-self:center;
+}
+
+section#productos-oxivit>main>section>section>article>section form#nebulizacion {
+    display: none;
 }
 
 section#productos-oxivit>main>section>section>article.productos button {
@@ -1167,7 +1071,7 @@ img {
         font-size:13pt;
     }
     section#productos-oxivit {
-        margin-top:-21px;
+        margin-top:-25px;
     }
     section#productos-oxivit>header>h1 {
         font-size:9.45pt;
@@ -1656,6 +1560,13 @@ img {
     }
     section#productos-oxivit>main>section>section>article.productos button {
         font-size:6.7pt;
+    }
+    section#productos-oxivit>main>section>article>section form#nebulizacion {
+        display: none;
+    }
+    section#productos-oxivit>main>section>article>section form#nebulizacion2 {
+        display: flex;
+        justify-content: center;
     }
     section#beneficiosOxivit {
         max-width:100%;
@@ -4005,6 +3916,11 @@ img {
 
     section#productos-oxivit>main>section>article>section form#nebulizacion {
         display: flex;
+        justify-content: center;
+    }
+
+    section#productos-oxivit>main>section>article>section form#nebulizacion2 {
+        display: none;
         justify-content: center;
     }
 

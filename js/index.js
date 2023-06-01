@@ -269,7 +269,6 @@ function menu() {
 	}
 	menuEnlace1.addEventListener("click", moverMenu);
 	menuEnlace2.addEventListener("click", moverMenu);
-	menuEnlace3.addEventListener("click", moverMenu);
 	menuOxivit.addEventListener("click", moverMenu);
 	menuInicio.addEventListener("click", ocultarMenu);
 }
@@ -277,11 +276,9 @@ function focusMenuMovil() {
 	if (menuCelular.style.left == "100%") {
 		menuEnlace1.tabIndex = -1;
 		menuEnlace2.tabIndex = -1;
-		menuEnlace3.tabIndex = -1;
 	} else {
 		menuEnlace1.tabIndex = 1;
 		menuEnlace2.tabIndex = 1;
-		menuEnlace3.tabIndex = 1;
 	}
 }
 function tabEvent() {
@@ -586,85 +583,6 @@ function rotacionBeneficios() {
 	}
 	mainBeneficios[0].addEventListener("touchend", touchEndBeneficio);
 }
-function validarInputs() {
-	nombre.addEventListener("input", quitarValidacionNombre);
-	function quitarValidacionNombre(e) {
-		e.target.setCustomValidity("");
-		validarNombre(e);
-	}
-	nombre.addEventListener("invalid", validarNombre);
-	function validarNombre(e) {
-		let r = new RegExp("[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}");
-		if (nombre.value.length == 0) {
-			e.target.setCustomValidity("Ingresa nombre");
-		} else if (nombre.value.length > 0 && nombre.value.length < 3) {
-			e.target.setCustomValidity("Ingrese mínimo tres carácteres");
-		} else if (!r.test(nombre.value)) {
-			e.target.setCustomValidity("Utiliza sólo carácteres del idioma español");
-		}
-	}
-	correo.addEventListener("input", quitarValidacionCorreo);
-	function quitarValidacionCorreo(e) {
-		e.target.setCustomValidity("");
-		validarCorreo(e);
-	}
-	correo.addEventListener("invalid", validarCorreo);
-	function validarCorreo(e) {
-		let r = new RegExp("[a-zA-Z0-9]{3,15}[@][a-zA-Z0-9]{3,15}[.][a-zA-Z0-9]{3,15}");
-		if (correo.value.length == 0) {
-			e.target.setCustomValidity("Ingresa correo");
-		} else if (correo.value.length > 0 && correo.value.length < 11) {
-			e.target.setCustomValidity("Ingrese mínimo once carácteres");
-		} else if (!r.test(correo.value)) {
-			e.target.setCustomValidity("Utiliza un formato de correo valido");
-		}
-	}
-	celular.addEventListener("input", quitarValidacionCelular);
-	function quitarValidacionCelular(e) {
-		e.target.setCustomValidity("");
-		validarTelefono(e);
-	}
-	celular.addEventListener("invalid", validarTelefono);
-	function validarTelefono(e) {
-		let r = new RegExp("[+]{0,1}[0-9]{9,20}");
-		if (celular.value.length == 0) {
-			e.target.setCustomValidity("Ingresa teléfono");
-		} else if (celular.value.length < 9) {
-			e.target.setCustomValidity("Ingrese mínimo nueve carácteres");
-		} else if (!r.test(celular.value)) {
-			e.target.setCustomValidity("Utiliza un formato de teléfono valido");
-		}
-	}
-	consulta.addEventListener("input", quitarValidacionConsulta);
-	function quitarValidacionConsulta(e) {
-		e.target.setCustomValidity("");
-		validarConsulta(e);
-	}
-	consulta.addEventListener("invalid", validarConsulta);
-	function validarConsulta(e) {
-		let r = new RegExp("[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]{3,1500}");
-		if (consulta.value.length == 0) {
-			e.target.setCustomValidity("Ingresa consulta");
-		} else if (consulta.value.length < 10) {
-			e.target.setCustomValidity("Ingrese mínimo diez carácteres");
-		} else if (!r.test(consulta.value)) {
-			e.target.setCustomValidity("Utiliza sólo carácteres del idioma español");
-		}
-	}
-}
-function mensajeCorreo() {
-	if (mensaje.innerHTML != "" && mensajeEnviado == false) {
-		mensaje.style.display = "flex";
-		mensajeEnviado = true;
-	} else if (mensajeEnviado == true) {
-		mensaje.innerHTML = "";
-		mensaje.style.display = "none";
-		mensajeEnviado = false;
-		clearTimeout("esperar");
-		return;
-	}
-	esperar = setTimeout("mensajeCorreo()", 10000);
-}
 function cambio() {
 	window.addEventListener("resize", function() {
 		if (index.clientWidth >= 595) {
@@ -699,88 +617,11 @@ document.addEventListener("visibilitychange", function() {
 		rotacionBeneficios();
 	}
 });
-let w = document.getElementById("whatsapp");
-let wh = document.getElementById("whatsapp-header");
-let ma = document.getElementById("maximizar");
-let wo = document.getElementById("whatsapp-oxivit");
-let mi = document.getElementById("minimizar");
-let wb = document.getElementById("whatsapp-body");
-let wf = document.getElementById("whatsapp-footer");
-let e = document.getElementById("enviarMensaje");
-function whatsapp() {
-	ma.addEventListener("click", mensajeria);
-	function mensajeria() {
-		w.style.transition = "1s all";
-		wb.style.display = "flex";
-		wf.style.display = "flex";
-		wo.style.display = "flex";
-		mi.style.display = "flex";
-		w.style.backgroundColor = "white";
-		w.style.height = "75%";
-		w.style.width = "60%";
-		w.style.border = "2px solid black";
-		wh.style.backgroundColor = "rgb(31, 138, 136)";
-		wh.style.borderBottom = "2px solid black";
-		if (wb.childNodes == 0) {
-
-		}
-	}
-	mi.addEventListener("click", minimizar);
-	function minimizar() {
-		w.style.transition = "0s";
-		wb.style.display = "none";
-		wf.style.display = "none";
-		wo.style.display = "none";
-		mi.style.display = "none";
-		w.style.background = "none";
-		w.style.height = "7%";
-		w.style.width = "auto";
-		w.style.border = "none";
-		wh.style.background = "none";
-		wh.style.borderBottom = "none";
-	}
-	e.addEventListener("click", enviarWhatsapp);
-	function enviarWhatsapp() {
-		fetch("https://api.whatsapp.com/send?phone=51982762366&text=This%20is%20a%20test",
-		{
-			
-		})
-		/*
-		fetch("https://graph.facebook.com/v16.0/112192638523204/messages",
-		{
-			method: "POST",
-			headers: {
-			'Authorization': 'Bearer EAAK7zNE3pg0BADpe1uwOXhZCRIZBeCoUvcGOVJ8Upam2CQJ6TihtDpARwGfzuxnFcrZCfOVRStf1IONtyRT3YRmLA9CSGdWL1m6ZB3nIBr2ZBx101PCeJQsosQEuhNsNHLtISNjlWBTGhwRcZBeReOPSqnVL3AmP4XDYIztbwHS6WZAP4vRqbNlYx7dMSYJl5jlLAazf7bLbmSncREJQuYIBd0jegNo6o8ZD',
-			'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({"messaging_product": "whatsapp", "to": "51982762366", 
-									"type": "template", "template": { "name": "hello_world",
-									"language": { "code": "en_US"} } } )
-		})
-		fetch("https://lemon-earthy-sting.glitch.me/webhook/OxivitWhatsapp",
-		{
-			method: "POST",
-			headers: {
-			'Authorization': 'Bearer EAAHgr15OrQYBALKw87qsIQauiApAtfxUqPWG8ZBwzzZCcYkRHKS0XZCpDTCij2E5IqlqZBoPIdBoZBB1VkxUazbyH0vyMYnI0xzL4JjGzTY6vC7agwr4LCAgyonZBnt4a5m3rFt7ZAOgJrxBZAZAredIYYTafjEdrfNtqrsWGNF19sXXI4KcxDQQ7Lfka0ri8sZBXVQg1CYA5IhQ3Ls5j8h5vZCIMVrNeb85hoZD',
-			'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({"messaging_product": "whatsapp", "to": "51982762366",
-									"from": "51987198911",
-									"type": "template", "template": { "name": "hello_world",
-									"language": { "code": "en_US"} } } )
-		})*/
-		.then(function(res){ console.log(res) })
-		.catch(function(res){ console.log(res) });
-	}
-}
-window.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
 	rotacion();
 	cambio();
 	cambiarPortada();
-	mensajeCorreo();
 	focusMenuMovil();
-	validarInputs();
-	whatsapp();
 	if (index.clientWidth <= 594) {
 		rotacionBeneficios();
 		menu();
