@@ -1,0 +1,4346 @@
+@font-face {
+    font-family:"Hurme Semi Bold";
+    src:url("../fuentes/HurmeGeometricSans1-SemiBold.otf");
+}
+
+@font-face {
+    font-family:"Hurme Bold";
+    src:url("../fuentes/HurmeGeometricSans1-Bold.otf");
+}
+
+@font-face {
+    font-family:"Hurme Black";
+    src:url("../fuentes/HurmeGeometricSans1-Black.otf");
+}
+
+@font-face {
+    font-family:"Hurme";
+    src:url("../fuentes/HurmeGeometricSans1.otf");
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+* {
+    font-family:"Hurme Black";
+    box-sizing:border-box;
+}
+
+a {
+    font-family:"Hurme Semi Bold";
+}
+
+body {
+    display:flex;
+    flex-flow:column;
+    margin:0;
+}
+
+nav#nav {
+    display:flex;
+    flex-flow:row;
+    height:35.6694px;
+    width:100%;
+    background-color:rgba(31, 138, 136, 0.8);
+    position:fixed;
+    z-index:4;
+}
+
+nav#nav>aside {
+    display:flex;
+    align-items:center;
+}
+
+nav#nav>aside#logo-oxivit {
+    margin-left:20px;
+    width:fit-content;
+}
+
+nav#nav>aside>a {
+    height:67%;
+    width:auto;
+    display:flex;
+}
+
+nav#nav>aside>a>figure {
+    margin:0;
+    display:flex;
+    align-items:center;
+}
+
+nav#nav>aside>a>figure>img {
+	padding:0 5px;
+}
+
+nav#nav>main {
+    display:none;
+}
+
+nav#nav>aside#redes-oxivit {
+    flex:1;
+    justify-content:flex-end;
+}
+
+nav#nav>aside#redes-oxivit>a {
+    margin:0 20px 0 0;
+}
+
+nav#nav>aside#redes-oxivit>a>figure>img {
+    height:75%;
+    width:auto;
+}
+
+nav#nav>aside#redes-oxivit>aside#menu-oxivit {
+    display:flex;
+    flex-flow:column;
+    justify-content:center;
+    margin-right:20px;
+    cursor:pointer;
+    height:60%;
+}
+
+nav#nav>aside#redes-oxivit>aside#menu-oxivit>button {
+    background:none;
+    border:none;
+    display:flex;
+    flex-flow:column;
+    padding:5px 3px;
+}
+
+nav#nav>aside#redes-oxivit>aside#menu-oxivit>button:focus-visible {
+	border-radius:5px;
+	outline:2px solid black;
+}
+
+nav#nav>aside#redes-oxivit>aside#menu-oxivit>button>span {
+    width:15px;
+    margin:1.5px 0;
+    border-top: 2px solid white;
+    transition:1s all;
+    position:relative;
+}
+
+nav#whatsapp {
+    height:7%;
+    width:auto;
+    position:fixed;
+    bottom:50px;
+    right:10px;
+    z-index:3;
+    background:none;
+    border-radius:10px;
+    display:flex;
+    flex-flow:column;
+    transition:0s;
+}
+
+nav#whatsapp>header {
+    height:35px;
+    width:35px;
+    display:flex;
+    flex-flow:row;
+    flex-wrap:wrap;
+    width:100%;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    background:none;
+    border-bottom:none;
+}
+
+nav#whatsapp>header>button {
+    flex:1;
+}
+
+nav#whatsapp>header>p {
+    margin:0;
+    flex:3;
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+nav#whatsapp>header>button {
+    display:none;
+    justify-content:center;
+    align-items:center;
+    border:none;
+    background:none;
+    padding:0;
+    height:100%;
+    width:auto;
+}
+
+nav#whatsapp>header>button#maximizar {
+    display:flex;
+}
+
+nav#whatsapp>header>button>figure {
+    display:flex;
+    align-items:center;
+    height:100%;
+    width:auto;
+    margin:0;
+}
+
+nav#whatsapp>header>button>figure>img {
+    height:80%;
+    width:auto;
+    border-radius:10px;
+}
+
+nav#whatsapp>main {
+    display:none;
+    height:86.19%;
+}
+
+nav#whatsapp>footer {
+    display:none;
+    flex-flow:row;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+nav#whatsapp>footer>input {
+    width:80%;
+    border-bottom-left-radius:10px;
+    border-bottom:none;
+    border-left:none;
+}
+
+nav#whatsapp>footer>input:focus-visible {
+    outline:none;
+}
+
+nav#whatsapp>footer>button {
+    border-bottom-right-radius:10px;
+    border-right:none;
+    border-left:none;
+    position:relative;
+    top:1px;
+}
+
+section#menu-celular {
+    height:100%;
+    width:100%;
+    background-color:rgb(31, 138, 136);
+    position:fixed;
+    display:flex;
+    flex-flow:column;
+    justify-content:center;
+    align-items:center;
+    transition:1s ease-out all;
+    z-index:3;
+    top:0;
+}
+
+section#menu-celular>a {
+    text-decoration:none;
+    color:white;
+    margin:5% 0;
+    padding:2.5%;
+    font-size:12pt;
+}
+
+main#index {
+    overflow:hidden;
+}
+
+main#slider {
+    display:flex;
+    flex-flow:column;
+    flex-wrap:wrap;
+    position:relative;
+    width:400%;
+    overflow:hidden;
+}
+
+main#slider>section {
+    display:flex;
+    flex-flow:row;
+    flex-wrap:wrap;
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    transition:1s all;
+}
+
+main>section>figure {
+    display:flex;
+    margin:0;
+    position:relative;
+    z-index:1;
+    height:100%;
+    width:25%;
+}
+
+main>section>figure>img {
+    height:100%;
+    width:100%;
+    display:flex;
+    z-index:1;
+    transition:1s all;
+}
+
+main>aside#circulosSlider {
+    display:flex;
+    justify-content:center;
+    position:relative;
+    top:-30px;
+    z-index:2;
+    flex:1;
+    width:25%;
+}
+
+main>aside>button {
+	background:none;
+	border:none;
+	position:static;
+    padding:5px 3px;
+    margin:0 2px;
+}
+
+main>aside>button:focus-visible {
+	border-radius:5px;
+	outline:2px solid rgb(31, 138, 136);
+}
+
+main>aside>button>span {
+    height:15px;
+    width:15px;
+    border:none;
+    border-radius:20px;
+    background-color:#3C3C3B;
+    transition:0.5s all;
+    cursor:pointer;
+}
+
+main button {
+    display: flex;
+    position: absolute;
+}
+
+main button#btn-producto-izquierda {
+    left: 50px;
+    border: none;
+    transform: rotate(180deg);
+}
+
+main button#btn-producto-derecha {
+	width:12px;
+    left:20.4%;
+    border: none;
+}
+
+main button#btn-producto-derecha:focus-visible {
+	width:6px;
+}
+
+main button#btn-producto-izquierda,
+main button#btn-producto-derecha {
+    bottom: 37.0125%;
+    z-index:2;
+    background:none;
+}
+
+main button#btn-producto-izquierda>span,
+main button#btn-producto-derecha>span {
+    width: 30px;
+    position: absolute;
+}
+
+main button#btn-producto-izquierda>span.btn-izq-der,
+main button#btn-producto-derecha>span.btn-der-izq {
+    transform: rotate(45deg);
+    top: -10px;
+}
+
+main button#btn-producto-izquierda>span.btn-izq-izq,
+main button#btn-producto-derecha>span.btn-der-der {
+    transform: rotate(-45deg);
+    top: 9px;
+}
+
+main button>span {
+    border: 2px solid rgb(114, 114, 114);
+}
+
+h1 {
+    color: rgb(31, 138, 136);
+}
+
+section#productos-oxivit {
+    width:400%;
+    display:flex;
+    flex-flow:column;
+    position:relative;
+    overflow:hidden;
+    margin-top:-25px;
+}
+
+section#productos-oxivit>header {
+    display: flex;
+    justify-content: center;
+    margin:37.4851px 0;
+    width:25%;
+}
+
+section#productos-oxivit>header>h1 {
+    font-family:"Hurme Black";
+    display:flex;
+    flex-flow:column;
+    text-align:center;
+    font-size:8.44pt;
+    margin:0;
+}
+
+section#productos-oxivit>header>h1>span {
+    font-family:"Hurme";
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    font-size:6pt;
+    margin:0 0 15px 0;
+    color:rgb(114,114,114);
+}
+
+section#productos-oxivit>main {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    transition:1s all;
+    -webkit-transition: all 0.3s;
+    right:0%;
+}
+
+section#productos-oxivit>main>section#altura-producto {
+    display:flex;
+    flex-flow:row;
+    flex-wrap:wrap;
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+section#productos-oxivit>main>section#altura-producto>section {
+    display:flex;
+    flex-flow:row;
+    position:relative;
+    width:50%;
+    overflow:hidden;
+    padding-bottom:40px;
+}
+
+section#productos-oxivit>main>section>section>article {
+    width:29.89232%;
+    margin: 0 10.06%;
+    box-shadow:1px 1px 3px rgba(114,114,114,0.5);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+section#productos-oxivit>main>section>section>article.producto1 {
+    opacity: 1;
+}
+
+section#productos-oxivit>main>section>section>article.productos {
+    display:flex;
+    flex-flow:column;
+    transition: 1s all;
+}
+
+section#productos-oxivit>main>section>section>article.productos form {
+    display: flex;
+    justify-content: center;
+}
+
+section#productos-oxivit>main>section>section>article.productos button {
+    display:flex;
+    align-items:center;
+    height:17.3803px;
+    font-size: 8pt;
+    padding:0 7px;
+    position:relative;
+    font-family:"Hurme Semi Bold";
+    border-radius:8px;
+    border:none;
+    box-shadow:1px 1px 3px rgba(114,114,114,0.5);
+    color:rgb(31,138,136);
+}
+
+section#productos-oxivit>main>section>section>article.productos button:focus-visible {
+    outline:2px solid black;
+}
+
+section#productos-oxivit>main>section>section>article>figure {
+    display: flex;
+}
+
+section#productos-oxivit>main>section>section>article>section {
+    display: flex;
+    flex-flow: column;
+    padding: 2%;
+    flex:1;
+    justify-content:space-between;
+}
+
+section#productos-oxivit>main>section>section>article>section p {
+    margin: 1% 0;
+    color: rgb(114, 114, 114);
+    font-size: 10.02pt;
+    font-family:"Hurme";
+}
+
+section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+    font-size:10pt;
+    margin:0;
+}
+
+section#productos-oxivit>main>section>section>article>section p.tits2 {
+    font-size:8pt;
+}
+
+section#productos-oxivit>main>section>section>article>section p.tits3 {
+    font-size: 6.8pt;
+}
+
+section#productos-oxivit>main>section>section>article>section>header {
+    display: flex;
+    flex-flow: row;
+}
+
+section#productos-oxivit>main>section>section>article>section>header>p {
+    font-family:"Hurme Semi Bold";
+    color: black;
+    font-size:11.2pt;
+}
+
+section#productos-oxivit>main>section>section>article>section>header>aside {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+section#productos-oxivit>main>section>section>article>section>header>aside>p {
+    color: rgb(114, 114, 114);
+}
+
+section#productos-oxivit>main>section>section>article>section>section>aside {
+    display: flex;
+    justify-content: flex-end;
+}
+
+section#productos-oxivit>main>section>section>article>section>section>aside>p {
+    color: rgb(31, 138, 136);
+    font-family:"Hurme Semi Bold";
+}
+
+section#productos-oxivit>main>section>section>article.productos button:hover {
+	cursor:pointer;
+}
+
+section>video {
+    display: flex;
+}
+
+section#beneficiosOxivit {
+    display: flex;
+    flex-flow: column;
+}
+
+section#beneficiosOxivit>header {
+    margin:37.4851px 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    flex: 1;
+}
+
+section#beneficiosOxivit>header>h1 {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    font-size:8.44pt;
+    margin: 0;
+    color: rgb(31, 138, 136);
+    font-family: "Hurme Black";
+}
+
+section#beneficiosOxivit>main#beneficios {
+    display:flex;
+    flex-flow:row;
+    flex-wrap:wrap;
+    width:500%;
+    position:relative;
+    overflow:hidden;
+}
+
+section#beneficiosOxivit>main#beneficios>section.beneficios>article figure>img {
+    height:auto;
+    width:50%;
+    display: flex;
+    margin: 0 auto;
+}
+
+section#beneficiosOxivit>main>button {
+    border: none;
+    display: flex;
+    position: relative;
+    background-color: white;
+    top: 60px;
+}
+
+section#beneficiosOxivit>main>button>span {
+    width: 30px;
+    border: 2px solid rgb(114, 114, 114);
+    z-index: 2;
+    position: relative;
+}
+
+section#beneficiosOxivit>main>button#btn-beneficio-izquierda {
+    left: 325px;
+}
+
+section#beneficiosOxivit>main>button#btn-beneficio-izquierda>span.btn-izq-izq {
+    top: 22px;
+    left: 4px;
+}
+
+section#beneficiosOxivit>main>button#btn-beneficio-izquierda>span.btn-izq-der {
+    right: 30px;
+}
+
+section#beneficiosOxivit>main>button#btn-beneficio-derecha>span.btn-der-izq {
+    top: 22px;
+}
+
+section#beneficiosOxivit>main>button#btn-beneficio-derecha>span.btn-der-der {
+    left: -33px;
+}
+
+section#beneficiosOxivit>main>button#btn-beneficio-izquierda>span.btn-izq-der,
+section#beneficiosOxivit>main>button#btn-beneficio-derecha>span.btn-der-izq {
+    transform: rotate(45deg);
+}
+
+section#beneficiosOxivit>main>button#btn-beneficio-izquierda>span.btn-izq-izq,
+section#beneficiosOxivit>main>button#btn-beneficio-derecha>span.btn-der-der {
+    transform: rotate(-45deg);
+}
+
+.circulos-beneficio {
+    background-color: rgb(114, 114, 114);
+    transition: 1s all;
+}
+
+.circulo-beneficio1 {
+    background-color: rgb(60, 60, 60);
+}
+
+section#beneficiosOxivit>header>h1#beneficios {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    color: rgb(31, 138, 136);
+    font-family: "Hurme Black";
+    margin: 0;
+}
+
+section.beneficios {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    transition:1s all;
+}
+
+section.beneficios h2 {
+    font-family:"Hurme Semi Bold";
+    font-size:7pt;
+    text-align: center;
+    margin:17.3835px 0 11.0622px;
+}
+
+section.beneficios h3 {
+    font-size:5pt;
+    font-family: "Hurme";
+    text-align: center;
+    margin:0;
+    color:rgb(114,114,114);
+}
+
+section.beneficios>article {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    max-width:7.61385%;
+    height:100%;
+}
+
+section.beneficios>article.articulo-beneficio {
+    transition:1s all;
+}
+
+section.beneficios>article.beneficios-izq {
+    margin:0 0.477% 0 1.91%;
+}
+
+section.beneficios>article.beneficios-der {
+    right:5%;
+    margin:0 1.91% 0 0.477%;
+}
+
+main>aside#circulosBeneficio {
+    display:flex;
+    justify-content:center;
+    z-index:2;
+    width:20%;
+    margin:5px 0;
+}
+
+section#galeria {
+    margin-top:37.4851px;
+}
+
+section#galeria>article#galeria1 .galeria-tablet,
+section#galeria>article#galeria2 .galeria-tablet {
+    display: none;
+}
+
+section#galeria>article {
+    display: flex;
+    flex-flow: row;
+}
+
+section#contacto {
+    display: flex;
+    flex-flow: column;
+    margin:0 0 37.4851px 0;
+}
+
+section#contacto>header>h1 {
+    font-family: "Hurme Black";
+    color: rgb(31, 138, 136);
+    font-size:11pt;
+    text-align:center;
+    margin:37.4851px 0;
+}
+
+section#contacto>p#mensajeIndex {
+	font-family:"Hurme";
+	display:none;
+	justify-content:center;
+	color:rgb(31, 138, 136);
+}
+
+section#contacto>main {
+    display: flex;
+    flex-flow: column;
+    margin:0 20.12%;
+}
+
+section#contacto>main>form {
+    display: flex;
+    flex-flow: column;
+}
+
+section#contacto>main>form>div {
+    display:flex;
+    flex-flow:column;
+}
+
+section#contacto>main>form button>span {
+    border:none;
+    display:none;
+}
+
+section#contacto>main>form input,
+section#contacto>main>form textarea {
+    font-family: "Hurme";
+    padding:1% 2%;
+    border:none;
+    border-radius:8px;
+    box-shadow:1px 1px 3px rgba(114,114,114,0.5);
+    color:rgb(60,60,60);
+}
+
+section#contacto>main>form input,
+section#contacto>main>form textarea {
+    margin:0 0 5.05%;
+}
+
+section#contacto>main>form button {
+    margin:0 0 5.5%;
+}
+
+section#contacto>main>form label {
+    font-family:"Hurme Semi Bold";
+    margin-left:2%;
+}
+
+section#contacto>main>form label {
+    font-size:5pt;
+}
+
+section#contacto>main>form input,
+section#contacto>main>form textarea,
+section#contacto>main>form button,
+section#contacto>p#mensajeIndex {
+    font-size:6pt;
+}
+
+section#contacto>main>form input,
+section#contacto>main>form textarea,
+section#contacto>main>form button {
+    border-radius:8px;
+}
+
+section#contacto>main>form button {
+    border:none;
+    border-radius:8px; 
+    box-shadow:1px 1px 3px rgba(114,114,114,0.5);
+    color:rgb(31,138,136);
+    padding:1px 12.5px;
+    position:relative;
+    font-family:"Hurme Black";
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:16.4911px;
+}
+
+section#contacto>main>form input {
+    height:22.4911px;
+}
+
+section#contacto>main>form input[type=text]:focus,
+section#contacto>main>form input[type=tel]:focus,
+section#contacto>main>form input[type=email]:focus {
+	padding: 1% 2%;
+    outline:2px solid black;
+}
+
+section#contacto>main>form input:focus-visible {
+	outline:none;
+}
+
+section#contacto>main>form textarea:focus,
+section#contacto>main>form textarea:hover  {
+	outline:2px solid black;
+}
+
+a:focus-visible,
+figure:focus-visible,
+img:focus-visible {
+	border-radius:5px;
+	outline:2px solid black;
+}
+
+nav#nav>aside#redes-oxivit>aside#menu-oxivit:focus-visible {
+	outline:2px solid black;
+}
+
+section#productos-oxivit>button:focus-visible {
+	padding:0 3px;
+	outline:2px solid rgb(114,114,114);
+}
+
+section#contacto>main>form button:focus-visible {
+	outline:2px solid black;
+}
+
+section#contacto>main>form button:hover {
+	cursor:pointer;
+}
+
+section#contacto>main>form button>span {
+    font-family:"Hurme Semi Bold";
+}
+
+section#contacto>main>form input:hover {
+	outline: 2px solid black;
+}
+
+textarea:hover {
+    padding:5px;
+}
+
+section#contacto>main>form textarea {
+    min-height:74.9702px !important;
+    width:100% !important;
+}
+
+section#contacto>main>form aside {
+    display: flex;
+    justify-content: flex-end;
+}
+
+section#contacto>main>aside {
+    display:flex;
+    width:fit-content;
+}
+
+footer#pie {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    background-color: rgb(60, 60, 60);
+    padding:37.4851px 20.12%;
+}
+
+footer#pie>section#nosotros {
+    display: flex;
+    flex-flow: column;
+    margin-bottom:20px;
+}
+
+footer#pie>aside {
+    display:flex;
+    flex-flow:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+
+footer#pie section#certificados {
+    order:1;
+    margin-bottom:20px;
+}
+
+footer#pie section#certificados>p {
+    margin:0;
+}
+
+footer#pie section#informacion {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    order:2;
+}
+
+footer#pie section#informacion>main {
+    display: flex;
+    flex-flow: column;
+}
+
+footer#pie section#informacion>main>a {
+    margin:0 0 10px;
+    width:fit-content;
+}
+
+footer#pie section#informacion>main>a:last-child {
+    margin:0;
+}
+
+footer#pie section#contactanos>main>a {
+    margin:0 0 10px;
+    width:fit-content;
+}
+
+footer#pie section#contactanos>main>a:last-child {
+    margin:0;
+}
+
+footer#pie figure>img {
+    width: 20%;
+}
+
+footer {
+    display: flex;
+    flex-flow: column;
+    background-color: rgb(60, 60, 60);
+}
+
+footer h4 {
+    font-family:"Hurme Bold";
+    color: white;
+    margin-top:0;
+    margin-bottom:10px;
+    font-size:7pt;
+}
+
+footer#pie>section#nosotros>p {
+    margin:0;
+}
+
+footer#pie>section#nosotros>p,
+footer p,
+footer a {
+    color: rgb(114, 114, 114);
+    font-family: "Hurme Semi Bold";
+    font-size:4.97pt;
+}
+
+footer#pie section#contactanos {
+    order:3;
+}
+
+footer#pie section#siguenos {
+    order:2;
+    margin:0;
+}
+
+footer#pie section#informacion {
+    order:3;
+}
+
+
+footer#pie section#contactanos2 {
+    display:none;
+}
+
+footer#pie section#contactanos>main>a {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+footer#pie section#contactanos figure {
+    display: flex;
+    align-items: center;
+}
+
+footer#pie section#contactanos figure>img {
+    height:12px;
+    width:12px;
+    margin-right:5px;
+}
+
+footer#pie section#contactanos>main>a>p {
+    margin:0;
+}
+
+footer#pie section#siguenos>main {
+    display: flex;
+    flex-flow: row;
+}
+
+footer#pie section#siguenos>main>a>figure {
+    display:flex;
+    align-items:center;
+}
+
+footer#pie section#siguenos>main>a>figure>img {
+    height:15px;
+    width:15px;
+}
+
+footer#pie section#siguenos>main>a.derecha {
+    margin-left:10px;
+}
+
+footer a {
+    text-decoration: none;
+    margin: 2% 0;
+}
+
+footer>main {
+    display: flex;
+    flex-flow: column;
+}
+
+footer#pie2 {
+    background-color: black;
+    justify-content:center;
+    height:33.7366px;
+}
+
+footer#pie2>p {
+    display: flex;
+    justify-content: center;
+    font-size:4.5pt;
+    margin:0;
+    color:white;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width:351px) {
+    main>aside>span {
+        height:17.5px;
+        width:17.5px;
+    }
+    section#menu-celular>a {
+        font-size:12.5pt;
+    }
+    section#productos-oxivit {
+        margin-top:-17.5px;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:8.6pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:6.2pt;
+        margin:0 0 20px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:11.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:10.03pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:8.14pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:6.9pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:10.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        font-size:8.5pt;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:8.6pt;
+    }
+    section.beneficios>article {
+        max-width:7.488%;
+    }
+    section.beneficios>article.beneficios-izq {
+        margin:0 0.503% 0 2.01%;
+    }
+    section.beneficios>article.beneficios-der {
+        margin:0 2.01% 0 0.503%;
+    }
+    section.beneficios h2 {
+        font-size:7.3pt;
+    }
+    section.beneficios h3 {
+        font-size:5.1pt;
+    }
+    section#contacto>header>h1 {
+        font-size:12pt;
+    }
+    section#contacto>main {
+        margin:0 20.15%;
+    }
+    section#contacto>main>form input:hover {
+        outline:2px solid black;
+    }
+    section#contacto>main>form label {
+        font-size:5.5pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:6.2pt;
+    }
+    footer h4 {
+        font-size:7.5pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:5.48pt;
+    }
+    footer#pie2>p {
+        font-size:4.63pt;
+    }
+    footer#pie section#siguenos {
+        order:1;
+    }
+    footer#pie>aside>section:nth-child(2),
+    footer#pie>aside>section:nth-child(3) {
+        margin-bottom:0;
+    }
+}
+
+@media (min-width:375px) {
+    main>aside>span {
+        height:20px;
+        width:20px;
+    }
+    section#menu-celular>a {
+        font-size:13pt;
+    }
+    section#productos-oxivit {
+        margin-top:-21px;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:9.45pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:6.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:12pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:11.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:8.3pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:7.9pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:11pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        font-size:9pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:40px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:9.45pt;
+    }
+    section.beneficios h2 {
+        font-size:7.9pt;
+    }
+    section.beneficios h3 {
+        font-size:5.5pt;
+    }
+    section#galeria {
+        margin-top:40px;
+    }
+    section#contacto {
+        margin:0 0 40px 0;
+    }
+    section#contacto>header>h1 {
+        margin:40px 0;
+        font-size:12.5pt;
+    }
+    section#contacto>main>form label {
+        font-size:5.8pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        margin:0 0 4.3%;
+        font-size:6.5pt;
+    }
+    section#contacto>main>form button {
+        margin:0 0 5.5277%;
+    }
+    section#contacto>main>form textarea {
+        min-height:80px !important;
+    }
+    section#contacto>main>form input {
+        height:24px;
+    }
+    section#contacto>main>form button {
+        height:18px;
+    }
+    footer#pie {
+        padding:40px;
+    }
+    footer h4 {
+        font-size:8pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:5.51pt;
+    }
+    footer#pie {
+        padding:40px 20.15%;
+    } 
+    footer#pie2>p {
+        font-size:4.9pt;
+    }
+    footer#pie2 {
+        height:36px;
+    }
+}
+
+@media (min-width:395px) {
+    section#menu-celular>a {
+        font-size:14pt;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:9.8pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:6.8pt;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:12.7pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:11.7pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:9.38pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:8.15pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:11.8pt;
+    }
+    main button#btn-producto-izquierda {
+        left:60px;
+    }
+    main button#btn-producto-derecha {
+        right:21.6%;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:9.8pt;
+    }
+    section.beneficios h2 {
+        font-size:8.2pt;
+    }
+    section.beneficios h3 {
+        font-size:5.8pt;
+    }
+    section#contacto>header>h1 {
+        font-size:13pt;
+    }
+    section#contacto>main>form label {
+        font-size:6pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        font-size:9.5pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:7pt;
+    }
+    footer h4 {
+        font-size:8.5pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:5.94pt;
+    }
+    footer#pie2>p {
+        font-size:5.4pt;
+    }
+}
+
+@media (min-width:445px) {
+    section#menu-celular>a {
+        font-size:15pt;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:11pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:7.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:14.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:13.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:10.62pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:9.3pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:13.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        font-size:10.2pt;
+    }
+    main button#btn-producto-izquierda {
+        left:70px;
+    }
+    main button#btn-producto-derecha {
+        right:70px;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:11pt;
+    }
+    section.beneficios h2 {
+        font-size:9.1pt;
+    }
+    section.beneficios h3 {
+        font-size:6.3pt;
+    }
+    section#contacto>header>h1 {
+        font-size:14.3pt;
+    }
+    section#contacto>main>form label {
+        font-size:6.5pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:8pt;
+    }
+    footer#pie>aside {
+        display:flex;
+        flex-flow:row;
+        flex-wrap:wrap;
+    }
+    footer h4 {
+        font-size:11pt;
+    }
+    footer#pie section#siguenos {
+        order:2;
+    }
+    footer#pie section#informacion {
+        order:3;
+    }
+    footer#pie section#contactanos {
+        order:4;
+    }
+    footer#pie section#siguenos>main>a>figure>img {
+        height:25px;
+        width:25px;
+    }
+    footer#pie section#contactanos figure>img {
+        height:17px;
+        width:17px;
+    }
+    footer h4 {
+        font-size:10pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:6.71pt;
+    }
+    footer#pie2>p {
+        font-size:5.9pt;
+    }
+}
+
+@media (min-width:495px) {
+    nav#nav>aside#redes-oxivit>aside#menu-oxivit>span {
+        width:17px;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:12.3pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:8pt;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:16pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:15pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:11pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:10pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:14.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        font-size:11.75pt;
+    }
+    main button#btn-producto-izquierda {
+        left:80px;
+    }
+    main button#btn-producto-derecha {
+        right:80px;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:12.3pt;
+    }
+    section.beneficios h2 {
+        font-size:10.3pt;
+    }
+    section.beneficios h3 {
+        font-size:6.9pt;
+    }
+    section#contacto>header>h1 {
+        font-size:16pt;
+    }
+    section#contacto>main>form label {
+        font-size:7.3pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:9pt;
+    }
+    footer h4 {
+        font-size:11pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:7.66pt;
+    }
+    footer#pie2>p {
+        font-size:6.69pt;
+    }
+}
+
+@media (min-width:545px) {
+    section#productos-oxivit>header>h1 {
+        font-size:13.3pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:8.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:17.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:15.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:12.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:11pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:15.7pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        font-size:13pt;
+    }
+    main button#btn-producto-izquierda {
+        left:90px;
+    }
+    main button#btn-producto-derecha {
+        right:90px;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:13.3pt;
+    }
+    section.beneficios h2 {
+        font-size:11pt;
+    }
+    section.beneficios h3 {
+        font-size:8.1pt;
+    }
+    section#contacto>header>h1 {
+        font-size:17.6pt;
+    }
+    section#contacto>main>form label {
+        font-size:8.06pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:9.5pt;
+    }
+    footer h4 {
+        font-size:12.5pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:8.29pt;
+    }
+    footer#pie>aside {
+        flex-flow:row;
+        flex-wrap:wrap;
+    }
+    footer#pie section#siguenos>main>a>figure>img {
+        height:30px;
+        width:30px;
+    }
+    footer#pie section#contactanos figure>img {
+        height:22px;
+        width:22px;
+    }
+    footer#pie2>p {
+        font-size:7.29pt;
+    }
+}
+
+@media (min-width:595px) {
+    section#menu-celular {
+        transition:0s;
+        left:100% !important;
+    }
+    nav#nav>aside#logo-oxivit {
+        flex:1;
+    }
+    nav#nav>main {
+        display:flex;
+        align-items:center;
+        flex:5;
+        justify-content:center;
+    }
+    nav#nav>main>a {
+        text-decoration:none;
+        color:white;
+        font-size:8pt;
+        padding:0 5px;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 20px;
+    }
+    nav#nav>aside#redes-oxivit {
+        flex:1;
+    }
+    nav#nav>aside#redes-oxivit>aside#menu-oxivit {
+        display:none;
+    }
+    section#productos-oxivit {
+        width:100%;
+    }
+    section#productos-oxivit>header {
+        width:100%;
+        margin:38.7954px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:12.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:8.5pt;
+    }
+    main button#btn-producto-izquierda,
+    main button#btn-producto-derecha {
+        display:none;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:12.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>button {
+        display:none;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section {
+        display:flex;
+        flex-flow:row;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        display:flex;
+        width:100%;
+        justify-content: center;
+        padding:0 0 38.7954px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 31.0363px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section>article {
+        position:static;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section>article.productos {
+        display:flex;
+        flex-flow:column;
+        opacity:1;
+        margin:0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section>article.producto-izq {
+        margin-right:5.2162%;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:9.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:9pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:6.87pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:6.1pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:9pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        font-size:6.7pt;
+    }
+    section#beneficiosOxivit {
+        max-width:100%;
+    }
+    section#beneficiosOxivit>header {
+        margin:38.7954px 0;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        width:auto;
+        max-width:100%;
+        margin:0 8.4% 38.7954px;
+    }
+    section#beneficiosOxivit>main#beneficios>section {
+        display:flex;
+        flex-flow:row;
+        flex-wrap:wrap;
+        justify-content:space-between;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        max-width:30%;
+        position:static;
+        opacity:1 !important;
+        height:auto;
+        margin:0 0 31.0363px 0;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(2),
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(5),
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(8) {
+        margin:0 5% 0 5%;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(7),
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(8),
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(9) {
+        margin-bottom:0;
+    }
+    section.beneficios {
+        right:0% !important;
+    }
+    section.beneficios h2 {
+        font-size:8.2pt;
+        margin:17.07px 0 10.8627px;
+    }
+    section.beneficios h3 {
+        font-size:5.8pt;
+    }
+    main>aside#circulosBeneficio {
+        display:none;
+    }
+    section#galeria {
+        margin:0;
+    }
+    section#galeria>article#galeria1 .galeria-tablet,
+    section#galeria>article#galeria2 .galeria-tablet {
+        display:flex;
+    }
+    section#contacto {
+        margin:0 0 38.7954px 0;
+    }
+    section#contacto>header>h1 {
+        margin:38.7954px 0;
+        font-size:14pt;
+    }
+    section#contacto>main {
+        flex-flow:row;
+        margin:0 8.5%;
+        gap:4.1%;
+    }
+    section#contacto>main>form {
+        justify-content:space-between;
+        flex:1;
+    }
+    section#contacto>main>aside {
+        flex:1;
+        justify-content:center;
+        align-self:center;
+    }
+    section#contacto>main>form input {
+        height:23.2772px;
+    }
+    section#contacto>main>form textarea {
+        height:80.384px;
+        resize:none;
+    }
+    section#contacto>main>form button {
+        height:17.3803px;
+        margin-bottom:0;
+    }
+    section#contacto>main>form button>span {
+        display:flex;
+    }
+    section#contacto>main>form button,
+    section#contacto>main>form button>span {
+        font-family:"Hurme Semi Bold";
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:6pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea,
+    section#contacto>main>form button {
+        margin:0;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:7pt;
+    }
+    section#contacto>main>aside>picture>img {
+        height:auto;
+        display:flex;
+    }
+    footer#pie {
+        display:flex;
+        flex-flow:row;
+        flex-wrap:wrap;
+        padding:31.0363px 8.398%;
+    }
+    footer h4 {
+        font-size:5.99pt;
+    }
+    footer#pie section#certificados {
+        margin:0;
+    }
+    footer#pie section#certificados,
+    footer#pie section#informacion {
+        margin-right:7%;
+    }
+    footer#pie>section#nosotros {
+        width:35.25%;
+        margin-right:5.05%;
+        margin-bottom:0;
+    }
+    footer#pie>aside {
+        width:59.7%;
+    }
+    footer#pie section#informacion {
+        order:2;
+    }
+    footer#pie section#contactanos {
+        order:3;
+        display:flex;
+        flex-flow:column;
+        flex-wrap:wrap;
+        align-content:flex-end;
+    }
+    footer#pie section#contactanos figure>img {
+        height:10px;
+        width:10px;
+    }
+    footer#pie section#siguenos>main>a>figure>img {
+        height:15px;
+        width:15px;
+    }
+    footer#pie>aside>section:nth-child(2),
+    footer#pie>aside>section:nth-child(3) {
+        margin-bottom:0;
+    }
+    footer#pie section#siguenos,
+    footer#pie section#contactanos {
+        display:none;
+    }
+    footer#pie section#contactanos2 {
+        order:3;
+    }
+    footer#pie section#contactanos2>section#siguenos {
+        margin-top:15px;
+    }
+    footer#pie section#contactanos2,
+    footer#pie section#contactanos2>section#siguenos,
+    footer#pie section#contactanos2>section#contactanos {
+        display:flex;
+        flex-flow:column;
+        justify-content:space-between;
+    }
+    footer#pie section#siguenos {
+        order:4;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:4.61pt;
+    }
+    footer#pie2 {
+        height:22.3461px;
+    }
+    footer#pie2>p {
+        font-size:4.5pt;
+    }
+}
+
+@media (min-width:645px) {
+    nav#nav {
+        height:40.5px;
+    }
+    nav#nav>main>a {
+        font-size:9pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 25px;
+    }
+    section#productos-oxivit>header {
+        margin-top:44px;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:13.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:9pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 44px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 35px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:10.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:10pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:7.6pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:6.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:9.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:20px;
+        font-size:7.7pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:44px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:13.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 44px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:35px;
+    }
+    section.beneficios h2 {
+        font-size:9pt;
+    }
+    section.beneficios h3 {
+        font-size:6pt;
+    }
+    section#contacto {
+        margin:0 0 44px 0;
+    }
+    section#contacto>header>h1 {
+        margin:44px 0;
+        font-size:15pt;
+    }
+    section#contacto>main>form input {
+        height:25px;
+    }
+    section#contacto>main>form textarea {
+        height:86.5px;
+    }
+    section#contacto>main>form button {
+        height:19px;
+    }
+    section#contacto>main {
+        margin:0 8%;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:6.5pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:8pt;
+    }
+    footer#pie {
+        padding:35px 7.7%;
+    }
+    footer h4 {
+        font-size:7pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:4.71pt;
+    }
+    footer#pie2 {
+        height:23.5px;
+    }
+    footer#pie2>p {
+        font-size:4.6pt;
+    }
+}
+
+@media (min-width:695px) {
+    nav#nav {
+        height:45;
+    }
+    nav#nav>main>a {
+        font-size:10pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 30px;
+    }
+    section#productos-oxivit>header {
+        margin:49px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:14.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:9.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 49px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 39px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:11.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:10.2pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:8.14pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:6.89pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:10.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:22px;
+        font-size:8.2pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:49px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:14.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 49px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:39px;
+    }
+    section.beneficios h2 {
+        font-size:9.6pt;
+    }
+    section.beneficios h3 {
+        font-size:6.8pt;
+    }
+    section#contacto {
+        margin:0 0 49px 0;
+    }
+    section#contacto>header>h1 {
+        margin:49px 0;
+        font-size:16pt;
+    }
+    section#contacto>main>form input {
+        height:27px;
+    }
+    section#contacto>main>form textarea {
+        height:93px;
+    }
+    section#contacto>main>form button {
+        height:21px;
+    }
+    section#contacto>main {
+        margin:0 7.5%;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:7.5pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:9.3pt;
+    }
+    footer#pie {
+        padding:39px 7.1%;
+    }
+    footer h4 {
+        font-size:7.2pt;
+    }
+    footer#pie section#contactanos figure>img {
+        height:14px;
+        width:14px;
+    }
+    footer#pie section#siguenos>main>a>figure>img {
+        height:20px;
+        width:20px;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:5.48pt;
+    }
+    footer#pie2 {
+        height:25px;
+    }
+    footer#pie2>p {
+        font-size:5.4pt;
+    }
+}
+
+@media (min-width:745px) {
+    nav#nav {
+        height:49.5px;
+    }
+    nav#nav>main>a {
+        font-size:11pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 35px;
+    }
+    main>aside#circulosSlider {
+        top:-27px;
+    }
+    section#productos-oxivit>header {
+        margin:54px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:15.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:10pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 54px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 43px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:12pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:11.3pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:9.1pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:8pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:11pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:24px;
+        font-size:8.77pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:54px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:15.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 54px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:43px;
+    }
+    section.beneficios h2 {
+        font-size:10.3pt;
+    }
+    section.beneficios h3 {
+        font-size:6.9pt;
+    }
+    section#contacto {
+        margin:0 0 54px 0;
+    }
+    section#contacto>header>h1 {
+        margin:54px 0;
+        font-size:17pt;
+    }
+    section#contacto>main>form input {
+        height:29px;
+    }
+    section#contacto>main>form textarea {
+        height:99.5px;
+    }
+    section#contacto>main>form button {
+        height:23px;
+    }
+    section#contacto>main {
+        margin:0 7%;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:8.7pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:10.2pt;
+    }
+    footer#pie {
+        padding:43px 6.7%;
+    }
+    footer h4 {
+        font-size:7.4pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:5.58pt;
+    }
+    footer#pie2 {
+        height:26.5px;
+    }
+    footer#pie2>p {
+        font-size:5.5pt;
+    }
+}
+
+@media (min-width:795px) {
+    nav#nav {
+        height:54px;
+    }
+    nav#nav>main>a {
+        font-size:12pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 40px;
+    }
+    main>aside#circulosSlider {
+        top:-29px;
+    }
+    section#productos-oxivit>header {
+        margin:59px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:16.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:10.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 59px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 47px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:12.6pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:11.6pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:9.39pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:8.15pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:11.7pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:26px;
+        font-size:9.5pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:59px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:16.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 59px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:47px;
+    }
+    section.beneficios h2 {
+        font-size:11.2pt;
+    }
+    section.beneficios h3 {
+        font-size:8pt;
+    }
+    section#contacto {
+        margin:0 0 59px 0;
+    }
+    section#contacto>header>h1 {
+        margin:59px 0;
+        font-size:18pt;
+    }
+    section#contacto>main>form input {
+        height:31px;
+    }
+    section#contacto>main>form textarea {
+        height:106px;
+    }
+    section#contacto>main>form button {
+        height:25px;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:5.9775pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:11pt;
+    }
+    footer#pie {
+        padding:47px 8.385%;
+    }
+    footer h4 {
+        font-size:7.5pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:5.6pt;
+    }
+    footer#pie2 {
+        height:28px;
+    }
+    footer#pie2>p {
+        font-size:5.55pt;
+    }
+}
+
+@media (min-width:845px) {
+    nav#nav {
+        height:58.5px;
+    }
+    nav#nav>main>a {
+        font-size:13pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 45px;
+    }
+    main>aside#circulosSlider {
+        top:-31px;
+    }
+    section#productos-oxivit>header {
+        margin:64px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:17.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:11pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 64px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 51px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:13.85pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:12pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:10pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:8.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:12.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:28px;
+        font-size:10pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:64px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:17.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 64px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:51px;
+    }
+    footer#pie {
+        padding:51px 8.385%;
+    }
+    section.beneficios h2 {
+        font-size:11.6pt;
+    }
+    section.beneficios h3 {
+        font-size:8.1pt;
+    }
+    section#contacto {
+        margin:0 0 64px 0;
+    }
+    section#contacto>header>h1 {
+        margin:64px 0;
+        font-size:19pt;
+    }
+    section#contacto>main>form input {
+        height:33px;
+    }
+    section#contacto>main>form textarea {
+        height:112.5px;
+    }
+    section#contacto>main>form button {
+        height:27px;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:9.6pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:11.5pt;
+    }
+    footer h4 {
+        font-size:8.5pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:6.06pt;
+    }
+    footer#pie2 {
+        height:29.5px;
+    }
+    footer#pie2>p {
+        font-size:6pt;
+    }
+}
+
+@media (min-width:895px) {
+    nav#nav {
+        height:63px;
+    }
+    nav#nav>main>a {
+        font-size:14pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 50px;
+    }
+    main>aside#circulosSlider {
+        top:-33px;
+    }
+    main>aside>span {
+        height:25px;
+        width:25px;
+    }
+    section#productos-oxivit {
+        margin-top:-26px;
+    }
+    section#productos-oxivit>header {
+        margin:69px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:18.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:11.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 69px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 54px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:14.2pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:13.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:10.64pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:9.39pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:13.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        font-size:10.5pt;
+        border-radius:10px;
+    }
+    section#beneficiosOxivit>header {
+        margin:69px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:18.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 69px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:55px;
+    }
+    section.beneficios h2 {
+        font-size:12.5pt;
+    }
+    section.beneficios h3 {
+        font-size:9.1pt;
+    }
+    section#contacto {
+        margin:0 0 69px 0;
+    }
+    section#contacto>header>h1 {
+        margin:69px 0;
+        font-size:20pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:10.3pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:12pt;
+    }
+    section#contacto>main>form input {
+        height:35px;
+    }
+    section#contacto>main>form textarea {
+        height:123px;
+    }
+    section#contacto>main>form button {
+        height:29px;
+    }
+    footer#pie {
+        padding:55px 8.385%;
+    }
+    footer h4 {
+        font-size:8.8pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:6.69pt;
+    }
+    footer#pie2 {
+        height:31px;
+    }
+    footer#pie2>p {
+        font-size:6.6pt;
+    }
+}
+
+@media (min-width:945px) {
+    nav#nav {
+        height:67.5px;
+    }
+    nav#nav>main>a {
+        font-size:15pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 55px;
+    }
+    main>aside#circulosSlider {
+        top:-34px;
+    }
+    section#productos-oxivit>header {
+        margin:74px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:19.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:12pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 74px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 58px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:15.24pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:14pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:11.4pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:10pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:14pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        font-size:11.2pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:74px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:19.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 74px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:59px;
+    }
+    section.beneficios h2 {
+        font-size:12.8pt;
+    }
+    section.beneficios h3 {
+        font-size:9.3pt;
+    }
+    section#contacto {
+        margin:0 0 74px 0;
+    }
+    section#contacto>header>h1 {
+        margin:74px 0;
+        font-size:21pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:10.5pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:12.5pt;
+    }
+    section#contacto>main>form input {
+        height:37px;
+    }
+    section#contacto>main>form textarea {
+        height:129.5px;
+    }
+    section#contacto>main>form button {
+        height:31px;
+    }
+    footer#pie {
+        padding:59px 8.385%;
+    }
+    footer h4 {
+        font-size:9pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:6.74pt;
+    }
+    footer#pie2 {
+        height:32.5px;
+    }
+    footer#pie2>p {
+        font-size:6.7pt;
+    }
+}
+
+@media (min-width:995px) {
+    nav#nav {
+        height:72px;
+    }
+    nav#nav>main>a {
+        font-size:16pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 60px;
+    }
+    main>aside#circulosSlider {
+        top:-35px;
+    }
+    section#productos-oxivit>header {
+        margin:79px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:20.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:12.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 79px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 62px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:16pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:14.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:11.8pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:10.1pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:14.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:25px;
+        font-size:11.8pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:79px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:20.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 79px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:63px;
+    }
+    section.beneficios h2 {
+        font-size:13.9pt;
+    }
+    section.beneficios h3 {
+        font-size:9.8pt;
+    }
+    section#contacto {
+        margin:0 0 79px 0;
+    }
+    section#contacto>header>h1 {
+        margin:79px 0;
+        font-size:22pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:11.4pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:13.5pt;
+    }
+    section#contacto>main>form input {
+        height:39px;
+    }
+    section#contacto>main>form textarea {
+        height:136px;
+    }
+    section#contacto>main>form button {
+        height:33px;
+    }
+    footer#pie {
+        padding:63px 8.385%;
+    }
+    footer h4 {
+        font-size:9pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:7.42pt;
+    }
+    footer#pie section#contactanos figure>img {
+        height:15px;
+        width:15px;
+    }
+    footer#pie section#siguenos>main>a>figure>img {
+        height:22px;
+        width:22px;
+    }
+    footer#pie2 {
+        height:34px;
+    }
+    footer#pie2>p {
+        font-size:7.3pt;
+    }
+}
+
+@media (min-width:1095px) {
+    nav#nav {
+        height:76.5px;
+    }
+    nav#nav>main>a {
+        font-size:17pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 65px;
+    }
+    main>aside#circulosSlider {
+        top:-36px;
+    }
+    section#productos-oxivit>header {
+        margin:84px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:22.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:13.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 84px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 66px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:17.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:15.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:13.2pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:11.6pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:16pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:27px;
+        font-size:12.8pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:84px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:22.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 84px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:67px;
+    }
+    section.beneficios h2 {
+        font-size:15.3pt;
+    }
+    section.beneficios h3 {
+        font-size:10.5pt;
+    }
+    section#contacto {
+        margin:0 0 84px 0;
+    }
+    section#contacto>header>h1 {
+        margin:84px 0;
+        font-size:24pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:12.5pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:15pt;
+    }
+    section#contacto>main>form input {
+        height:43px;
+    }
+    section#contacto>main>form textarea {
+        height:149px;
+    }
+    section#contacto>main>form button {
+        height:37px;
+    }
+    footer#pie {
+        padding:67px 8.385%;
+    }
+    footer h4 {
+        font-size:10pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:8.18pt;
+    }
+    footer#pie section#contactanos figure>img {
+        height:17px;
+        width:17px;
+    }
+    footer#pie section#siguenos>main>a>figure>img {
+        height:25px;
+        width:25px;
+    }
+    footer#pie2 {
+        height:37px;
+    }
+    footer#pie2>p {
+        font-size:8.1pt;
+    }
+}
+
+@media (min-width:1195px) {
+    nav#nav {
+        height:71px;
+    }
+    nav#nav>main>a {
+        font-size:18pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 70px;
+    }
+    main>aside#circulosSlider {
+        top:-37px;
+    }
+    section#productos-oxivit>header {
+        margin:89px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:24.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:14.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 89px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 70px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:18.8pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:17.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:14.3pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:12.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:17.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:30px;
+        font-size:13.9pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:89px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:24.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 89px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:71px;
+    }
+    section.beneficios h2 {
+        font-size:16.5pt;
+    }
+    section.beneficios h3 {
+        font-size:11.7pt;
+    }
+    section#contacto {
+        margin:0 0 89px 0;
+    }
+    section#contacto>header>h1 {
+        margin:89px 0;
+        font-size:26pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:13.6pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:16pt;
+    }
+    section#contacto>main>form input {
+        height:47px;
+    }
+    section#contacto>main>form textarea {
+        height:162px;
+    }
+    section#contacto>main>form button {
+        height:41px;
+    }
+    footer#pie {
+        padding:71px 8.385%;
+    }
+    footer h4 {
+        font-size:11.8pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:8.77pt;
+    }
+    footer#pie2 {
+        height:40px;
+    }
+    footer#pie2>p {
+        font-size:8.7pt;
+    }
+}
+
+@media (min-width:1295px) {
+    nav#nav {
+        height:76.5px;
+    }
+    nav#nav>main>a {
+        font-size:19pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 75px;
+    }
+    main>aside#circulosSlider {
+        top:-38px;
+    }
+    section#productos-oxivit>header {
+        margin:94px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:26.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:15.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 94px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 74px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:21.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:20.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:15.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:13.6pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:19.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:32px;
+        padding:0 10px;
+        font-size:15pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:94px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:26.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 94px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:75px;
+    }
+    section.beneficios h2 {
+        font-size:17.9pt;
+    }
+    section.beneficios h3 {
+        font-size:12.9pt;
+    }
+    section#contacto {
+        margin:0 0 94px 0;
+    }
+    section#contacto>header>h1 {
+        margin:94px 0;
+        font-size:28pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:14.5pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:17pt;
+    }
+    section#contacto>main>form input {
+        height:51px;
+    }
+    section#contacto>main>form textarea {
+        height:175px;
+    }
+    section#contacto>main>form button {
+        height:45px;
+    }
+    footer#pie {
+        padding:75px 8.385%;
+    }
+    footer h4 {
+        font-size:12.59pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:9.67pt;
+    }
+    footer#pie2 {
+        height:43px;
+    }
+    footer#pie2>p {
+        font-size:9.6pt;
+    }
+}
+
+@media (min-width:1395px) {
+    nav#nav {
+        height:81px;
+    }
+    nav#nav>main>a {
+        font-size:20pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 80px;
+    }
+    main>aside#circulosSlider {
+        top:-39px;
+    }
+    main>aside>span {
+        height:30px;
+        width:30px;
+    }
+    section#productos-oxivit {
+        margin-top:-31px;
+    }
+    section#productos-oxivit>header {
+        margin:99px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:28.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:16.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 99px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding:0 0 78px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:23pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:21pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:16.9pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:14.4pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:21pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:33px;
+        font-size:16pt;
+        padding:0 12px;
+    }
+    section#beneficiosOxivit>header {
+        margin:99px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:28.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 99px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:79px;
+    }
+    section.beneficios h2 {
+        font-size:19.4pt;
+    }
+    section.beneficios h3 {
+        font-size:13.8pt;
+    }
+    section#contacto {
+        margin:0 0 99px 0;
+    }
+    section#contacto>header>h1 {
+        margin:99px 0;
+        font-size:30pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:15.4pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:18pt;
+    }
+    section#contacto>main>form input {
+        height:55px;
+    }
+    section#contacto>main>form textarea {
+        height:188px;
+    }
+    section#contacto>main>form button {
+        height:49px;
+    }
+    footer#pie {
+        padding:79px 8.385%;
+    }
+    footer h4 {
+        font-size:13.6pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:10.35pt;
+    }
+    footer#pie section#siguenos>main>a>figure>img {
+        height: 27px;
+        width: 27px;
+    }
+    footer#pie2 {
+        height:46px;
+    }
+    footer#pie2>p {
+        font-size:10.2pt;
+    }
+}
+
+@media (min-width:1495px) {
+    nav#nav {
+        height:85.5px;
+    }
+    nav#nav>main>a {
+        font-size:21pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 85px;
+    }
+    main>aside#circulosSlider {
+        top:-40px;
+    }
+    section#productos-oxivit>header {
+        margin:104px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:30.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:17.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 104px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding: 0 0 82px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:24.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:23pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:17.9pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:15.6pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:22pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:35px;
+        font-size:17pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:104px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:30.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 104px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:83px;
+    }
+    section.beneficios h2 {
+        font-size:21.1pt;
+    }
+    section.beneficios h3 {
+        font-size:14.9pt;
+    }
+    section#contacto {
+        margin:0 0 104px 0;
+    }
+    section#contacto>header>h1 {
+        margin:104px 0;
+        font-size:32pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:16pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:19pt;
+    }
+    section#contacto>main>form input {
+        height:59px;
+    }
+    section#contacto>main>form textarea {
+        height:201px;
+    }
+    section#contacto>main>form button {
+        height:53px;
+    }
+    footer#pie {
+        padding:83px 8.385%;
+    }
+    footer h4 {
+        font-size:14.3pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:11.27pt;
+    }
+    footer#pie section#contactanos figure>img {
+        height:22px;
+        width:22px;
+    }
+    footer#pie section#siguenos>main>a>figure>img {
+        height:35px;
+        width:35px;
+    }
+    footer#pie2 {
+        height:49px;
+    }
+    footer#pie2>p {
+        font-size:11.2pt;
+    }
+}
+
+@media (min-width:1595px) {
+    nav#nav {
+        height:90px;
+    }
+    nav#nav>main>a {
+        font-size:22pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 90px;
+    }
+    main>aside#circulosSlider {
+        top:-41px;
+    }
+    section#productos-oxivit>header {
+        margin:109px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:32.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:18.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 109px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding: 0 0 86px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:26.1pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:24.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:19.12pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:16.8pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:24pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:37px;
+        font-size:19pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:109px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:32.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 109px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:87px;
+    }
+    section.beneficios h2 {
+        font-size:22.5pt;
+    }
+    section.beneficios h3 {
+        font-size:15.6pt;
+    }
+    section#contacto {
+        margin:0 0 109px 0;
+    }
+    section#contacto>header>h1 {
+        margin:109px 0;
+        font-size:34pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button,
+	section#contacto>p#mensajeIndex {
+        font-size:17pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:20pt;
+    }
+    section#contacto>main>form input {
+        height:63px;
+    }
+    section#contacto>main>form textarea {
+        height:214px;
+    }
+    section#contacto>main>form button {
+        height:57px;
+    }
+    footer#pie {
+        padding:87px 8.385%;
+    }
+    footer h4 {
+        font-size:15.5pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:11.64pt;
+    }
+    footer#pie2 {
+        height:52px;
+    }
+    footer#pie2>p {
+        font-size:11.5pt;
+    }
+}
+
+@media (min-width:1695px) {
+    nav#nav {
+        height:94.5px;
+    }
+    nav#nav>main>a {
+        font-size:23pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 95px;
+    }
+    main>aside#circulosSlider {
+        top:-42px;
+    }
+    section#productos-oxivit>header {
+        margin:114px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:34.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:19.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 114px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding: 0 0 90px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:27.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:26pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:20.48pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:17.7pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:25.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:35px;
+        padding:0 15px;
+        font-size:20pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:114px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:34.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 114px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:91px;
+    }
+    section.beneficios h2 {
+        font-size:23.7pt;
+    }
+    section.beneficios h3 {
+        font-size:16.9pt;
+    }
+    section#contacto {
+        margin:0 0 114px 0;
+    }
+    section#contacto>header>h1 {
+        margin:114px 0;
+        font-size:36pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button {
+        font-size:18pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:21pt;
+    }
+    section#contacto>main>form input {
+        height:67px;
+    }
+    section#contacto>main>form textarea {
+        height:227px;
+    }
+    section#contacto>main>form button {
+        height:61px;
+    }
+    footer#pie {
+        padding:91px 8.385%;
+    }
+    footer h4 {
+        font-size:17.5pt;
+    }
+    footer#pie>section#nosotros>p {
+        font-size:12.75pt;
+    }
+    footer p, footer a {
+        font-size:13pt;
+    }
+    footer#pie2 {
+        height:55px;
+    }
+    footer#pie2>p {
+        font-size:12.6pt;
+    }
+}
+
+@media (min-width:1795px) {
+    nav#nav {
+        height:99px;
+    }
+    nav#nav>main>a {
+        font-size:24pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 100px;
+    }
+    main>aside#circulosSlider {
+        top:-43px;
+    }
+    section#productos-oxivit>header {
+        margin:119px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:36.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:20.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 119px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding: 0 0 94px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:29pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:27.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:21.7pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:19pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:26.5pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:40px;
+        font-size:21pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:119px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:36.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 119px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:95px;
+    }
+    section.beneficios h2 {
+        font-size:25pt;
+    }
+    section.beneficios h3 {
+        font-size:17.8pt;
+    }
+    section#contacto {
+        margin:0 0 119px 0;
+    }
+    section#contacto>header>h1 {
+        margin:119px 0;
+        font-size:38pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button {
+        font-size:19pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:22pt;
+    }
+    section#contacto>main>form input {
+        height:71px;
+    }
+    section#contacto>main>form textarea {
+        height:240pxx;
+    }
+    section#contacto>main>form button {
+        height:65px;
+    }
+    footer#pie {
+        padding:95px 8.385%;
+    }
+    footer h4 {
+        font-size:18.5pt;
+    }
+    footer#pie>section#nosotros>p {
+        font-size:13.82pt;
+    }
+    footer p, footer a {
+        font-size:14pt;
+    }
+    footer#pie2 {
+        height:58px;
+    }
+    footer#pie2>p {
+        font-size:13.7pt;
+    }
+}
+
+@media (min-width:1895px) {
+    nav#nav {
+        height:103.5px;
+    }
+    nav#nav>main>a {
+        font-size:24.5pt;
+    }
+    nav#nav>main :nth-child(2) {
+        margin:0 105px;
+    }
+    main>aside#circulosSlider {
+        top:-44px;
+    }
+    section#productos-oxivit>header {
+        margin:124px 0;
+    }
+    section#productos-oxivit>header>h1 {
+        font-size:38.5pt;
+    }
+    section#productos-oxivit>header>h1>span {
+        font-size:21.5pt;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section {
+        padding:0 0 124px 0;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section:first-child {
+        padding: 0 0 98px 0;
+    }
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:30.5pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:29pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:22.47pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:19.9pt;
+    }
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:28pt;
+    }
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:50px;
+        font-size:22pt;
+    }
+    section#beneficiosOxivit>header {
+        margin:124px 0;
+    }
+    section#beneficiosOxivit>header>h1 {
+        font-size:38.5pt;
+    }
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 124px;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:99px;
+    }
+    section.beneficios h2 {
+        font-size:26.6pt;
+    }
+    section.beneficios h3 {
+        font-size:19.1pt;
+    }
+    section#contacto {
+        margin:0 0 124px 0;
+    }
+    section#contacto>header>h1 {
+        margin:124px 0;
+        font-size:40pt;
+    }
+    section#contacto>main>form label,
+    section#contacto>main>form button {
+        font-size:20pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:23.5pt;
+    }
+    section#contacto>main>form input {
+        height:75px;
+    }
+    section#contacto>main>form textarea {
+        height:253px;
+    }
+    section#contacto>main>form button {
+        height:69px;
+    }
+    footer#pie {
+        padding:99px 8.385%;
+    }
+    footer h4 {
+        font-size:19pt;
+    }
+    footer#pie>section#nosotros>p,
+    footer p, footer a {
+        font-size:14.09pt;
+    }
+    footer#pie section#contactanos figure>img {
+        height:23px;
+        width:23px;
+    }
+    footer#pie section#siguenos>main>a>figure>img {
+        height:40px;
+        width:40px;
+    }
+    footer#pie2 {
+        height:61px;
+    }
+    footer#pie2>p {
+        font-size:14pt;
+    }
+}
+
+@media (min-width:1920px) {
+    nav#nav {
+        display: flex;
+        flex-flow: row;
+        height:113px;
+        width: 100%;
+        background-color: rgba(31, 138, 136, 0.8);
+        position: fixed;
+        z-index: 3;
+    }
+
+    nav#nav>aside {
+        display: flex;
+        align-items: center;
+        flex: 0.5
+    }
+
+    nav#nav>aside#logo-oxivit {
+        margin-left: 50px;
+    }
+
+    nav#nav>aside>a>figure {
+        margin: 0;
+    }
+
+    nav#nav>main {
+        display: flex;
+        flex-flow: row;
+    }
+
+    nav#nav>main {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        flex: 7;
+    }
+
+    nav#nav>main>a {
+        text-decoration: none;
+        color: white;
+        font-size: 25pt;
+    }
+
+    nav#nav>main>a:nth-child(2) {
+        margin: 0 110px;
+    }
+
+    nav#nav>aside#redes-oxivit {
+        flex: 1;
+        position:relative;
+        right:20px;
+    }
+
+    nav#nav>aside#redes-oxivit>a {
+        height: 50%;
+        margin: 0 30px 0 0;
+    }
+
+    main {
+        display: flex;
+        flex-flow: column;
+    }
+
+    main>section>figure {
+        display: flex;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    main>section>figure>img {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        z-index: 1;
+        transition: 1s all;
+    }
+
+    main>aside#circulosSlider {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: -50px;
+        z-index: 2;
+    }
+
+    main>aside#circulosSlider {
+        top:-45px;
+    }
+
+    main>aside>span {
+        height:36px;
+        width:36px;
+        border-radius:20px;
+        background-color:#3C3C3B;
+        margin:0 10px;
+        transition:0.5s all;
+        cursor:pointer;
+    }
+
+    section#productos-oxivit {
+        display: flex;
+        flex-flow: column;
+        margin-top:-36px;
+    }
+
+    section#productos-oxivit>header {
+        display: flex;
+        justify-content: center;
+        margin:125px 0;
+    }
+
+    section#productos-oxivit>header>h1 {
+        font-size:40.5pt;
+    }
+
+    section#productos-oxivit>header>h1>span {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        text-align: center;
+        color: rgb(114, 114, 114);
+        font-size:22.5pt;
+        margin:0 0 30px 0;
+    }
+
+    section#productos-oxivit>main {
+        display: flex;
+        flex-flow: column;
+        margin:0;
+    }
+
+    section#productos-oxivit>main>section {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        margin: 0 0 10.4% 0;
+    }
+
+    section#productos-oxivit>main#productos-oxivit2>section {
+        margin-bottom:25px;
+    }
+    
+    section#productos-oxivit>main>section#altura-producto>section {
+        padding-bottom:100px !important;
+    }
+
+    section#productos-oxivit>main>section>article {
+        display: flex;
+        flex-flow: column;
+        width: 27.1875%;
+        border: 1px solid rgb(114, 114, 114);
+        border-radius: 2px;
+    }
+
+    article p {
+        margin: 5px;
+    }
+
+    article>section {
+        border-top: 1px solid rgb(114, 114, 114);
+    }
+
+    section#productos-oxivit>main#productos-oxivit2>section>section>article.producto-izq {
+        margin-right:5.209%;
+    }
+
+    section#productos-oxivit>main>section>article>figure {
+        display: flex;
+        margin: 0;
+    }
+
+    section#productos-oxivit>main>section>article>figure>img {
+        height: 100%;
+        width: 100%;
+    }
+
+    section#productos-oxivit>main>section>article>section {
+        display: flex;
+        flex-flow: column;
+        flex: 1;
+        justify-content: space-around;
+    }
+
+    section#productos-oxivit>main>section>article>section>header {
+        display: flex;
+        flex-flow: row;
+    }
+
+    section#productos-oxivit>main>section>section>article>section>header>p {
+        font-size:31.5pt;
+    }
+
+    section#productos-oxivit>main>section>section>article>section p {
+        font-size:29.5pt;
+    }
+
+    section#productos-oxivit>main>section>section>article>section p.tits2 {
+        font-size:22.96pt;
+    }
+
+    section#productos-oxivit>main>section>section>article>section p.tits3 {
+        font-size:20.17pt;
+    }
+
+    section#productos-oxivit>main>section>section>article>section p.tits-nebu {
+        font-size:29pt;
+    }
+
+    section#productos-oxivit>main>section>section>article.productos button {
+        height:56px;
+        padding:0 20px;
+        font-size:23pt;
+    }
+
+    section#productos-oxivit>main>section>article>section>header>p {
+        font-family: "Hurme Semi Bold";
+        font-size: 14pt;
+        color: black;
+    }
+
+    section#productos-oxivit>main>section>article>section>header>aside {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    section#productos-oxivit>main>section>article>section>header>aside>p {
+        color: rgb(114, 114, 114);
+        font-family: "Hurme Semi Bold";
+    }
+
+    section#productos-oxivit>main>section>article>section p.tits {
+        font-size: 14pt;
+        font-family: "Hurme Semi Bold";
+    }
+
+    section#productos-oxivit>main>section>article>section p.tits2 {
+        font-size: 12pt;
+        font-family: "Hurme Semi Bold";
+    }
+
+    section#productos-oxivit>main>section>article>section p.tits3 {
+        font-size: 10pt;
+    }
+
+    section#productos-oxivit>main>section>article>section aside {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    section#productos-oxivit>main>section>article>section aside>p {
+        font-family: "Hurme Semi Bold";
+        color: rgb(31, 138, 136);
+    }
+
+    section#productos-oxivit>main>section>article>section form#nebulizacion {
+        display: flex;
+        justify-content: center;
+    }
+
+    section#productos-oxivit>main>section>article>section form#nebulizacion>button {
+        font-weight: 700;
+        color: rgb(31, 138, 136);
+        margin: 5px;
+    }
+
+    section#productos-oxivit>main>section>article>section form#nebulizacion>button:hover {
+        cursor: pointer;
+    }
+
+    section#beneficiosOxivit {
+        display: flex;
+        flex-flow: column;
+    }
+
+    section#beneficiosOxivit>header {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        margin:0;
+    }
+
+    section#beneficiosOxivit>header>h1 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 11% 0;
+        font-family: "Hurme Black";
+        color: rgb(31, 138, 136);
+        margin:125px 0;
+        font-size:40.5pt;
+    }
+
+    section#beneficiosOxivit>main {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        margin: 0 8.3%;
+    }
+
+    section#beneficiosOxivit>main#beneficios {
+        margin:0 8.4% 0;
+    }
+
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article {
+        margin-bottom:100px;
+    }
+
+    section.beneficios h2 {
+        margin:55px 0 35px;
+        font-size:26.9pt;
+    }
+
+    section#beneficiosOxivit>main>article.beneficio-medio {
+        margin: 0 3.4%;
+    }
+
+    section#beneficiosOxivit>main>article>figure {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    section#beneficiosOxivit>main>article>figure>img {
+        height: 50%;
+        width: 50%;
+    }
+
+    section.beneficios h3 {
+        font-size:19.1pt;
+    }
+
+    section#beneficiosOxivit>main>article>h2,
+    section#beneficiosOxivit>main>article>h3 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    section#galeria {
+        display: flex;
+        flex-flow: column;
+        margin-top:125px;
+    }
+
+    section#galeria>article {
+        display: flex;
+        flex-flow: row;
+    }
+
+    section#galeria>article>figure.galeria-grande {
+        width: 50%;
+    }
+
+    section#galeria>article>figure.galeria-chica {
+        width: 25%;
+    }
+
+    section#galeria>article>figure {
+        margin: 0;
+    }
+
+    section#galeria>article>figure>img {
+        height: 100%;
+        width: 100%;
+    }
+
+    section#contacto {
+        display: flex;
+        flex-flow: column;
+        margin:0;
+    }
+
+    section#contacto>header {
+        display: flex;
+        justify-content: center;
+    }
+
+    section#contacto>header>h1 {
+        font-family: "Hurme Black";
+        color: rgb(31, 138, 136);
+        font-size:42pt;
+        margin:125px 0;
+    }
+
+    section#contacto>main {
+        display: flex;
+        flex-flow: row;
+        margin: 0 8.4% 125px;
+        gap:50px;
+    }
+
+    section#contacto>main>form {
+        display: flex;
+        flex-flow: column;
+        width: 50%;
+    }
+
+    section#contacto>main>form>label {
+        font-family: "Hurme Semi Bold";
+        font-size: 14pt;
+        margin:0;
+    }
+
+    section#contacto>main>form>input {
+        height:10%;
+        margin: 5px 0;
+        font-family: "Hurme Semi Bold";
+        font-size: 14pt;
+        margin:0 0 25px;
+    }
+
+    section#contacto>main>form textarea {
+        height:259px;
+    }
+
+    section#contacto>main>form label,
+    section#contacto>main>form button {
+        font-size:22pt;
+    }
+    section#contacto>main>form input,
+    section#contacto>main>form textarea {
+        font-size:26.65pt;
+    }
+
+    section#contacto>main>form input,
+    section#contacto>main>form textarea,
+    section#contacto>main>form button {
+        border-radius:10px;
+    }
+
+    section#contacto>main>form input {
+        height:75px;
+    }
+
+    section#contacto>main>form>aside {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    section#contacto>main>form>aside>button {
+        color: #1F8A88;
+        margin:0;
+        height:56px;
+        display:flex;
+        align-items:center;
+        padding:0 20px;
+    }
+
+    section#contacto>main>form>aside>button:hover {
+        cursor: pointer;
+    }
+
+    section#contacto>main>aside>figure {
+        display: flex;
+        margin: 0;
+    }
+
+    section#contacto>main>aside>figure>img {
+        width: 100%;
+    }
+
+    video {
+        display: flex;
+    }
+
+    footer#pie {
+        padding:100px 8.385%;
+    }
+
+    footer {
+        padding: 5% 8.3%;
+        background-color: rgb(60, 60, 60);
+    }
+
+    footer header h4 {
+        color: white;
+        font-size:19.3pt;
+    }
+
+    footer#pie>section#nosotros>p,
+    footer p,
+    footer a {
+        color: rgb(114, 114, 114);
+        font-family: "Hurme Semi Bold";
+        font-size:14.16pt;
+    }
+
+    footer#pie section#informacion>main>a {
+        text-decoration: none;
+        margin: 0 0 25px 0;
+    }
+
+    footer#pie section#contactanos>main>a {
+        margin:0 0 25px;
+    }
+
+    footer figure {
+        margin: 0;
+    }
+
+    footer figure img {
+        height: 100%;
+        width: 100%;
+    }
+
+    footer #contactanos figure {
+        height: 20px;
+        width: 20px;
+    }
+
+    footer#pie section#contactanos figure>img {
+        height:25px;
+        width:25px;
+        margin:0;
+    }
+
+    footer#pie section#contactanos>main>a>p {
+        margin-left:20px;
+    }
+
+    footer #siguenos figure {
+        height: 25px;
+        width: 25px;
+    }
+
+    footer>main {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+
+    footer>main>aside {
+        display: flex;
+        flex-flow: column;
+    }
+
+    footer#pie section#siguenos>main>a.derecha {
+        margin-left:25px;
+    }
+
+    footer>main>section#nosotros,
+    footer>main>section#certificados,
+    footer>main>section#informacion {
+        margin: 0 5% 0 0;
+    }
+
+    footer>main>section#informacion>main {
+        display: flex;
+        flex-flow: column;
+    }
+
+    footer>main>aside>section#contactanos>main {
+        display: flex;
+        flex-flow: column;
+    }
+
+    footer>main>aside>section#contactanos>main>a {
+        display: flex;
+        flex-flow: row;
+        margin: 0 0 10px 0;
+    }
+
+    footer>main>aside>section#contactanos>main>a>p {
+        margin: 0 0 0 2%;
+    }
+
+    footer>main>aside>section#siguenos>main {
+        display: flex;
+        flex-flow: row;
+    }
+
+    footer>main>aside>section#siguenos>main>a {
+        margin: 0 10px 0 0;
+    }
+
+    footer#pie section#siguenos>main>a>figure>img {
+        height:42px;
+        width:42px;
+    }
+
+    footer#pie2 {
+        margin-top:-1px;
+        height:72px;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        padding:0;
+    }
+
+    footer#pie2>p {
+        color: white;
+        font-family: "Hurme Semi Bold";
+        font-size:14.1pt;
+    }
+}
