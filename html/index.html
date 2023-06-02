@@ -388,7 +388,7 @@
                 <h1>PONERSE EN CONTACTO</h1>
             </header>
             <main>
-                <form action="../corser" method="post">
+                <form action="mailto:programacionytecnologias@gmail.com" method="POST">
                     <div>
                         <label for="nombre">NOMBRE COMPLETO</label>
                         <input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}" 
@@ -414,7 +414,7 @@
                     		pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]{10,1500}"></textarea>
                     </div>
                     <aside>
-                        <button type="submit" name="opcion" value="cor">
+                        <button type="submit" name="opcion" value="cor" id="enviar">
                             ENVIAR<span>&nbspCONSULTA</span>
                         </button>
                     </aside>
@@ -426,7 +426,7 @@
                     </picture>
                 </aside>
             </main>
-            <p id="mensajeIndex">${mensaje }</p>
+            <p id="mensajeIndex"></p>
         </section>
         <section>
             <video width="100%" height="100%" controls>
@@ -596,4 +596,5 @@
     </footer>
 </body>
 <script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
 </html>
