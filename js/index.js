@@ -269,6 +269,7 @@ function menu() {
 	}
 	menuEnlace1.addEventListener("click", moverMenu);
 	menuEnlace2.addEventListener("click", moverMenu);
+	menuEnlace3.addEventListener("click", moverMenu);
 	menuOxivit.addEventListener("click", moverMenu);
 	menuInicio.addEventListener("click", ocultarMenu);
 }
@@ -276,9 +277,11 @@ function focusMenuMovil() {
 	if (menuCelular.style.left == "100%") {
 		menuEnlace1.tabIndex = -1;
 		menuEnlace2.tabIndex = -1;
+		menuEnlace3.tabIndex = -1;
 	} else {
 		menuEnlace1.tabIndex = 1;
 		menuEnlace2.tabIndex = 1;
+		menuEnlace3.tabIndex = 1;
 	}
 }
 function tabEvent() {
@@ -583,6 +586,85 @@ function rotacionBeneficios() {
 	}
 	mainBeneficios[0].addEventListener("touchend", touchEndBeneficio);
 }
+function validarInputs() {
+	nombre.addEventListener("input", quitarValidacionNombre);
+	function quitarValidacionNombre(e) {
+		e.target.setCustomValidity("");
+		validarNombre(e);
+	}
+	nombre.addEventListener("invalid", validarNombre);
+	function validarNombre(e) {
+		let r = new RegExp("[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}");
+		if (nombre.value.length == 0) {
+			e.target.setCustomValidity("Ingresa nombre");
+		} else if (nombre.value.length > 0 && nombre.value.length < 3) {
+			e.target.setCustomValidity("Ingrese mínimo tres carácteres");
+		} else if (!r.test(nombre.value)) {
+			e.target.setCustomValidity("Utiliza sólo carácteres del idioma español");
+		}
+	}
+	correo.addEventListener("input", quitarValidacionCorreo);
+	function quitarValidacionCorreo(e) {
+		e.target.setCustomValidity("");
+		validarCorreo(e);
+	}
+	correo.addEventListener("invalid", validarCorreo);
+	function validarCorreo(e) {
+		let r = new RegExp("[a-zA-Z0-9]{3,15}[@][a-zA-Z0-9]{3,15}[.][a-zA-Z0-9]{3,15}");
+		if (correo.value.length == 0) {
+			e.target.setCustomValidity("Ingresa correo");
+		} else if (correo.value.length > 0 && correo.value.length < 11) {
+			e.target.setCustomValidity("Ingrese mínimo once carácteres");
+		} else if (!r.test(correo.value)) {
+			e.target.setCustomValidity("Utiliza un formato de correo valido");
+		}
+	}
+	celular.addEventListener("input", quitarValidacionCelular);
+	function quitarValidacionCelular(e) {
+		e.target.setCustomValidity("");
+		validarTelefono(e);
+	}
+	celular.addEventListener("invalid", validarTelefono);
+	function validarTelefono(e) {
+		let r = new RegExp("[+]{0,1}[0-9]{9,20}");
+		if (celular.value.length == 0) {
+			e.target.setCustomValidity("Ingresa teléfono");
+		} else if (celular.value.length < 9) {
+			e.target.setCustomValidity("Ingrese mínimo nueve carácteres");
+		} else if (!r.test(celular.value)) {
+			e.target.setCustomValidity("Utiliza un formato de teléfono valido");
+		}
+	}
+	consulta.addEventListener("input", quitarValidacionConsulta);
+	function quitarValidacionConsulta(e) {
+		e.target.setCustomValidity("");
+		validarConsulta(e);
+	}
+	consulta.addEventListener("invalid", validarConsulta);
+	function validarConsulta(e) {
+		let r = new RegExp("[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]{3,1500}");
+		if (consulta.value.length == 0) {
+			e.target.setCustomValidity("Ingresa consulta");
+		} else if (consulta.value.length < 10) {
+			e.target.setCustomValidity("Ingrese mínimo diez carácteres");
+		} else if (!r.test(consulta.value)) {
+			e.target.setCustomValidity("Utiliza sólo carácteres del idioma español");
+		}
+	}
+}
+function mensajeCorreo() {
+	if (mensaje.innerHTML != "" && mensajeEnviado == false) {
+		mensaje.style.display = "flex";
+		mensajeEnviado = true;
+	} else if (mensajeEnviado == true) {
+		mensaje.innerHTML = "";
+		mensaje.style.display = "none";
+		mensajeEnviado = false;
+		clearTimeout("esperar");
+		return;
+	}
+	esperar = setTimeout("mensajeCorreo()", 10000);
+}
 function cambio() {
 	window.addEventListener("resize", function() {
 		if (index.clientWidth >= 595) {
@@ -621,7 +703,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	rotacion();
 	cambio();
 	cambiarPortada();
+	mensajeCorreo();
 	focusMenuMovil();
+	validarInputs();
 	if (index.clientWidth <= 594) {
 		rotacionBeneficios();
 		menu();

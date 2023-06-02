@@ -17,7 +17,10 @@
     font-family:"Hurme";
     src:url("../fuentes/HurmeGeometricSans1.otf");
 }
-
+a#com {
+	display:flex;
+	margin:50px;
+}
 html {
     scroll-behavior:smooth;
 }
@@ -37,7 +40,7 @@ body {
     margin:0;
 }
 
-nav#nav {
+nav {
     display:flex;
     flex-flow:row;
     height:35.6694px;
@@ -47,51 +50,51 @@ nav#nav {
     z-index:4;
 }
 
-nav#nav>aside {
+nav>aside {
     display:flex;
     align-items:center;
 }
 
-nav#nav>aside#logo-oxivit {
+nav>aside#logo-oxivit {
     margin-left:20px;
     width:fit-content;
 }
 
-nav#nav>aside>a {
+nav>aside>a {
     height:67%;
     width:auto;
     display:flex;
 }
 
-nav#nav>aside>a>figure {
+nav>aside>a>figure {
     margin:0;
     display:flex;
     align-items:center;
 }
 
-nav#nav>aside>a>figure>img {
+nav>aside>a>figure>img {
 	padding:0 5px;
 }
 
-nav#nav>main {
+nav>main {
     display:none;
 }
 
-nav#nav>aside#redes-oxivit {
+nav>aside#redes-oxivit {
     flex:1;
     justify-content:flex-end;
 }
 
-nav#nav>aside#redes-oxivit>a {
+nav>aside#redes-oxivit>a {
     margin:0 20px 0 0;
 }
 
-nav#nav>aside#redes-oxivit>a>figure>img {
+nav>aside#redes-oxivit>a>figure>img {
     height:75%;
     width:auto;
 }
 
-nav#nav>aside#redes-oxivit>aside#menu-oxivit {
+nav>aside#redes-oxivit>aside#menu-oxivit {
     display:flex;
     flex-flow:column;
     justify-content:center;
@@ -100,7 +103,7 @@ nav#nav>aside#redes-oxivit>aside#menu-oxivit {
     height:60%;
 }
 
-nav#nav>aside#redes-oxivit>aside#menu-oxivit>button {
+nav>aside#redes-oxivit>aside#menu-oxivit>button {
     background:none;
     border:none;
     display:flex;
@@ -108,12 +111,12 @@ nav#nav>aside#redes-oxivit>aside#menu-oxivit>button {
     padding:5px 3px;
 }
 
-nav#nav>aside#redes-oxivit>aside#menu-oxivit>button:focus-visible {
+nav>aside#redes-oxivit>aside#menu-oxivit>button:focus-visible {
 	border-radius:5px;
 	outline:2px solid black;
 }
 
-nav#nav>aside#redes-oxivit>aside#menu-oxivit>button>span {
+nav>aside#redes-oxivit>aside#menu-oxivit>button>span {
     width:15px;
     margin:1.5px 0;
     border-top: 2px solid white;
@@ -353,12 +356,9 @@ section#productos-oxivit>main>section>section>article.productos {
     transition: 1s all;
 }
 
-section#productos-oxivit>main>section>section>article>section form {
-    align-self:center;
-}
-
-section#productos-oxivit>main>section>section>article>section form#nebulizacion {
-    display: none;
+section#productos-oxivit>main>section>section>article.productos form {
+    display: flex;
+    justify-content: center;
 }
 
 section#productos-oxivit>main>section>section>article.productos button {
@@ -746,7 +746,7 @@ img:focus-visible {
 	outline:2px solid black;
 }
 
-nav#nav>aside#redes-oxivit>aside#menu-oxivit:focus-visible {
+nav>aside#redes-oxivit>aside#menu-oxivit:focus-visible {
 	outline:2px solid black;
 }
 
@@ -1322,7 +1322,7 @@ img {
 }
 
 @media (min-width:495px) {
-    nav#nav>aside#redes-oxivit>aside#menu-oxivit>span {
+    nav>aside#redes-oxivit>aside#menu-oxivit>span {
         width:17px;
     }
     section#productos-oxivit>header>h1 {
@@ -1560,13 +1560,6 @@ img {
     }
     section#productos-oxivit>main>section>section>article.productos button {
         font-size:6.7pt;
-    }
-    section#productos-oxivit>main>section>article>section form#nebulizacion {
-        display: none;
-    }
-    section#productos-oxivit>main>section>article>section form#nebulizacion2 {
-        display: flex;
-        justify-content: center;
     }
     section#beneficiosOxivit {
         max-width:100%;
@@ -3916,11 +3909,6 @@ img {
 
     section#productos-oxivit>main>section>article>section form#nebulizacion {
         display: flex;
-        justify-content: center;
-    }
-
-    section#productos-oxivit>main>section>article>section form#nebulizacion2 {
-        display: none;
         justify-content: center;
     }
 

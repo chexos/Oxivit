@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <nav id="nav">
+    <nav>
         <aside id="logo-oxivit">
             <a href="#index">
                 <figure>
@@ -17,6 +17,7 @@
         <main>
             <a href="#productos-oxivit">PRODUCTOS</a>
             <a href="#beneficiosOxivit">BENEFICIOS</a>
+            <a href="#contacto">CONTACTO</a>
         </main>
         <aside id="redes-oxivit">
             <a href="https://www.facebook.com/profile.php?id=100037191201341">
@@ -69,9 +70,11 @@
             	</button>
             </aside>
         </main>
+    	<a href="../autser?opc=com" id="com">Guardar</a>
         <section id="menu-celular" style="left:100%;">
             <a href="#productos-oxivit" id="menu-enlace-1">PRODUCTOS</a>
             <a href="#beneficiosOxivit" id="menu-enlace-2">BENEFICIOS</a>
+            <a href="#contacto" id="menu-enlace-3">CONTACTO</a>
         </section>
         <section id="productos-oxivit">
             <header id="titulo-productos">
@@ -170,13 +173,8 @@
                                 <section>
                                     <p class="tits2">Solicitar cotización por m2</p>
                                 </section>
-                                <form action="#contactanos" id="nebulizacion">
+                                <form action="#contacto" id="nebulizacion">
                                     <button id="btnNebulizacion">
-                                        CONTACTARSE PARA COTIZAR
-                                    </button>
-                                </form>
-                                <form action="#contactanos" id="nebulizacion2">
-                                    <button id="btnNebulizacion2">
                                         CONTACTARSE PARA COTIZAR
                                     </button>
                                 </form>
@@ -386,6 +384,51 @@
                 </picture>
             </article>
         </section>
+        <section id="contacto">
+            <header>
+                <h1>PONERSE EN CONTACTO</h1>
+            </header>
+            <main>
+                <form action="../corser" method="post">
+                    <div>
+                        <label for="nombre">NOMBRE COMPLETO</label>
+                        <input pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}" 
+                        	type="text" placeholder="Nombre y apellidos" id="nombre"
+                    		name="txtNombre" required minlength="3" maxlength="50" >
+                    </div>
+                    <div>
+                        <label for="correo">CORREO</label>
+                        <input type="email" placeholder="Correo electrónico" id="correo"
+                    		name="txtCorreo" minlength="11" maxlength="47" required
+                    		pattern="[a-zA-Z0-9]{3,15}[@][a-zA-Z0-9]{3,15}[.][a-zA-Z0-9]{3,15}">
+                    </div>
+                    <div>
+                        <label for="celular">CELULAR</label>
+                        <input type="tel" placeholder="Número de celular" id="celular"
+                    		name="txtCelular" minlength="9" maxlength="20" required
+                    		pattern="[+]{0,1}[0-9]{9,20}">
+                    </div>
+                    <div>
+                        <label for="consulta">CONSULTA</label>
+                        <textarea placeholder="Consulta" id="consulta" 
+                    		name="txtConsulta" minlength="3" maxlength="1500" required
+                    		pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]{10,1500}"></textarea>
+                    </div>
+                    <aside>
+                        <button type="submit" name="opcion" value="cor">
+                            ENVIAR<span>&nbspCONSULTA</span>
+                        </button>
+                    </aside>
+                </form>
+                <aside>
+                    <picture>
+                        <source media="(min-width:1920px)" srcset="../imgs/paginawebfotocontacto.jpg">
+                        <img src="../imgs/oxivit-contacto.jpg">
+                    </picture>
+                </aside>
+            </main>
+            <p id="mensajeIndex">${mensaje }</p>
+        </section>
         <section>
             <video width="100%" height="100%" controls>
                 <source src="../vds/oxivit-productos.mp4">
@@ -448,6 +491,9 @@
                         </a>
                         <a href="#beneficiosOxivit">
                             Beneficios
+                        </a>
+                        <a href="#contacto">
+                            Ponerse en contacto
                         </a>
                     </main>
                 </section>
