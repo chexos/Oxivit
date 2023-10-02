@@ -1611,9 +1611,14 @@ img {
     section#galeria {
         margin:0;
     }
+    section#galeria>article#galeria1>picture,
+    section#galeria>article#galeria2>picture {
+		width:25%;
+	}
     section#galeria>article#galeria1 .galeria-tablet,
     section#galeria>article#galeria2 .galeria-tablet {
         display:flex;
+		width:50%;
     }
     section#contacto {
         margin:0 0 38.7954px 0;
