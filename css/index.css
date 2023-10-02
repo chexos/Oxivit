@@ -1865,7 +1865,7 @@ img {
 
 @media (min-width:695px) {
     nav#nav {
-        height:45;
+        height:45px;
     }
     nav#nav>main>a {
         font-size:10pt;
