@@ -446,6 +446,10 @@ section#productos-oxivit>main>section>section>article.productos button:hover {
 	cursor:pointer;
 }
 
+section>iframe {
+    display:none;
+}
+
 section>video {
     display: flex;
 }
@@ -795,6 +799,7 @@ footer#pie {
     flex-flow: column;
     flex-wrap: wrap;
     background-color: rgb(60, 60, 60);
+    margin:-1px 0 0 0;
     padding:37.4851px 20.12%;
 }
 
