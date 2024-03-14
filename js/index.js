@@ -174,7 +174,6 @@ function rotacion() {
 		}
 		verificarSlider();
 		sliderPortada.style.transition = "1s all";
-		rotarSlider = setTimeout("rotacion()", 3000);
 		e.stopImmediatePropagation();
 	}
 	sliderPortada.addEventListener("dragstart", dragStart);
@@ -246,7 +245,6 @@ function rotacion() {
 		prevenir = false;
 		verificarSlider();
 		sliderPortada.style.transition = "1s all";
-		rotarSlider = setTimeout("rotacion()", 3000);
 		e.stopImmediatePropagation();
 	}
 }
