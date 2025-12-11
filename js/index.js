@@ -39,32 +39,26 @@ function verificarSlider() {
 		case 0:
 			cambiarColorCirculo();
 			sliderPortada.style.right = "0%";
-			circuloSlider.style.right = "0%";
 			break;
 		case 1:
 			cambiarColorCirculo();
 			sliderPortada.style.right = "16.7%";
-			circuloSlider.style.right = "16.7%";
 			break;
 		case 2:
 			cambiarColorCirculo();
 			sliderPortada.style.right = "33.3%";
-			circuloSlider.style.right = "33.3%";
 			break;
 		case 3:
 			cambiarColorCirculo();
 			sliderPortada.style.right = "50%";
-			circuloSlider.style.right = "50%";
 			break;
 		case 4:
 			cambiarColorCirculo();
 			sliderPortada.style.right = "66.7%";
-			circuloSlider.style.right = "66.7%";
 			break;
 		case 5:
 			cambiarColorCirculo();
 			sliderPortada.style.right = "83.4%";
-			circuloSlider.style.right = "83.4%";
 			break;
 		default:
 			break;
