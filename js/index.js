@@ -1,6 +1,8 @@
 let index = document.getElementById("index");
+let carrusel = document.getElementById("slider");
 let slider = document.getElementsByClassName("slider");
 let sliderPortada = document.getElementById("sliderPortada");
+let circuloSlider = document.getElementById("circulosSlider");
 let circulosSlider = document.getElementsByClassName("circulos-slider");
 let c = -1;
 let cb = -1;
@@ -35,19 +37,33 @@ function verificarSlider() {
 	switch (c) {
 		case 0:
 			cambiarColorCirculo();
-			sliderPortada.style.right = "0%";
+			carrusel.style.right = "100%";
+			circuloSlider.style.right = "66.7%";
 			break;
 		case 1:
 			cambiarColorCirculo();
-			sliderPortada.style.right = "25%";
+			carrusel.style.right = "200%";
+			circuloSlider.style.right = "50%";
 			break;
 		case 2:
 			cambiarColorCirculo();
-			sliderPortada.style.right = "50%";
+			carrusel.style.right = "300%";
+			circuloSlider.style.right = "33.3%";
 			break;
 		case 3:
 			cambiarColorCirculo();
-			sliderPortada.style.right = "75%";
+			carrusel.style.right = "400%";
+			circuloSlider.style.right = "16.7%";
+			break;
+		case 4:
+			cambiarColorCirculo();
+			carrusel.style.right = "500%";
+			circuloSlider.style.right = "8.3%";
+			break;
+		case 5:
+			cambiarColorCirculo();
+			carrusel.style.right = "600%";
+			circuloSlider.style.right = "0%";
 			break;
 		default:
 			break;
@@ -90,7 +106,7 @@ function cambiarPortada() {
 }
 function reiniciarRotacion() {
 	clearTimeout(rotarSlider);
-	rotarSlider = setTimeout("rotacion()", 3000);
+	//rotarSlider = setTimeout("rotacion()", 3000);
 }
 function rotacion() {
 	c++;
@@ -102,7 +118,7 @@ function rotacion() {
 	let posActual;
 	let prevenir = false;
 	verificarSlider();
-	rotarSlider = setTimeout("rotacion()", 3000);
+	//rotarSlider = setTimeout("rotacion()", 3000);
 	sliderPortada.addEventListener("touchstart", touchStart);
 	function touchStart(e) {
 		clearTimeout(rotarSlider);

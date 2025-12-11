@@ -189,8 +189,8 @@ main>section>figure>img {
 main>aside#circulosSlider {
     display:flex;
     justify-content:center;
-    position:relative;
-    top:-30px;
+    position:absolute;
+    top:85%;
     z-index:2;
     flex:1;
     width:calc(100% / 6);
