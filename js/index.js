@@ -4,7 +4,8 @@ let slider = document.getElementsByClassName("slider");
 let sliderPortada = document.getElementById("sliderPortada");
 let circuloSlider = document.getElementById("circulosSlider");
 let circulosSlider = document.getElementsByClassName("circulos-slider");
-let c = -1;
+let c = 0;
+let cir = 0;
 let cb = -1;
 let cp = 0;
 let menuOxivit = document.getElementById("menu-oxivit");
@@ -37,32 +38,32 @@ function verificarSlider() {
 	switch (c) {
 		case 0:
 			cambiarColorCirculo();
+			carrusel.style.right = "0%";
+			circuloSlider.style.right = "83.4%";
+			break;
+		case 1:
+			cambiarColorCirculo();
 			carrusel.style.right = "100%";
 			circuloSlider.style.right = "66.7%";
 			break;
-		case 1:
+		case 2:
 			cambiarColorCirculo();
 			carrusel.style.right = "200%";
 			circuloSlider.style.right = "50%";
 			break;
-		case 2:
+		case 3:
 			cambiarColorCirculo();
 			carrusel.style.right = "300%";
 			circuloSlider.style.right = "33.3%";
 			break;
-		case 3:
+		case 4:
 			cambiarColorCirculo();
 			carrusel.style.right = "400%";
 			circuloSlider.style.right = "16.7%";
 			break;
-		case 4:
-			cambiarColorCirculo();
-			carrusel.style.right = "500%";
-			circuloSlider.style.right = "8.3%";
-			break;
 		case 5:
 			cambiarColorCirculo();
-			carrusel.style.right = "600%";
+			carrusel.style.right = "500%";
 			circuloSlider.style.right = "0%";
 			break;
 		default:
@@ -71,7 +72,7 @@ function verificarSlider() {
 }
 function cambiarColorCirculo() {
 	for (var i = 0; i < circulosSlider.length; i++) {
-		if (i == c) {
+		if (i == cir) {
 			circulosSlider[i].style.backgroundColor = "rgb(60,60,60)";
 		} else {
 			circulosSlider[i].style.backgroundColor = "rgb(114,114,114)";
@@ -80,25 +81,29 @@ function cambiarColorCirculo() {
 }
 function cambiarPortada() {
 	circulosSlider[0].addEventListener("click", function() {
-		c = 0;
+		c = 1;
+		cir = 0;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
 	});
 	circulosSlider[1].addEventListener("click", function() {
-		c = 1;
+		c = 2;
+		cir = 1;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
 	});
 	circulosSlider[2].addEventListener("click", function() {
-		c = 2;
+		c = 3;
+		cir = 2;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
 	});
 	circulosSlider[3].addEventListener("click", function() {
-		c = 3;
+		c = 4;
+		cir = 3;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
