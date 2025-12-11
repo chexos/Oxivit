@@ -34,7 +34,7 @@ let nombre = document.getElementById("nombre");
 let correo = document.getElementById("correo");
 let celular = document.getElementById("celular");
 let consulta = document.getElementById("consulta");
-let bloquearTouch = false;
+let touchActivo = false;
 function verificarSlider() {
 	switch (c) {
 		case 0:
@@ -67,17 +67,6 @@ function verificarSlider() {
 			break;
 	}
 }
-sliderPortada.addEventListener("transitionend", function() {
-	if (c == 5) {
-		c = 1;
-		sliderPortada.style.transition = "0s";
-		verificarSlider();
-	} else if (c == 0) {
-		c = 4;
-		sliderPortada.style.transition = "0s";
-		verificarSlider();
-	}
-});
 function cambiarColorCirculo() {
 	for (var i = 0; i < circulosSlider.length; i++) {
 		if (i == cir) {
@@ -122,6 +111,7 @@ function reiniciarRotacion() {
 	//rotarSlider = setTimeout("rotacion()", 3000);
 }
 function rotacion() {
+	touchActivo = true;
 	c++;
 	cir++;
 	if (c >= slider.length) {
@@ -138,12 +128,14 @@ function rotacion() {
 	//rotarSlider = setTimeout("rotacion()", 3000);
 	sliderPortada.addEventListener("touchstart", touchStart);
 	function touchStart(e) {
+		console.log("touchStart");
 		clearTimeout(rotarSlider);
 		x = e.touches[0].pageX;
 		x4 = 0;
 	}
 	sliderPortada.addEventListener("touchmove", touchMove);
 	function touchMove(e) {
+		console.log("touchMove");
 		let sli = document.getElementById("slider").clientWidth;
 		posActual = sliderPortada.style.right;
 		let pos = posActual.slice(0, posActual.length - 1);
@@ -189,7 +181,6 @@ function rotacion() {
 	}
 	sliderPortada.addEventListener("touchend", touchEnd);
 	function touchEnd(e) {
-		console.log("touch");
 		x2 = e.changedTouches[0].pageX;
 		if (x > x2) {
 			console.log(c);
@@ -205,6 +196,25 @@ function rotacion() {
 		verificarSlider();
 		e.stopImmediatePropagation();
 	}
+	sliderPortada.addEventListener("transitionrun", function() {
+		sliderPortada.removeEventListener("touchstart", touchStart);
+		sliderPortada.removeEventListener("touchmove", touchMove);
+		sliderPortada.removeEventListener("touchend", touchEnd);
+	});
+	sliderPortada.addEventListener("transitionend", function() {
+		if (c == 5) {
+			c = 1;
+			sliderPortada.style.transition = "0s";
+			verificarSlider();
+		} else if (c == 0) {
+			c = 4;
+			sliderPortada.style.transition = "0s";
+			verificarSlider();
+		}
+		sliderPortada.addEventListener("touchstart", touchStart);
+		sliderPortada.addEventListener("touchmove", touchMove);
+		sliderPortada.addEventListener("touchend", touchEnd);
+	});
 	sliderPortada.addEventListener("dragstart", dragStart);
 	function dragStart(e) {
 		clearTimeout(rotarSlider);
