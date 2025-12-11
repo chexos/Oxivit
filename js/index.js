@@ -5,7 +5,7 @@ let sliderPortada = document.getElementById("sliderPortada");
 let circuloSlider = document.getElementById("circulosSlider");
 let circulosSlider = document.getElementsByClassName("circulos-slider");
 let c = 0;
-let cir = 0;
+let cir = -1;
 let cb = -1;
 let cp = 0;
 let menuOxivit = document.getElementById("menu-oxivit");
@@ -115,7 +115,11 @@ function reiniciarRotacion() {
 }
 function rotacion() {
 	c++;
-	if (c >= slider.length) c = 0;
+	cir++;
+	if (c >= slider.length) {
+ 		c = 0;
+		cir = 0;
+	}
 	let x;
 	let x2;
 	let x3;
@@ -177,18 +181,24 @@ function rotacion() {
 	}
 	sliderPortada.addEventListener("touchend", touchEnd);
 	function touchEnd(e) {
+		console.log("touch");
 		x2 = e.changedTouches[0].pageX;
 		if (x > x2) {
-			if (c === 3) {
-				c = 0;
+			console.log(c);
+			if (c === 4) {
+				c = 1;
+				cir = 0;
 			} else {
 				c++;
+				cir++;
 			}
 		} else if (x < x2) {
 			if (c === 0) {
-				c = 3;
+				c = 4;
+				cir = 3;
 			} else {
 				c--;
+				cir--;
 			}
 		} else {
 
@@ -251,16 +261,20 @@ function rotacion() {
 	function dragEnd(e) {
 		x2 = e.pageX;
 		if (x > x2) {
-			if (c === 3) {
-				c = 0;
+			if (c === 4) {
+				c = 1;
+				cir = 0;
 			} else {
 				c++;
+				cir++;
 			}
 		} else if (x < x2) {
 			if (c === 0) {
-				c = 3;
+				c = 4;
+				cir = 3;
 			} else {
 				c--;
+				cir--;
 			}
 		}
 		prevenir = false;
@@ -713,6 +727,7 @@ document.addEventListener("visibilitychange", function() {
 		clearTimeout(rotarBeneficios);
 	} else {
 		c--;
+		cir--;
 		rotacion();
 		cb--;
 		rotacionBeneficios();
