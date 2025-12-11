@@ -34,9 +34,11 @@ let nombre = document.getElementById("nombre");
 let correo = document.getElementById("correo");
 let celular = document.getElementById("celular");
 let consulta = document.getElementById("consulta");
+let bloquearTouch = false;
 function verificarSlider() {
 	switch (c) {
 		case 0:
+			cir = 3;
 			cambiarColorCirculo();
 			sliderPortada.style.right = "0%";
 			break;
@@ -57,6 +59,7 @@ function verificarSlider() {
 			sliderPortada.style.right = "66.7%";
 			break;
 		case 5:
+			cir = 0;
 			cambiarColorCirculo();
 			sliderPortada.style.right = "83.4%";
 			break;
@@ -64,6 +67,17 @@ function verificarSlider() {
 			break;
 	}
 }
+sliderPortada.addEventListener("transitionend", function() {
+	if (c == 5) {
+		c = 1;
+		sliderPortada.style.transition = "0s";
+		verificarSlider();
+	} else if (c == 0) {
+		c = 4;
+		sliderPortada.style.transition = "0s";
+		verificarSlider();
+	}
+});
 function cambiarColorCirculo() {
 	for (var i = 0; i < circulosSlider.length; i++) {
 		if (i == cir) {
@@ -179,21 +193,11 @@ function rotacion() {
 		x2 = e.changedTouches[0].pageX;
 		if (x > x2) {
 			console.log(c);
-			if (c === 4) {
-				c = 1;
-				cir = 0;
-			} else {
-				c++;
-				cir++;
-			}
+			c++;
+			cir++;
 		} else if (x < x2) {
-			if (c === 0) {
-				c = 4;
-				cir = 3;
-			} else {
-				c--;
-				cir--;
-			}
+			c--;
+			cir--;
 		} else {
 
 		}
