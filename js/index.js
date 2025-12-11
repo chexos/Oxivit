@@ -203,8 +203,8 @@ function rotacion() {
 		} else {
 
 		}
-		verificarSlider();
 		sliderPortada.style.transition = "1s all";
+		verificarSlider();
 		e.stopImmediatePropagation();
 	}
 	sliderPortada.addEventListener("dragstart", dragStart);
@@ -278,8 +278,8 @@ function rotacion() {
 			}
 		}
 		prevenir = false;
-		verificarSlider();
 		sliderPortada.style.transition = "1s all";
+		verificarSlider();
 		e.stopImmediatePropagation();
 	}
 }
