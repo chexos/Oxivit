@@ -372,6 +372,10 @@ function verificarProducto() {
 		productosOxivit.style.transform = "translateX(" + (- (2 * index)) + "px)";
 	} else if (cp == 3) {
 		productosOxivit.style.transform = "translateX(" + (- (3 * index)) + "px)";
+	} else if (cp == 4) {
+		productosOxivit.style.transform = "translateX(" + (- (4 * index)) + "px)";
+	} else if (cp == 5) {
+		productosOxivit.style.transform = "translateX(" + (- (5 * index)) + "px)";
 	}
 	focusNebulizacion();
 }
@@ -428,6 +432,12 @@ function cambiarProducto() {
 				break;
 			case 3:
 				newWidth = - (index.clientWidth * 3);
+				break;
+			case 4:
+				newWidth = - (index.clientWidth * 4);
+				break;
+			case 5:
+				newWidth = - (index.clientWidth * 5);
 				break;
 		}
 		productosOxivit.style.transition = "0s";
