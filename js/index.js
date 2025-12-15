@@ -380,11 +380,15 @@ function verificarProducto() {
 	focusNebulizacion();
 }
 function disminiurProductos(event) {
+	if (cp == 1 || cp == 4)
+		productosOxivit.style.transition = "1s all";
 	cp--;
 	verificarProducto();
 	event.stopImmediatePropagation();
 }
 function aumentarProductos(event) {
+	if (cp == 1 || cp == 4)
+		productosOxivit.style.transition = "1s all";
 	cp++;
 	verificarProducto();
 	event.stopImmediatePropagation();
@@ -469,6 +473,17 @@ function cambiarProducto() {
 		e.stopImmediatePropagation();
 	}
 	productosOxivit.addEventListener("touchend", touchEndProducto);
+	productosOxivit.addEventListener("transitionend", function() {
+		if (cp == 5) {
+			cp = 1;
+			productosOxivit.style.transition = "0s";
+			verificarProducto();
+		} else if (cp == 0) {
+			cp = 4;
+			productosOxivit.style.transition = "0s";
+			verificarProducto();
+		}
+	});
 }
 function verificarBeneficios() {
 	switch (cb) {
