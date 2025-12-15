@@ -382,7 +382,8 @@ function verificarProducto() {
 function disminiurProductos(event) {
 	if (cp == 1 || cp == 4)
 		productosOxivit.style.transition = "1s all";
-	cp--;
+	if (cp > 0)
+		cp--;
 	verificarProducto();
 	event.stopImmediatePropagation();
 }
