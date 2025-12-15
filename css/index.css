@@ -318,6 +318,7 @@ section#productos-oxivit>main {
     transition:1s all;
     -webkit-transition: all 0.3s;
     right:0%;
+    transform:translateX(-16.6666%);
 }
 
 section#productos-oxivit>main>section#altura-producto {
