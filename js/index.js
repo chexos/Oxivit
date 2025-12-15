@@ -108,7 +108,7 @@ function cambiarPortada() {
 }
 function reiniciarRotacion() {
 	clearTimeout(rotarSlider);
-	//rotarSlider = setTimeout("rotacion()", 3000);
+	rotarSlider = setTimeout("rotacion()", 3000);
 }
 function rotacion() {
 	touchActivo = true;
@@ -125,7 +125,7 @@ function rotacion() {
 	let posActual;
 	let prevenir = false;
 	verificarSlider();
-	//rotarSlider = setTimeout("rotacion()", 3000);
+	rotarSlider = setTimeout("rotacion()", 3000);
 	sliderPortada.addEventListener("touchstart", touchStart);
 	function touchStart(e) {
 		console.log("touchStart");
