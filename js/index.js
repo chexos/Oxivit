@@ -380,20 +380,12 @@ function verificarProducto() {
 	focusNebulizacion();
 }
 function disminiurProductos(event) {
-	if (cp == 0) {
-		cp = 3;
-	} else {
-		cp--;
-	}
+	cp--;
 	verificarProducto();
 	event.stopImmediatePropagation();
 }
 function aumentarProductos(event) {
-	if (cp == 3) {
-		cp = 0;
-	} else {
-		cp++;
-	}
+	cp++;
 	verificarProducto();
 	event.stopImmediatePropagation();
 }
