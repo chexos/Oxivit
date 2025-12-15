@@ -390,7 +390,8 @@ function disminiurProductos(event) {
 function aumentarProductos(event) {
 	if (cp == 1 || cp == 4)
 		productosOxivit.style.transition = "1s all";
-	cp++;
+	if (cp < 5)
+		cp++;
 	verificarProducto();
 	event.stopImmediatePropagation();
 }
