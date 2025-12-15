@@ -756,6 +756,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		cambiarProducto();
 		cambiarBeneficio();
 		tabEvent();
+		verificarProducto();
 	} else {
 
 	}
