@@ -482,7 +482,7 @@ section#beneficiosOxivit>main#beneficios {
     display:flex;
     flex-flow:row;
     flex-wrap:wrap;
-    width:500%;
+    width:700%;
     position:relative;
     overflow:hidden;
 }
@@ -588,7 +588,7 @@ section.beneficios>article {
     display: flex;
     flex-flow: column;
     flex-wrap: wrap;
-    max-width:7.61385%;
+    max-width:5.4385%;
     height:100%;
 }
 
@@ -597,12 +597,12 @@ section.beneficios>article.articulo-beneficio {
 }
 
 section.beneficios>article.beneficios-izq {
-    margin:0 0.477% 0 1.91%;
+    margin:0 0.3406% 0 1.364%;
 }
 
 section.beneficios>article.beneficios-der {
     right:5%;
-    margin:0 1.91% 0 0.477%;
+    margin:0 1.91% 0 0.3406%;
 }
 
 main>aside#circulosBeneficio {
@@ -1017,13 +1017,13 @@ img {
         font-size:8.6pt;
     }
     section.beneficios>article {
-        max-width:7.488%;
+        max-width:5.3485%;
     }
     section.beneficios>article.beneficios-izq {
-        margin:0 0.503% 0 2.01%;
+        margin:0 0.3595% 0 1.436%;
     }
     section.beneficios>article.beneficios-der {
-        margin:0 2.01% 0 0.503%;
+        margin:0 1.436% 0 0.3595%;
     }
     section.beneficios h2 {
         font-size:7.3pt;
