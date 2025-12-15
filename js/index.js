@@ -34,7 +34,6 @@ let nombre = document.getElementById("nombre");
 let correo = document.getElementById("correo");
 let celular = document.getElementById("celular");
 let consulta = document.getElementById("consulta");
-let touchActivo = false;
 function verificarSlider() {
 	switch (c) {
 		case 0:
@@ -111,7 +110,6 @@ function reiniciarRotacion() {
 	rotarSlider = setTimeout("rotacion()", 3000);
 }
 function rotacion() {
-	touchActivo = true;
 	c++;
 	cir++;
 	if (c >= slider.length) {
