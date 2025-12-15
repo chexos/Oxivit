@@ -7,7 +7,7 @@ let circulosSlider = document.getElementsByClassName("circulos-slider");
 let c = 0;
 let cir = -1;
 let cb = -1;
-let cp = 0;
+let cp = 1;
 let menuOxivit = document.getElementById("menu-oxivit");
 let menuEnlace1 = document.getElementById("menu-enlace-1");
 let menuEnlace2 = document.getElementById("menu-enlace-2");
@@ -34,7 +34,6 @@ let nombre = document.getElementById("nombre");
 let correo = document.getElementById("correo");
 let celular = document.getElementById("celular");
 let consulta = document.getElementById("consulta");
-let touchActivo = false;
 function verificarSlider() {
 	switch (c) {
 		case 0:
@@ -108,10 +107,11 @@ function cambiarPortada() {
 }
 function reiniciarRotacion() {
 	clearTimeout(rotarSlider);
-	//rotarSlider = setTimeout("rotacion()", 3000);
+	rotarSlider = setTimeout("rotacion()", 3000);
 }
 function rotacion() {
-	touchActivo = true;
+	if (sliderPortada.style.transition = "0s")
+		sliderPortada.style.transition = "1s all";
 	c++;
 	cir++;
 	if (c >= slider.length) {
@@ -125,7 +125,7 @@ function rotacion() {
 	let posActual;
 	let prevenir = false;
 	verificarSlider();
-	//rotarSlider = setTimeout("rotacion()", 3000);
+	rotarSlider = setTimeout("rotacion()", 3000);
 	sliderPortada.addEventListener("touchstart", touchStart);
 	function touchStart(e) {
 		console.log("touchStart");
@@ -194,6 +194,7 @@ function rotacion() {
 		}
 		sliderPortada.style.transition = "1s all";
 		verificarSlider();
+		rotarSlider = setTimeout("rotacion()", 3000);
 		e.stopImmediatePropagation();
 	}
 	sliderPortada.addEventListener("transitionrun", function() {
@@ -372,24 +373,26 @@ function verificarProducto() {
 		productosOxivit.style.transform = "translateX(" + (- (2 * index)) + "px)";
 	} else if (cp == 3) {
 		productosOxivit.style.transform = "translateX(" + (- (3 * index)) + "px)";
+	} else if (cp == 4) {
+		productosOxivit.style.transform = "translateX(" + (- (4 * index)) + "px)";
+	} else if (cp == 5) {
+		productosOxivit.style.transform = "translateX(" + (- (5 * index)) + "px)";
 	}
 	focusNebulizacion();
 }
 function disminiurProductos(event) {
-	if (cp == 0) {
-		cp = 3;
-	} else {
+	if (cp == 1 || cp == 4)
+		productosOxivit.style.transition = "1s all";
+	if (cp > 0)
 		cp--;
-	}
 	verificarProducto();
 	event.stopImmediatePropagation();
 }
 function aumentarProductos(event) {
-	if (cp == 3) {
-		cp = 0;
-	} else {
+	if (cp == 1 || cp == 4)
+		productosOxivit.style.transition = "1s all";
+	if (cp < 5)
 		cp++;
-	}
 	verificarProducto();
 	event.stopImmediatePropagation();
 }
@@ -429,6 +432,12 @@ function cambiarProducto() {
 			case 3:
 				newWidth = - (index.clientWidth * 3);
 				break;
+			case 4:
+				newWidth = - (index.clientWidth * 4);
+				break;
+			case 5:
+				newWidth = - (index.clientWidth * 5);
+				break;
 		}
 		productosOxivit.style.transition = "0s";
 		if (x > x3) {
@@ -448,11 +457,10 @@ function cambiarProducto() {
 		x2 = e.changedTouches[0].clientX;
 		console.log(x2);
 		if (x > x2) {
-			if (cp === 3) {
-				cp = 0;
-			} else {
+			if (cp == 1 || cp == 4)
+				productosOxivit.style.transition = "1s all";
+			if (cp < 5)
 				cp++;
-			}
 		} else if (x < x2) {
 			if (cp === 0) {
 				cp = 3;
@@ -467,6 +475,17 @@ function cambiarProducto() {
 		e.stopImmediatePropagation();
 	}
 	productosOxivit.addEventListener("touchend", touchEndProducto);
+	productosOxivit.addEventListener("transitionend", function() {
+		if (cp == 5) {
+			cp = 1;
+			productosOxivit.style.transition = "0s";
+			verificarProducto();
+		} else if (cp == 0) {
+			cp = 4;
+			productosOxivit.style.transition = "0s";
+			verificarProducto();
+		}
+	});
 }
 function verificarBeneficios() {
 	switch (cb) {

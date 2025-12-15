@@ -232,7 +232,7 @@ main button#btn-producto-izquierda {
 
 main button#btn-producto-derecha {
 	width:12px;
-    left:20.4%;
+    left:13.8%;
     border: none;
 }
 
@@ -274,7 +274,7 @@ h1 {
 }
 
 section#productos-oxivit {
-    width:400%;
+    width:600%;
     display:flex;
     flex-flow:column;
     position:relative;
@@ -286,7 +286,7 @@ section#productos-oxivit>header {
     display: flex;
     justify-content: center;
     margin:37.4851px 0;
-    width:25%;
+    width:16.6666%;
 }
 
 section#productos-oxivit>header>h1 {
@@ -318,6 +318,7 @@ section#productos-oxivit>main {
     transition:1s all;
     -webkit-transition: all 0.3s;
     right:0%;
+    transform:translateX(-16.6666%);
 }
 
 section#productos-oxivit>main>section#altura-producto {
@@ -340,7 +341,7 @@ section#productos-oxivit>main>section#altura-producto>section {
 
 section#productos-oxivit>main>section>section>article {
     width:29.89232%;
-    margin: 0 10.06%;
+    margin: 0 6.707%;
     box-shadow:1px 1px 3px rgba(114,114,114,0.5);
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
