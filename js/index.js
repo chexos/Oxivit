@@ -456,11 +456,10 @@ function cambiarProducto() {
 		x2 = e.changedTouches[0].clientX;
 		console.log(x2);
 		if (x > x2) {
-			if (cp === 3) {
-				cp = 0;
-			} else {
+			if (cp == 1 || cp == 4)
+				productosOxivit.style.transition = "1s all";
+			if (cp < 5)
 				cp++;
-			}
 		} else if (x < x2) {
 			if (cp === 0) {
 				cp = 3;
