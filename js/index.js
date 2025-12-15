@@ -110,6 +110,8 @@ function reiniciarRotacion() {
 	rotarSlider = setTimeout("rotacion()", 3000);
 }
 function rotacion() {
+	if (sliderPortada.style.transition = "0s")
+		sliderPortada.style.transition = "1s all";
 	c++;
 	cir++;
 	if (c >= slider.length) {
