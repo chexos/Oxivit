@@ -1,8 +1,11 @@
 let index = document.getElementById("index");
+let carrusel = document.getElementById("slider");
 let slider = document.getElementsByClassName("slider");
 let sliderPortada = document.getElementById("sliderPortada");
+let circuloSlider = document.getElementById("circulosSlider");
 let circulosSlider = document.getElementsByClassName("circulos-slider");
-let c = -1;
+let c = 0;
+let cir = -1;
 let cb = -1;
 let cp = 0;
 let menuOxivit = document.getElementById("menu-oxivit");
@@ -31,23 +34,34 @@ let nombre = document.getElementById("nombre");
 let correo = document.getElementById("correo");
 let celular = document.getElementById("celular");
 let consulta = document.getElementById("consulta");
+let touchActivo = false;
 function verificarSlider() {
 	switch (c) {
 		case 0:
+			cir = 3;
 			cambiarColorCirculo();
 			sliderPortada.style.right = "0%";
 			break;
 		case 1:
 			cambiarColorCirculo();
-			sliderPortada.style.right = "25%";
+			sliderPortada.style.right = "16.7%";
 			break;
 		case 2:
 			cambiarColorCirculo();
-			sliderPortada.style.right = "50%";
+			sliderPortada.style.right = "33.3%";
 			break;
 		case 3:
 			cambiarColorCirculo();
-			sliderPortada.style.right = "75%";
+			sliderPortada.style.right = "50%";
+			break;
+		case 4:
+			cambiarColorCirculo();
+			sliderPortada.style.right = "66.7%";
+			break;
+		case 5:
+			cir = 0;
+			cambiarColorCirculo();
+			sliderPortada.style.right = "83.4%";
 			break;
 		default:
 			break;
@@ -55,7 +69,7 @@ function verificarSlider() {
 }
 function cambiarColorCirculo() {
 	for (var i = 0; i < circulosSlider.length; i++) {
-		if (i == c) {
+		if (i == cir) {
 			circulosSlider[i].style.backgroundColor = "rgb(60,60,60)";
 		} else {
 			circulosSlider[i].style.backgroundColor = "rgb(114,114,114)";
@@ -64,25 +78,29 @@ function cambiarColorCirculo() {
 }
 function cambiarPortada() {
 	circulosSlider[0].addEventListener("click", function() {
-		c = 0;
+		c = 1;
+		cir = 0;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
 	});
 	circulosSlider[1].addEventListener("click", function() {
-		c = 1;
+		c = 2;
+		cir = 1;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
 	});
 	circulosSlider[2].addEventListener("click", function() {
-		c = 2;
+		c = 3;
+		cir = 2;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
 	});
 	circulosSlider[3].addEventListener("click", function() {
-		c = 3;
+		c = 4;
+		cir = 3;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
@@ -90,11 +108,16 @@ function cambiarPortada() {
 }
 function reiniciarRotacion() {
 	clearTimeout(rotarSlider);
-	rotarSlider = setTimeout("rotacion()", 3000);
+	//rotarSlider = setTimeout("rotacion()", 3000);
 }
 function rotacion() {
+	touchActivo = true;
 	c++;
-	if (c >= slider.length) c = 0;
+	cir++;
+	if (c >= slider.length) {
+ 		c = 0;
+		cir = 0;
+	}
 	let x;
 	let x2;
 	let x3;
@@ -102,15 +125,17 @@ function rotacion() {
 	let posActual;
 	let prevenir = false;
 	verificarSlider();
-	rotarSlider = setTimeout("rotacion()", 3000);
+	//rotarSlider = setTimeout("rotacion()", 3000);
 	sliderPortada.addEventListener("touchstart", touchStart);
 	function touchStart(e) {
+		console.log("touchStart");
 		clearTimeout(rotarSlider);
 		x = e.touches[0].pageX;
 		x4 = 0;
 	}
 	sliderPortada.addEventListener("touchmove", touchMove);
 	function touchMove(e) {
+		console.log("touchMove");
 		let sli = document.getElementById("slider").clientWidth;
 		posActual = sliderPortada.style.right;
 		let pos = posActual.slice(0, posActual.length - 1);
@@ -158,24 +183,38 @@ function rotacion() {
 	function touchEnd(e) {
 		x2 = e.changedTouches[0].pageX;
 		if (x > x2) {
-			if (c === 3) {
-				c = 0;
-			} else {
-				c++;
-			}
+			console.log(c);
+			c++;
+			cir++;
 		} else if (x < x2) {
-			if (c === 0) {
-				c = 3;
-			} else {
-				c--;
-			}
+			c--;
+			cir--;
 		} else {
 
 		}
-		verificarSlider();
 		sliderPortada.style.transition = "1s all";
+		verificarSlider();
 		e.stopImmediatePropagation();
 	}
+	sliderPortada.addEventListener("transitionrun", function() {
+		sliderPortada.removeEventListener("touchstart", touchStart);
+		sliderPortada.removeEventListener("touchmove", touchMove);
+		sliderPortada.removeEventListener("touchend", touchEnd);
+	});
+	sliderPortada.addEventListener("transitionend", function() {
+		if (c == 5) {
+			c = 1;
+			sliderPortada.style.transition = "0s";
+			verificarSlider();
+		} else if (c == 0) {
+			c = 4;
+			sliderPortada.style.transition = "0s";
+			verificarSlider();
+		}
+		sliderPortada.addEventListener("touchstart", touchStart);
+		sliderPortada.addEventListener("touchmove", touchMove);
+		sliderPortada.addEventListener("touchend", touchEnd);
+	});
 	sliderPortada.addEventListener("dragstart", dragStart);
 	function dragStart(e) {
 		clearTimeout(rotarSlider);
@@ -230,21 +269,25 @@ function rotacion() {
 	function dragEnd(e) {
 		x2 = e.pageX;
 		if (x > x2) {
-			if (c === 3) {
-				c = 0;
+			if (c === 4) {
+				c = 1;
+				cir = 0;
 			} else {
 				c++;
+				cir++;
 			}
 		} else if (x < x2) {
 			if (c === 0) {
-				c = 3;
+				c = 4;
+				cir = 3;
 			} else {
 				c--;
+				cir--;
 			}
 		}
 		prevenir = false;
-		verificarSlider();
 		sliderPortada.style.transition = "1s all";
+		verificarSlider();
 		e.stopImmediatePropagation();
 	}
 }
@@ -692,6 +735,7 @@ document.addEventListener("visibilitychange", function() {
 		clearTimeout(rotarBeneficios);
 	} else {
 		c--;
+		cir--;
 		rotacion();
 		cb--;
 		rotacionBeneficios();
