@@ -1400,6 +1400,9 @@ img {
 }
 
 @media (min-width:545px) {
+    main>aside#circulosSlider {
+        top:90%;
+    }
     section#productos-oxivit>header>h1 {
         font-size:13.3pt;
     }
@@ -2121,7 +2124,7 @@ img {
         top:-29px;
     }
     section#productos-oxivit>header {
-        margin:59px 0;
+        margin:59px 0 59px;
     }
     section#productos-oxivit>header>h1 {
         font-size:16.5pt;
