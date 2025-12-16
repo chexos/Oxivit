@@ -198,11 +198,6 @@ function rotacion() {
 		rotarSlider = setTimeout("rotacion()", 3000);
 		e.stopImmediatePropagation();
 	}
-	sliderPortada.addEventListener("transitionrun", function() {
-		sliderPortada.removeEventListener("touchstart", touchStart);
-		sliderPortada.removeEventListener("touchmove", touchMove);
-		sliderPortada.removeEventListener("touchend", touchEnd);
-	});
 	sliderPortada.addEventListener("transitionend", function() {
 		if (c == 5) {
 			c = 1;
