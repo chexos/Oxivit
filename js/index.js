@@ -7,6 +7,7 @@ let circulosSlider = document.getElementsByClassName("circulos-slider");
 let c = 0;
 let cir = -1;
 let cb = 0;
+let cirb = -1;
 let cp = 1;
 let menuOxivit = document.getElementById("menu-oxivit");
 let menuEnlace1 = document.getElementById("menu-enlace-1");
