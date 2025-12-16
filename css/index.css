@@ -606,6 +606,10 @@ section.beneficios>article.beneficios-der {
     margin:0 1.91% 0 0.3406%;
 }
 
+section.beneficios>article.opacidad-0 {
+    opacity:0;
+}
+
 main>aside#circulosBeneficio {
     display:flex;
     justify-content:center;
