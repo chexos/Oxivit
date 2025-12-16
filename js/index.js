@@ -408,8 +408,12 @@ function cambiarProducto() {
 			productosOxivit.removeEventListener("touchstart", touchStartProducto);
 			return;
 		}
-		clearTimeout(rotarBeneficios);
-		x = event.touches[0].pageX;
+		if (cp == 0 || cp == 5) {
+			return;
+		} else {
+			clearTimeout(rotarBeneficios);
+			x = event.touches[0].pageX;
+		}
 	}
 	productosOxivit.addEventListener("touchstart", touchStartProducto);
 	function touchMoveProducto(event) {
@@ -417,36 +421,40 @@ function cambiarProducto() {
 			productosOxivit.removeEventListener("touchmove", touchMoveProducto);
 			return;
 		}
-		let newWidth;
-		let cambioProductosWidth;
-		x3 = event.touches[0].pageX;
-		switch (cp) {
-			case 0:
-				newWidth = 0;
-				break;
-			case 1:
-				newWidth = - index.clientWidth;
-				break;
-			case 2:
-				newWidth = - (index.clientWidth * 2);
-				break;
-			case 3:
-				newWidth = - (index.clientWidth * 3);
-				break;
-			case 4:
-				newWidth = - (index.clientWidth * 4);
-				break;
-			case 5:
-				newWidth = - (index.clientWidth * 5);
-				break;
-		}
-		productosOxivit.style.transition = "0s";
-		if (x > x3) {
-			cambioProductosWidth = x - x3;
-			productosOxivit.style.transform = "translateX(" + (newWidth - cambioProductosWidth) + "px)";
+		if (cp == 0 || cp == 5) {
+			return;
 		} else {
-			cambioProductosWidth = x3 - x;
-			productosOxivit.style.transform = "translateX(" + (newWidth + cambioProductosWidth) + "px)";
+			let newWidth;
+			let cambioProductosWidth;
+			x3 = event.touches[0].pageX;
+			switch (cp) {
+				case 0:
+					newWidth = 0;
+					break;
+				case 1:
+					newWidth = - index.clientWidth;
+					break;
+				case 2:
+					newWidth = - (index.clientWidth * 2);
+					break;
+				case 3:
+					newWidth = - (index.clientWidth * 3);
+					break;
+				case 4:
+					newWidth = - (index.clientWidth * 4);
+					break;
+				case 5:
+					newWidth = - (index.clientWidth * 5);
+					break;
+			}
+			productosOxivit.style.transition = "0s";
+			if (x > x3) {
+				cambioProductosWidth = x - x3;
+				productosOxivit.style.transform = "translateX(" + (newWidth - cambioProductosWidth) + "px)";
+			} else {
+				cambioProductosWidth = x3 - x;
+				productosOxivit.style.transform = "translateX(" + (newWidth + cambioProductosWidth) + "px)";
+			}
 		}
 	}
 	productosOxivit.addEventListener("touchmove", touchMoveProducto);
@@ -455,25 +463,29 @@ function cambiarProducto() {
 			productosOxivit.removeEventListener("touchend", touchEndProducto);
 			return;
 		}
-		x2 = e.changedTouches[0].clientX;
-		console.log(x2);
-		if (x > x2) {
-			if (cp == 1 || cp == 4)
-				productosOxivit.style.transition = "1s all";
-			if (cp < 5)
-				cp++;
-		} else if (x < x2) {
-			if (cp === 0) {
-				cp = 3;
-			} else {
-				cp--;
-			}
+		if (cp == 0 || cp == 5) {
+			return;
 		} else {
+			x2 = e.changedTouches[0].clientX;
+			console.log(x2);
+			if (x > x2) {
+				if (cp == 1 || cp == 4)
+					productosOxivit.style.transition = "1s all";
+				if (cp < 5)
+					cp++;
+			} else if (x < x2) {
+				if (cp === 0) {
+					cp = 3;
+				} else {
+					cp--;
+				}
+			} else {
 
+			}
+			productosOxivit.style.transition = "1s all";
+			verificarProducto();
+			e.stopImmediatePropagation();
 		}
-		productosOxivit.style.transition = "1s all";
-		verificarProducto();
-		e.stopImmediatePropagation();
 	}
 	productosOxivit.addEventListener("touchend", touchEndProducto);
 	function carruselProductosInterminable() {
