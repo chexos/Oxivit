@@ -658,6 +658,17 @@ function rotacionBeneficios() {
 		event.stopImmediatePropagation();
 	}
 	mainBeneficios[0].addEventListener("touchend", touchEndBeneficio);
+	mainBeneficios[0].addEventListener("transitionend", function() {
+		if (cb == 6) {
+			mainBeneficios[0].style.transition = "0s";
+			cb = 1;
+			verificarBeneficios();
+		} else if (cb == 0) {
+			mainBeneficios[0].style.transition = "0s";
+			cb = 5;
+			verificarBeneficios();
+		}
+	});
 }
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
