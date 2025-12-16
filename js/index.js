@@ -660,8 +660,10 @@ function rotacionBeneficios() {
 		} else {
 			x3 = event.changedTouches[0].pageX;
 			if (x > x3) {
-				if (cb < 6)
+				if (cb < 6) {
 					cb++;
+					cirb++;
+				}
 			} else if (x < x3) {
 				if (cb === 0) {
 					cb = 4;
@@ -680,12 +682,11 @@ function rotacionBeneficios() {
 		if (cb == 6) {
 			mainBeneficios[0].style.transition = "0s";
 			cb = 1;
-			verificarBeneficios();
 		} else if (cb == 0) {
 			mainBeneficios[0].style.transition = "0s";
 			cb = 5;
-			verificarBeneficios();
 		}
+		verificarBeneficios();
 	}
 	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
 }
