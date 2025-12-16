@@ -129,14 +129,12 @@ function rotacion() {
 	//rotarSlider = setTimeout("rotacion()", 3000);
 	sliderPortada.addEventListener("touchstart", touchStart);
 	function touchStart(e) {
-		console.log("touchStart");
 		clearTimeout(rotarSlider);
 		x = e.touches[0].pageX;
 		x4 = 0;
 	}
 	sliderPortada.addEventListener("touchmove", touchMove);
 	function touchMove(e) {
-		console.log("touchMove");
 		let sli = document.getElementById("slider").clientWidth;
 		posActual = sliderPortada.style.right;
 		let pos = posActual.slice(0, posActual.length - 1);
