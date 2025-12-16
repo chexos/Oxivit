@@ -1524,6 +1524,9 @@ img {
     section#beneficiosOxivit>header>h1 {
         font-size:12.5pt;
     }
+    section#productos-oxivit>main {
+        transform:translateX(0%);
+    }
     section#productos-oxivit>main#productos-oxivit2>button {
         display:none;
     }
@@ -1553,6 +1556,9 @@ img {
     }
     section#productos-oxivit>main#productos-oxivit2>section>section>article.producto-izq {
         margin-right:5.2162%;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section>article.productos.ocultar {
+        display:none;
     }
     section#productos-oxivit>main>section>section>article>section>header>p {
         font-size:9.5pt;
