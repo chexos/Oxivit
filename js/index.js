@@ -129,80 +129,85 @@ function rotacion() {
 	rotarSlider = setTimeout("rotacion()", 3000);
 	sliderPortada.addEventListener("touchstart", touchStart);
 	function touchStart(e) {
-		console.log("touchStart");
-		clearTimeout(rotarSlider);
-		x = e.touches[0].pageX;
-		x4 = 0;
+		if (c == 0 || c == 5) {
+			return;
+		} else {
+			clearTimeout(rotarSlider);
+			x = e.touches[0].pageX;
+			x4 = 0;
+		}
 	}
 	sliderPortada.addEventListener("touchmove", touchMove);
 	function touchMove(e) {
-		console.log("touchMove");
-		let sli = document.getElementById("slider").clientWidth;
-		posActual = sliderPortada.style.right;
-		let pos = posActual.slice(0, posActual.length - 1);
-		pos = parseFloat(pos);
-		clearTimeout(rotarSlider);
-		x3 = e.touches[0].pageX;
-		sliderPortada.style.transition = "0s";
-		if (x4 == 0 && x3 != 0 && prevenir == true) {
-			prevenir = false;
-			if (x > x3) {
-				sliderPortada.style.right = (pos + (x3 * 100 / sli)) + "%";
-			} else if (x < x3) {
-				cambioSliderWidth = x3 - x;
-				sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
-			}
-		} else if (x4 == 0 && x3 != 0) {
-			x4 = x3;
-			if (x > x3) {
-				cambioSliderWidth = x - x3;
-				sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
-			} else if (x < x3) {
-				cambioSliderWidth = x3 - x;
-				sliderPortada.style.right = (pos - (cambioSliderWidth * 100 / sli)) + "%";
-			} else {
-
-			}
-		} else if (x3 == 0) {
-			e.preventDefault();
-			prevenir = e.defaultPrevented;
+		if (c == 0 || c == 5) {
+			return;
 		} else {
-			if (x3 > x4) {
-				cambioSliderWidth = x3 - x4;
-				sliderPortada.style.right = (pos - (cambioSliderWidth * 100 / sli)) + "%";
-			} else if (x3 < x4) {
-				cambioSliderWidth = x4 - x3;
-				sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
-			} else {
+			let sli = document.getElementById("slider").clientWidth;
+			posActual = sliderPortada.style.right;
+			let pos = posActual.slice(0, posActual.length - 1);
+			pos = parseFloat(pos);
+			clearTimeout(rotarSlider);
+			x3 = e.touches[0].pageX;
+			sliderPortada.style.transition = "0s";
+			if (x4 == 0 && x3 != 0 && prevenir == true) {
+				prevenir = false;
+				if (x > x3) {
+					sliderPortada.style.right = (pos + (x3 * 100 / sli)) + "%";
+				} else if (x < x3) {
+					cambioSliderWidth = x3 - x;
+					sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
+				}
+			} else if (x4 == 0 && x3 != 0) {
+				x4 = x3;
+				if (x > x3) {
+					cambioSliderWidth = x - x3;
+					sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
+				} else if (x < x3) {
+					cambioSliderWidth = x3 - x;
+					sliderPortada.style.right = (pos - (cambioSliderWidth * 100 / sli)) + "%";
+				} else {
 
+				}
+			} else if (x3 == 0) {
+				e.preventDefault();
+				prevenir = e.defaultPrevented;
+			} else {
+				if (x3 > x4) {
+					cambioSliderWidth = x3 - x4;
+					sliderPortada.style.right = (pos - (cambioSliderWidth * 100 / sli)) + "%";
+				} else if (x3 < x4) {
+					cambioSliderWidth = x4 - x3;
+					sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
+				} else {
+
+				}
 			}
+			x4 = x3;
+			e.stopImmediatePropagation();
 		}
-		x4 = x3;
-		e.stopImmediatePropagation();
 	}
 	sliderPortada.addEventListener("touchend", touchEnd);
 	function touchEnd(e) {
-		x2 = e.changedTouches[0].pageX;
-		if (x > x2) {
-			console.log(c);
-			c++;
-			cir++;
-		} else if (x < x2) {
-			c--;
-			cir--;
+		if (c == 0 || c == 5) {
+			return;
 		} else {
+			x2 = e.changedTouches[0].pageX;
+			if (x > x2) {
+				console.log(c);
+				c++;
+				cir++;
+			} else if (x < x2) {
+				c--;
+				cir--;
+			} else {
 
+			}
+			sliderPortada.style.transition = "1s all";
+			verificarSlider();
+			rotarSlider = setTimeout("rotacion()", 3000);
+			e.stopImmediatePropagation();
 		}
-		sliderPortada.style.transition = "1s all";
-		verificarSlider();
-		rotarSlider = setTimeout("rotacion()", 3000);
-		e.stopImmediatePropagation();
 	}
-	sliderPortada.addEventListener("transitionrun", function() {
-		sliderPortada.removeEventListener("touchstart", touchStart);
-		sliderPortada.removeEventListener("touchmove", touchMove);
-		sliderPortada.removeEventListener("touchend", touchEnd);
-	});
 	sliderPortada.addEventListener("transitionend", function() {
 		if (c == 5) {
 			c = 1;
@@ -408,8 +413,12 @@ function cambiarProducto() {
 			productosOxivit.removeEventListener("touchstart", touchStartProducto);
 			return;
 		}
-		clearTimeout(rotarBeneficios);
-		x = event.touches[0].pageX;
+		if (cp == 0 || cp == 5) {
+			return;
+		} else {
+			clearTimeout(rotarBeneficios);
+			x = event.touches[0].pageX;
+		}
 	}
 	productosOxivit.addEventListener("touchstart", touchStartProducto);
 	function touchMoveProducto(event) {
@@ -417,36 +426,40 @@ function cambiarProducto() {
 			productosOxivit.removeEventListener("touchmove", touchMoveProducto);
 			return;
 		}
-		let newWidth;
-		let cambioProductosWidth;
-		x3 = event.touches[0].pageX;
-		switch (cp) {
-			case 0:
-				newWidth = 0;
-				break;
-			case 1:
-				newWidth = - index.clientWidth;
-				break;
-			case 2:
-				newWidth = - (index.clientWidth * 2);
-				break;
-			case 3:
-				newWidth = - (index.clientWidth * 3);
-				break;
-			case 4:
-				newWidth = - (index.clientWidth * 4);
-				break;
-			case 5:
-				newWidth = - (index.clientWidth * 5);
-				break;
-		}
-		productosOxivit.style.transition = "0s";
-		if (x > x3) {
-			cambioProductosWidth = x - x3;
-			productosOxivit.style.transform = "translateX(" + (newWidth - cambioProductosWidth) + "px)";
+		if (cp == 0 || cp == 5) {
+			return;
 		} else {
-			cambioProductosWidth = x3 - x;
-			productosOxivit.style.transform = "translateX(" + (newWidth + cambioProductosWidth) + "px)";
+			let newWidth;
+			let cambioProductosWidth;
+			x3 = event.touches[0].pageX;
+			switch (cp) {
+				case 0:
+					newWidth = 0;
+					break;
+				case 1:
+					newWidth = - index.clientWidth;
+					break;
+				case 2:
+					newWidth = - (index.clientWidth * 2);
+					break;
+				case 3:
+					newWidth = - (index.clientWidth * 3);
+					break;
+				case 4:
+					newWidth = - (index.clientWidth * 4);
+					break;
+				case 5:
+					newWidth = - (index.clientWidth * 5);
+					break;
+			}
+			productosOxivit.style.transition = "0s";
+			if (x > x3) {
+				cambioProductosWidth = x - x3;
+				productosOxivit.style.transform = "translateX(" + (newWidth - cambioProductosWidth) + "px)";
+			} else {
+				cambioProductosWidth = x3 - x;
+				productosOxivit.style.transform = "translateX(" + (newWidth + cambioProductosWidth) + "px)";
+			}
 		}
 	}
 	productosOxivit.addEventListener("touchmove", touchMoveProducto);
@@ -455,28 +468,32 @@ function cambiarProducto() {
 			productosOxivit.removeEventListener("touchend", touchEndProducto);
 			return;
 		}
-		x2 = e.changedTouches[0].clientX;
-		console.log(x2);
-		if (x > x2) {
-			if (cp == 1 || cp == 4)
-				productosOxivit.style.transition = "1s all";
-			if (cp < 5)
-				cp++;
-		} else if (x < x2) {
-			if (cp === 0) {
-				cp = 3;
-			} else {
-				cp--;
-			}
+		if (cp == 0 || cp == 5) {
+			return;
 		} else {
+			x2 = e.changedTouches[0].clientX;
+			console.log(x2);
+			if (x > x2) {
+				if (cp == 1 || cp == 4)
+					productosOxivit.style.transition = "1s all";
+				if (cp < 5)
+					cp++;
+			} else if (x < x2) {
+				if (cp === 0) {
+					cp = 3;
+				} else {
+					cp--;
+				}
+			} else {
 
+			}
+			productosOxivit.style.transition = "1s all";
+			verificarProducto();
+			e.stopImmediatePropagation();
 		}
-		productosOxivit.style.transition = "1s all";
-		verificarProducto();
-		e.stopImmediatePropagation();
 	}
 	productosOxivit.addEventListener("touchend", touchEndProducto);
-	productosOxivit.addEventListener("transitionend", function() {
+	function carruselProductosInterminable() {
 		if (cp == 5) {
 			cp = 1;
 			productosOxivit.style.transition = "0s";
@@ -486,7 +503,8 @@ function cambiarProducto() {
 			productosOxivit.style.transition = "0s";
 			verificarProducto();
 		}
-	});
+	}
+	productosOxivit.addEventListener("transitionend", carruselProductosInterminable);
 }
 function verificarBeneficios() {
 	switch (cb) {
@@ -570,7 +588,7 @@ function cambiarBeneficio() {
 }
 function reiniciarRotacionBeneficios() {
 	clearTimeout(rotarBeneficios);
-	//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+	rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 }
 function rotacionBeneficios() {
 	cb++;
@@ -580,7 +598,7 @@ function rotacionBeneficios() {
 	let x2;
 	let x3;
 	verificarBeneficios();
-	//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+	rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 	if (index.clientWidth >= 595) {
 		clearTimeout(rotarBeneficios);
 	}
@@ -660,18 +678,27 @@ function rotacionBeneficios() {
 		} else {
 			x3 = event.changedTouches[0].pageX;
 			if (x > x3) {
-				if (cb < 6)
+				if (cb < 6) {
 					cb++;
+					if (cb == 6) {
+						cirb = 0;
+					} else {
+						cirb++;
+					}
+				}
 			} else if (x < x3) {
-				if (cb === 0) {
-					cb = 4;
-				} else {
+				if (cb > 0) {
 					cb--;
+					if (cb == 0) {
+						cirb = 4;
+					} else {
+						cirb--;
+					}
 				}
 			}
 			mainBeneficios[0].style.transition = "1s all";
 			verificarBeneficios();
-			//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+			rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 			event.stopImmediatePropagation();
 		}
 	}
@@ -680,12 +707,11 @@ function rotacionBeneficios() {
 		if (cb == 6) {
 			mainBeneficios[0].style.transition = "0s";
 			cb = 1;
-			verificarBeneficios();
 		} else if (cb == 0) {
 			mainBeneficios[0].style.transition = "0s";
 			cb = 5;
-			verificarBeneficios();
 		}
+		verificarBeneficios();
 	}
 	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
 }
