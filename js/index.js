@@ -643,7 +643,8 @@ function rotacionBeneficios() {
 		}
 		x3 = event.changedTouches[0].pageX;
 		if (x > x3) {
-			cb++;
+			if (cb < 6)
+				cb++;
 		} else if (x < x3) {
 			if (cb === 0) {
 				cb = 4;
