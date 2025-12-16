@@ -671,6 +671,11 @@ function rotacionBeneficios() {
 			} else if (x < x3) {
 				if (cb > 0) {
 					cb--;
+					if (cb == 0) {
+						cirb = 4;
+					} else {
+						cirb--;
+					}
 				}
 			}
 			mainBeneficios[0].style.transition = "1s all";
