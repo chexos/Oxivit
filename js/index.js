@@ -658,7 +658,7 @@ function rotacionBeneficios() {
 		event.stopImmediatePropagation();
 	}
 	mainBeneficios[0].addEventListener("touchend", touchEndBeneficio);
-	mainBeneficios[0].addEventListener("transitionend", function() {
+	function carruselBeneficiosInterminable() {
 		if (cb == 6) {
 			mainBeneficios[0].style.transition = "0s";
 			cb = 1;
@@ -668,7 +668,8 @@ function rotacionBeneficios() {
 			cb = 5;
 			verificarBeneficios();
 		}
-	});
+	}
+	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
 }
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
