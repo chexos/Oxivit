@@ -533,30 +533,35 @@ function verificarCB() {
 }
 function cambiarBeneficio() {
 	circulosBeneficio[0].addEventListener("click", function() {
+		cb = 1;
 		cirb = 0;
 		verificarBeneficios();
 		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[1].addEventListener("click", function() {
+		cb = 2;
 		cirb = 1;
 		verificarBeneficios();
 		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[2].addEventListener("click", function() {
+		cb = 3;
 		cirb = 2;
 		verificarBeneficios();
 		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[3].addEventListener("click", function() {
+		cb = 4;
 		cirb = 3;
 		verificarBeneficios();
 		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[4].addEventListener("click", function() {
+		cb = 5;
 		cirb = 4;
 		verificarBeneficios();
 		verificarCB();
@@ -584,8 +589,13 @@ function rotacionBeneficios() {
 			mainBeneficios[0].removeEventListener("touchstart", touchStartBeneficio);
 			return;
 		}
-		clearTimeout(rotarBeneficios);
-		x = event.touches[0].pageX;
+		if (cb == 0 || cb == 6) {
+			return;
+		} else {
+			console.log(cb);
+			clearTimeout(rotarBeneficios);
+			x = event.touches[0].pageX;
+		}
 	}
 	mainBeneficios[0].addEventListener("touchstart", touchStartBeneficio);
 	function touchMoveBeneficio(event) {
@@ -593,46 +603,50 @@ function rotacionBeneficios() {
 			mainBeneficios[0].removeEventListener("touchmove", touchMoveBeneficio);
 			return;
 		}
-		let beneficios = document.getElementsByClassName("beneficios");
-		let beneficiosWidthActual = beneficios[0].style.right;
-		let newWidth;
-		let cambioBeneficiosWidth;
-		if (beneficiosWidthActual.length == 2) {
-			newWidth = beneficiosWidthActual.slice(0, 1);
+		if (cb == 0 || cb == 6) {
+			return;
 		} else {
-			newWidth = beneficiosWidthActual.slice(0, 2);
-		}
-		x2 = event.touches[0].pageX;
-		switch (cb) {
-			case 0:
-				newWidth = 0;
-				break;
-			case 1:
-				newWidth = 14.3;
-				break;
-			case 2:
-				newWidth = 28.6;
-				break;
-			case 3:
-				newWidth = 42.8;
-				break;
-			case 4:
-				newWidth = 57.1;
-				break;
-			case 5:
-				newWidth = 71.4;
-				break;
-			case 6:
-				newWidth = 85.7;
-				break;
-		}
-		mainBeneficios[0].style.transition = "0s";
-		if (x > x2) {
-			cambioBeneficiosWidth = (x - x2) * 100 / beneficios[0].clientWidth;
-			mainBeneficios[0].style.right = (parseInt(newWidth) + cambioBeneficiosWidth) + "%";
-		} else {
-			cambioBeneficiosWidth = (x2 - x) * 100 / beneficios[0].clientWidth;
-			mainBeneficios[0].style.right = (parseInt(newWidth) - cambioBeneficiosWidth) + "%";
+			let beneficios = document.getElementsByClassName("beneficios");
+			let beneficiosWidthActual = beneficios[0].style.right;
+			let newWidth;
+			let cambioBeneficiosWidth;
+			if (beneficiosWidthActual.length == 2) {
+				newWidth = beneficiosWidthActual.slice(0, 1);
+			} else {
+				newWidth = beneficiosWidthActual.slice(0, 2);
+			}
+			x2 = event.touches[0].pageX;
+			switch (cb) {
+				case 0:
+					newWidth = 0;
+					break;
+				case 1:
+					newWidth = 14.3;
+					break;
+				case 2:
+					newWidth = 28.6;
+					break;
+				case 3:
+					newWidth = 42.8;
+					break;
+				case 4:
+					newWidth = 57.1;
+					break;
+				case 5:
+					newWidth = 71.4;
+					break;
+				case 6:
+					newWidth = 85.7;
+					break;
+			}
+			mainBeneficios[0].style.transition = "0s";
+			if (x > x2) {
+				cambioBeneficiosWidth = (x - x2) * 100 / beneficios[0].clientWidth;
+				mainBeneficios[0].style.right = (parseInt(newWidth) + cambioBeneficiosWidth) + "%";
+			} else {
+				cambioBeneficiosWidth = (x2 - x) * 100 / beneficios[0].clientWidth;
+				mainBeneficios[0].style.right = (parseInt(newWidth) - cambioBeneficiosWidth) + "%";
+			}
 		}
 	}
 	mainBeneficios[0].addEventListener("touchmove", touchMoveBeneficio);
@@ -641,26 +655,39 @@ function rotacionBeneficios() {
 			mainBeneficios[0].removeEventListener("touchend", touchEndBeneficio);
 			return;
 		}
-		x3 = event.changedTouches[0].pageX;
-		if (x > x3) {
-			if (cb === 4) {
-				cb = 0;
-			} else {
-				cb++;
+		if (cb == 0 || cb == 6) {
+			return;
+		} else {
+			x3 = event.changedTouches[0].pageX;
+			if (x > x3) {
+				if (cb < 6)
+					cb++;
+			} else if (x < x3) {
+				if (cb === 0) {
+					cb = 4;
+				} else {
+					cb--;
+				}
 			}
-		} else if (x < x3) {
-			if (cb === 0) {
-				cb = 4;
-			} else {
-				cb--;
-			}
+			mainBeneficios[0].style.transition = "1s all";
+			verificarBeneficios();
+			//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+			event.stopImmediatePropagation();
 		}
-		mainBeneficios[0].style.transition = "1s all";
-		verificarBeneficios();
-		//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
-		event.stopImmediatePropagation();
 	}
 	mainBeneficios[0].addEventListener("touchend", touchEndBeneficio);
+	function carruselBeneficiosInterminable() {
+		if (cb == 6) {
+			mainBeneficios[0].style.transition = "0s";
+			cb = 1;
+			verificarBeneficios();
+		} else if (cb == 0) {
+			mainBeneficios[0].style.transition = "0s";
+			cb = 5;
+			verificarBeneficios();
+		}
+	}
+	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
 }
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
@@ -773,6 +800,7 @@ document.addEventListener("visibilitychange", function() {
 		cir--;
 		rotacion();
 		cb--;
+		cirb--;
 		rotacionBeneficios();
 	}
 });
