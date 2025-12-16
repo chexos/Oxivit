@@ -662,7 +662,11 @@ function rotacionBeneficios() {
 			if (x > x3) {
 				if (cb < 6) {
 					cb++;
-					cirb++;
+					if (cb == 6) {
+						cirb = 0;
+					} else {
+						cirb++;
+					}
 				}
 			} else if (x < x3) {
 				if (cb === 0) {
