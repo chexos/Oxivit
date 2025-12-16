@@ -590,7 +590,7 @@ section.beneficios>article {
     flex-flow: column;
     flex-wrap: wrap;
     max-width:5.4385%;
-    height:100%;
+    height:max-content;
 }
 
 section.beneficios>article.articulo-beneficio {
