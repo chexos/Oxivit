@@ -669,9 +669,7 @@ function rotacionBeneficios() {
 					}
 				}
 			} else if (x < x3) {
-				if (cb === 0) {
-					cb = 4;
-				} else {
+				if (cb > 0) {
 					cb--;
 				}
 			}
