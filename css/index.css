@@ -567,6 +567,7 @@ section.beneficios {
     position:relative;
     overflow:hidden;
     transition:1s all;
+    right:14.3%;
 }
 
 section.beneficios h2 {
