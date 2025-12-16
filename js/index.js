@@ -476,7 +476,7 @@ function cambiarProducto() {
 		e.stopImmediatePropagation();
 	}
 	productosOxivit.addEventListener("touchend", touchEndProducto);
-	productosOxivit.addEventListener("transitionend", function() {
+	function carruselProductosInterminable() {
 		if (cp == 5) {
 			cp = 1;
 			productosOxivit.style.transition = "0s";
@@ -486,7 +486,8 @@ function cambiarProducto() {
 			productosOxivit.style.transition = "0s";
 			verificarProducto();
 		}
-	});
+	}
+	productosOxivit.addEventListener("transitionend", carruselProductosInterminable);
 }
 function verificarBeneficios() {
 	switch (cb) {
