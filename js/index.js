@@ -524,7 +524,7 @@ function verificarBeneficios() {
 }
 function verificarCB() {
 	for (var i = 0; i < circulosBeneficio.length; i++) {
-		if (cb == i) {
+		if (cirb == i) {
 			circulosBeneficio[i].style.backgroundColor = "rgb(60,60,60)";
 		} else {
 			circulosBeneficio[i].style.backgroundColor = "rgb(114,114,114)";
