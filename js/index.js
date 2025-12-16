@@ -533,30 +533,35 @@ function verificarCB() {
 }
 function cambiarBeneficio() {
 	circulosBeneficio[0].addEventListener("click", function() {
+		cb = 1;
 		cirb = 0;
 		verificarBeneficios();
 		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[1].addEventListener("click", function() {
+		cb = 2;
 		cirb = 1;
 		verificarBeneficios();
 		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[2].addEventListener("click", function() {
+		cb = 3;
 		cirb = 2;
 		verificarBeneficios();
 		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[3].addEventListener("click", function() {
+		cb = 4;
 		cirb = 3;
 		verificarBeneficios();
 		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[4].addEventListener("click", function() {
+		cb = 5;
 		cirb = 4;
 		verificarBeneficios();
 		verificarCB();
