@@ -795,6 +795,7 @@ document.addEventListener("visibilitychange", function() {
 		cir--;
 		rotacion();
 		cb--;
+		cirb--;
 		rotacionBeneficios();
 	}
 });
