@@ -2009,9 +2009,6 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 35px;
     }
-    main>aside#circulosSlider {
-        top:-27px;
-    }
     section#productos-oxivit>header {
         margin:79px 0 54px;
     }
@@ -2124,7 +2121,7 @@ img {
         top:-29px;
     }
     section#productos-oxivit>header {
-        margin:59px 0 59px;
+        margin:84px 0 59px;
     }
     section#productos-oxivit>header>h1 {
         font-size:16.5pt;
