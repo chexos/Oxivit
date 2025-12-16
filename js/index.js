@@ -129,72 +129,84 @@ function rotacion() {
 	//rotarSlider = setTimeout("rotacion()", 3000);
 	sliderPortada.addEventListener("touchstart", touchStart);
 	function touchStart(e) {
-		clearTimeout(rotarSlider);
-		x = e.touches[0].pageX;
-		x4 = 0;
+		if (c == 0 || c == 5) {
+			return;
+		} else {
+			clearTimeout(rotarSlider);
+			x = e.touches[0].pageX;
+			x4 = 0;
+		}
 	}
 	sliderPortada.addEventListener("touchmove", touchMove);
 	function touchMove(e) {
-		let sli = document.getElementById("slider").clientWidth;
-		posActual = sliderPortada.style.right;
-		let pos = posActual.slice(0, posActual.length - 1);
-		pos = parseFloat(pos);
-		clearTimeout(rotarSlider);
-		x3 = e.touches[0].pageX;
-		sliderPortada.style.transition = "0s";
-		if (x4 == 0 && x3 != 0 && prevenir == true) {
-			prevenir = false;
-			if (x > x3) {
-				sliderPortada.style.right = (pos + (x3 * 100 / sli)) + "%";
-			} else if (x < x3) {
-				cambioSliderWidth = x3 - x;
-				sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
-			}
-		} else if (x4 == 0 && x3 != 0) {
-			x4 = x3;
-			if (x > x3) {
-				cambioSliderWidth = x - x3;
-				sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
-			} else if (x < x3) {
-				cambioSliderWidth = x3 - x;
-				sliderPortada.style.right = (pos - (cambioSliderWidth * 100 / sli)) + "%";
-			} else {
-
-			}
-		} else if (x3 == 0) {
-			e.preventDefault();
-			prevenir = e.defaultPrevented;
+		if (c == 0 || c == 5) {
+			return;
 		} else {
-			if (x3 > x4) {
-				cambioSliderWidth = x3 - x4;
-				sliderPortada.style.right = (pos - (cambioSliderWidth * 100 / sli)) + "%";
-			} else if (x3 < x4) {
-				cambioSliderWidth = x4 - x3;
-				sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
-			} else {
+			let sli = document.getElementById("slider").clientWidth;
+			posActual = sliderPortada.style.right;
+			let pos = posActual.slice(0, posActual.length - 1);
+			pos = parseFloat(pos);
+			clearTimeout(rotarSlider);
+			x3 = e.touches[0].pageX;
+			sliderPortada.style.transition = "0s";
+			if (x4 == 0 && x3 != 0 && prevenir == true) {
+				prevenir = false;
+				if (x > x3) {
+					sliderPortada.style.right = (pos + (x3 * 100 / sli)) + "%";
+				} else if (x < x3) {
+					cambioSliderWidth = x3 - x;
+					sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
+				}
+			} else if (x4 == 0 && x3 != 0) {
+				x4 = x3;
+				if (x > x3) {
+					cambioSliderWidth = x - x3;
+					sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
+				} else if (x < x3) {
+					cambioSliderWidth = x3 - x;
+					sliderPortada.style.right = (pos - (cambioSliderWidth * 100 / sli)) + "%";
+				} else {
 
+				}
+			} else if (x3 == 0) {
+				e.preventDefault();
+				prevenir = e.defaultPrevented;
+			} else {
+				if (x3 > x4) {
+					cambioSliderWidth = x3 - x4;
+					sliderPortada.style.right = (pos - (cambioSliderWidth * 100 / sli)) + "%";
+				} else if (x3 < x4) {
+					cambioSliderWidth = x4 - x3;
+					sliderPortada.style.right = (pos + (cambioSliderWidth * 100 / sli)) + "%";
+				} else {
+
+				}
 			}
+			x4 = x3;
+			e.stopImmediatePropagation();
 		}
-		x4 = x3;
-		e.stopImmediatePropagation();
 	}
 	sliderPortada.addEventListener("touchend", touchEnd);
 	function touchEnd(e) {
-		x2 = e.changedTouches[0].pageX;
-		if (x > x2) {
-			console.log(c);
-			c++;
-			cir++;
-		} else if (x < x2) {
-			c--;
-			cir--;
+		if (c == 0 || c == 5) {
+			return;
 		} else {
+			x2 = e.changedTouches[0].pageX;
+			if (x > x2) {
+				console.log(c);
+				c++;
+				cir++;
+			} else if (x < x2) {
+				c--;
+				cir--;
+			} else {
 
+			}
+			sliderPortada.style.transition = "1s all";
+			verificarSlider();
+			//rotarSlider = setTimeout("rotacion()", 3000);
+			e.stopImmediatePropagation();
 		}
-		sliderPortada.style.transition = "1s all";
-		verificarSlider();
-		//rotarSlider = setTimeout("rotacion()", 3000);
-		e.stopImmediatePropagation();
 	}
 	sliderPortada.addEventListener("transitionend", function() {
 		if (c == 5) {
