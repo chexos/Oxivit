@@ -285,7 +285,7 @@ section#productos-oxivit {
 section#productos-oxivit>header {
     display: flex;
     justify-content: center;
-    margin:37.4851px 0;
+    margin:50.4851px 0 25.4851px;
     width:16.6666%;
 }
 
@@ -603,7 +603,7 @@ section.beneficios>article.beneficios-izq {
 
 section.beneficios>article.beneficios-der {
     right:5%;
-    margin:0 1.91% 0 0.3406%;
+    margin:0 1.364% 0 0.3406%;
 }
 
 section.beneficios>article.opacidad-0 {
@@ -1400,6 +1400,9 @@ img {
 }
 
 @media (min-width:545px) {
+    main>aside#circulosSlider {
+        top:90%;
+    }
     section#productos-oxivit>header>h1 {
         font-size:13.3pt;
     }
@@ -1509,7 +1512,7 @@ img {
     }
     section#productos-oxivit>header {
         width:100%;
-        margin:38.7954px 0;
+        margin:63.7954px 0 38.7954px;
     }
     section#productos-oxivit>header>h1 {
         font-size:12.5pt;
@@ -1523,6 +1526,9 @@ img {
     }
     section#beneficiosOxivit>header>h1 {
         font-size:12.5pt;
+    }
+    section#productos-oxivit>main {
+        transform:translateX(0%);
     }
     section#productos-oxivit>main#productos-oxivit2>button {
         display:none;
@@ -1553,6 +1559,9 @@ img {
     }
     section#productos-oxivit>main#productos-oxivit2>section>section>article.producto-izq {
         margin-right:5.2162%;
+    }
+    section#productos-oxivit>main#productos-oxivit2>section>section>article.productos.ocultar {
+        display:none;
     }
     section#productos-oxivit>main>section>section>article>section>header>p {
         font-size:9.5pt;
@@ -1777,7 +1786,7 @@ img {
         margin:0 25px;
     }
     section#productos-oxivit>header {
-        margin-top:44px;
+        margin:69px 0 44px;
     }
     section#productos-oxivit>header>h1 {
         font-size:13.5pt;
@@ -1885,7 +1894,7 @@ img {
         margin:0 30px;
     }
     section#productos-oxivit>header {
-        margin:49px 0;
+        margin:74px 0 49px;
     }
     section#productos-oxivit>header>h1 {
         font-size:14.5pt;
@@ -2000,11 +2009,8 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 35px;
     }
-    main>aside#circulosSlider {
-        top:-27px;
-    }
     section#productos-oxivit>header {
-        margin:54px 0;
+        margin:79px 0 54px;
     }
     section#productos-oxivit>header>h1 {
         font-size:15.5pt;
@@ -2115,7 +2121,7 @@ img {
         top:-29px;
     }
     section#productos-oxivit>header {
-        margin:59px 0;
+        margin:84px 0 59px;
     }
     section#productos-oxivit>header>h1 {
         font-size:16.5pt;
@@ -2223,7 +2229,7 @@ img {
         top:-31px;
     }
     section#productos-oxivit>header {
-        margin:64px 0;
+        margin:89px 0 64px;
     }
     section#productos-oxivit>header>h1 {
         font-size:17.5pt;
@@ -2338,7 +2344,7 @@ img {
         margin-top:-26px;
     }
     section#productos-oxivit>header {
-        margin:69px 0;
+        margin:94px 0 69px;
     }
     section#productos-oxivit>header>h1 {
         font-size:18.5pt;
@@ -2446,7 +2452,7 @@ img {
         top:-34px;
     }
     section#productos-oxivit>header {
-        margin:74px 0;
+        margin:99px 0 74px;
     }
     section#productos-oxivit>header>h1 {
         font-size:19.5pt;
@@ -2553,7 +2559,7 @@ img {
         top:-35px;
     }
     section#productos-oxivit>header {
-        margin:79px 0;
+        margin:104px 0 79px;
     }
     section#productos-oxivit>header>h1 {
         font-size:20.5pt;
