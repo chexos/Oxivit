@@ -494,19 +494,27 @@ function verificarBeneficios() {
 			verificarCB();
 			break;
 		case 1:
-			mainBeneficios[0].style.right = "20%";
+			mainBeneficios[0].style.right = "14.3%";
 			verificarCB();
 			break;
 		case 2:
-			mainBeneficios[0].style.right = "40%";
+			mainBeneficios[0].style.right = "28.6%";
 			verificarCB();
 			break;
 		case 3:
-			mainBeneficios[0].style.right = "60%";
+			mainBeneficios[0].style.right = "42.8%";
 			verificarCB();
 			break;
 		case 4:
-			mainBeneficios[0].style.right = "80%";
+			mainBeneficios[0].style.right = "57.1%";
+			verificarCB();
+			break;
+		case 5:
+			mainBeneficios[0].style.right = "71.4%";
+			verificarCB();
+			break;
+		case 6:
+			mainBeneficios[0].style.right = "85.7%";
 			verificarCB();
 			break;
 		default:
@@ -598,16 +606,22 @@ function rotacionBeneficios() {
 				newWidth = 0;
 				break;
 			case 1:
-				newWidth = 20;
+				newWidth = 14.3;
 				break;
 			case 2:
-				newWidth = 40;
+				newWidth = 28.6;
 				break;
 			case 3:
-				newWidth = 60;
+				newWidth = 42.8;
 				break;
 			case 4:
-				newWidth = 80;
+				newWidth = 57.1;
+				break;
+			case 5:
+				newWidth = 71.4;
+				break;
+			case 6:
+				newWidth = 85.7;
 				break;
 		}
 		mainBeneficios[0].style.transition = "0s";
