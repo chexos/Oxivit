@@ -2118,7 +2118,7 @@ img {
         margin:0 40px;
     }
     main>aside#circulosSlider {
-        top:-29px;
+        top:92%;
     }
     section#productos-oxivit>header {
         margin:84px 0 59px;
@@ -2225,9 +2225,6 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 45px;
     }
-    main>aside#circulosSlider {
-        top:-31px;
-    }
     section#productos-oxivit>header {
         margin:89px 0 64px;
     }
@@ -2332,9 +2329,6 @@ img {
     }
     nav#nav>main :nth-child(2) {
         margin:0 50px;
-    }
-    main>aside#circulosSlider {
-        top:-33px;
     }
     main>aside>span {
         height:25px;
@@ -2448,9 +2442,6 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 55px;
     }
-    main>aside#circulosSlider {
-        top:-34px;
-    }
     section#productos-oxivit>header {
         margin:99px 0 74px;
     }
@@ -2556,7 +2547,7 @@ img {
         margin:0 60px;
     }
     main>aside#circulosSlider {
-        top:-35px;
+        top:95%;
     }
     section#productos-oxivit>header {
         margin:104px 0 79px;
@@ -2671,11 +2662,8 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 65px;
     }
-    main>aside#circulosSlider {
-        top:-36px;
-    }
     section#productos-oxivit>header {
-        margin:84px 0;
+        margin:109px 0 84px;
     }
     section#productos-oxivit>header>h1 {
         font-size:22.5pt;
@@ -2787,11 +2775,8 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 70px;
     }
-    main>aside#circulosSlider {
-        top:-37px;
-    }
     section#productos-oxivit>header {
-        margin:89px 0;
+        margin:114px 0 89px;
     }
     section#productos-oxivit>header>h1 {
         font-size:24.5pt;
@@ -2895,11 +2880,8 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 75px;
     }
-    main>aside#circulosSlider {
-        top:-38px;
-    }
     section#productos-oxivit>header {
-        margin:94px 0;
+        margin:119px 0 94px;
     }
     section#productos-oxivit>header>h1 {
         font-size:26.5pt;
@@ -3004,9 +2986,6 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 80px;
     }
-    main>aside#circulosSlider {
-        top:-39px;
-    }
     main>aside>span {
         height:30px;
         width:30px;
@@ -3015,7 +2994,7 @@ img {
         margin-top:-31px;
     }
     section#productos-oxivit>header {
-        margin:99px 0;
+        margin:124px 0 99px;
     }
     section#productos-oxivit>header>h1 {
         font-size:28.5pt;
@@ -3124,11 +3103,8 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 85px;
     }
-    main>aside#circulosSlider {
-        top:-40px;
-    }
     section#productos-oxivit>header {
-        margin:104px 0;
+        margin:129px 0 104px;
     }
     section#productos-oxivit>header>h1 {
         font-size:30.5pt;
@@ -3240,11 +3216,8 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 90px;
     }
-    main>aside#circulosSlider {
-        top:-41px;
-    }
     section#productos-oxivit>header {
-        margin:109px 0;
+        margin:134px 0 109px;
     }
     section#productos-oxivit>header>h1 {
         font-size:32.5pt;
@@ -3348,11 +3321,8 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 95px;
     }
-    main>aside#circulosSlider {
-        top:-42px;
-    }
     section#productos-oxivit>header {
-        margin:114px 0;
+        margin:139px 0 114px;
     }
     section#productos-oxivit>header>h1 {
         font-size:34.5pt;
@@ -3458,11 +3428,8 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 100px;
     }
-    main>aside#circulosSlider {
-        top:-43px;
-    }
     section#productos-oxivit>header {
-        margin:119px 0;
+        margin:144px 0 119px;
     }
     section#productos-oxivit>header>h1 {
         font-size:36.5pt;
@@ -3567,11 +3534,8 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 105px;
     }
-    main>aside#circulosSlider {
-        top:-44px;
-    }
     section#productos-oxivit>header {
-        margin:124px 0;
+        margin:149px 0 124px;
     }
     section#productos-oxivit>header>h1 {
         font-size:38.5pt;
