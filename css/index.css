@@ -2986,9 +2986,6 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 80px;
     }
-    main>aside#circulosSlider {
-        top:-39px;
-    }
     main>aside>span {
         height:30px;
         width:30px;
