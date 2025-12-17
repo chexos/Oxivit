@@ -3321,9 +3321,6 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 95px;
     }
-    main>aside#circulosSlider {
-        top:-42px;
-    }
     section#productos-oxivit>header {
         margin:114px 0;
     }
