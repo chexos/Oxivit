@@ -2993,6 +2993,9 @@ img {
         height:30px;
         width:30px;
     }
+    section#productos-oxivit {
+        margin-top:-31px;
+    }
     section#productos-oxivit>header {
         margin:99px 0;
     }
