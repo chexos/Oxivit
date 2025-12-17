@@ -1605,15 +1605,14 @@ img {
         height:auto;
         margin:0 0 31.0363px 0;
     }
-    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(2),
-    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(5),
-    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(8) {
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article.articulo-beneficio-centro {
         margin:0 5% 0 5%;
     }
-    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(7),
-    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(8),
-    section#beneficiosOxivit>main#beneficios>section.beneficios>article:nth-child(9) {
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article.margen-inferior {
         margin-bottom:0;
+    }
+    section#beneficiosOxivit>main#beneficios>section.beneficios>article.disposicion-ninguna {
+        display:none;
     }
     section.beneficios {
         right:0% !important;
