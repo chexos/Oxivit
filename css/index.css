@@ -2330,9 +2330,6 @@ img {
     nav#nav>main :nth-child(2) {
         margin:0 50px;
     }
-    main>aside#circulosSlider {
-        top:-33px;
-    }
     main>aside>span {
         height:25px;
         width:25px;
