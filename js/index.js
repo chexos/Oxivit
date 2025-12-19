@@ -78,8 +78,13 @@ function cambiarColorCirculo() {
 }
 function cambiarPortada() {
 	circulosSlider[0].addEventListener("click", function() {
-		c = 1;
-		cir = 0;
+		if (c == 2 || c == 3) {
+			c = 1;
+			cir = 0;
+		} else if (c == 4) {
+			c = 5;
+			cir = 0;
+		}
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
