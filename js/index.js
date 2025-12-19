@@ -76,15 +76,25 @@ function cambiarColorCirculo() {
 		}
 	}
 }
+function verificarTransicionPortada() {
+	if (sliderPortada.style.transition == "0s" || sliderPortada.style.transition == "all")
+		sliderPortada.style.transition = "1s all";
+}
 function cambiarPortada() {
 	circulosSlider[0].addEventListener("click", function() {
-		c = 1;
+		verificarTransicionPortada();
+		if (c == 2 || c == 3) {
+			c = 1;
+		} else if (c == 4) {
+			c = 5;
+		}
 		cir = 0;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
 	});
 	circulosSlider[1].addEventListener("click", function() {
+		verificarTransicionPortada();
 		c = 2;
 		cir = 1;
 		verificarSlider();
@@ -92,6 +102,7 @@ function cambiarPortada() {
 		reiniciarRotacion();
 	});
 	circulosSlider[2].addEventListener("click", function() {
+		verificarTransicionPortada();
 		c = 3;
 		cir = 2;
 		verificarSlider();
@@ -99,7 +110,12 @@ function cambiarPortada() {
 		reiniciarRotacion();
 	});
 	circulosSlider[3].addEventListener("click", function() {
-		c = 4;
+		verificarTransicionPortada();
+		if (c == 2 || c == 3) {
+			c = 4;
+		} else if (c == 1) {
+			c = 0;
+		}
 		cir = 3;
 		verificarSlider();
 		cambiarColorCirculo();
@@ -111,8 +127,7 @@ function reiniciarRotacion() {
 	rotarSlider = setTimeout("rotacion()", 3000);
 }
 function rotacion() {
-	if (sliderPortada.style.transition = "0s")
-		sliderPortada.style.transition = "1s all";
+	verificarTransicionPortada();
 	c++;
 	cir++;
 	if (c >= slider.length) {
