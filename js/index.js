@@ -85,11 +85,10 @@ function cambiarPortada() {
 		verificarTransicionPortada();
 		if (c == 2 || c == 3) {
 			c = 1;
-			cir = 0;
 		} else if (c == 4) {
 			c = 5;
-			cir = 0;
 		}
+		cir = 0;
 		verificarSlider();
 		cambiarColorCirculo();
 		reiniciarRotacion();
@@ -112,7 +111,11 @@ function cambiarPortada() {
 	});
 	circulosSlider[3].addEventListener("click", function() {
 		verificarTransicionPortada();
-		c = 4;
+		if (c == 2 || c == 3) {
+			c = 4;
+		} else if (c == 1) {
+			c = 0;
+		}
 		cir = 3;
 		verificarSlider();
 		cambiarColorCirculo();
