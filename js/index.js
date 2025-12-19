@@ -76,8 +76,13 @@ function cambiarColorCirculo() {
 		}
 	}
 }
+function verificarTransicionPortada() {
+	if (sliderPortada.style.transition == "0s" || sliderPortada.style.transition == "all")
+		sliderPortada.style.transition = "1s all";
+}
 function cambiarPortada() {
 	circulosSlider[0].addEventListener("click", function() {
+		verificarTransicionPortada();
 		if (c == 2 || c == 3) {
 			c = 1;
 			cir = 0;
@@ -90,6 +95,7 @@ function cambiarPortada() {
 		reiniciarRotacion();
 	});
 	circulosSlider[1].addEventListener("click", function() {
+		verificarTransicionPortada();
 		c = 2;
 		cir = 1;
 		verificarSlider();
@@ -97,6 +103,7 @@ function cambiarPortada() {
 		reiniciarRotacion();
 	});
 	circulosSlider[2].addEventListener("click", function() {
+		verificarTransicionPortada();
 		c = 3;
 		cir = 2;
 		verificarSlider();
@@ -104,6 +111,7 @@ function cambiarPortada() {
 		reiniciarRotacion();
 	});
 	circulosSlider[3].addEventListener("click", function() {
+		verificarTransicionPortada();
 		c = 4;
 		cir = 3;
 		verificarSlider();
@@ -116,8 +124,7 @@ function reiniciarRotacion() {
 	rotarSlider = setTimeout("rotacion()", 3000);
 }
 function rotacion() {
-	if (sliderPortada.style.transition = "0s")
-		sliderPortada.style.transition = "1s all";
+	verificarTransicionPortada();
 	c++;
 	cir++;
 	if (c >= slider.length) {
