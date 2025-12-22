@@ -380,7 +380,8 @@ function focusNebulizacion() {
 	}
 }
 function verificarProducto() {
-	let index = document.getElementById("index").clientWidth;
+	let index = window.innerWidth;
+	console.log(index);
 	if (cp == 0) {
 		productosOxivit.style.transform = "translateX(0px)";
 	} else if (cp == 1) {
