@@ -2321,7 +2321,8 @@ img {
         font-size:9.6pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:11.5pt;
     }
     footer h4 {
