@@ -741,6 +741,9 @@ function rotacionBeneficios() {
 	}
 	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
 }
+function asignarAltoMensaje() {
+	
+}
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
 	function quitarValidacionNombre(e) {
