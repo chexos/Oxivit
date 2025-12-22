@@ -743,12 +743,15 @@ function rotacionBeneficios() {
 }
 function formulario() {
 	let mensajeTexto = document.getElementById("areaTexto");
-	function asignarAltoMensaje() {
+	function asignarAltoMensaje() {/*
 		mensajeTexto.innerText = consulta.value;
 		console.log(window.getComputedStyle(mensajeTexto).height);
-		consulta.style.height = window.getComputedStyle(mensajeTexto).height;
+		consulta.style.height = window.getComputedStyle(mensajeTexto).height;*/
+		consulta.style.height = consulta.scrollHeight + "px";
 	}
-	consulta.addEventListener("input", asignarAltoMensaje);/*
+	consulta.addEventListener("input", asignarAltoMensaje);
+	
+	/*
 	function asignarRelleno() {
 		let estilo = window.getComputedStyle(consulta);
 		mensajeTexto.style.padding = estilo.padding;
