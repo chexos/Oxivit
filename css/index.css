@@ -688,6 +688,7 @@ section#contacto>main>form p {
     font-family: "Hurme";
     padding:1% 2%;
     color:rgb(60,60,60);
+    opacity:0;
 }
 
 section#contacto>main>form input,
