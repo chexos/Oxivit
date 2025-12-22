@@ -523,6 +523,7 @@ function verificarBeneficios() {
 			verificarCB();
 			break;
 		case 1:
+			cirb = 0;
 			mainBeneficios[0].style.right = "14.3%";
 			verificarCB();
 			break;
@@ -616,7 +617,7 @@ function rotacionBeneficios() {
 	cb++;
 	cirb++;
 	if (cb > circulosBeneficio.length) {
-		cb = 1;
+		cb = 0;
 		cirb = 0;
 	}
 	let x;
