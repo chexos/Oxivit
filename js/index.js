@@ -725,12 +725,11 @@ function rotacionBeneficios() {
 	mainBeneficios[0].addEventListener("touchend", touchEndBeneficio);
 	function carruselBeneficiosInterminable() {
 		if (cb == 6) {
-			mainBeneficios[0].style.transition = "0s";
 			cb = 1;
 		} else if (cb == 0) {
-			mainBeneficios[0].style.transition = "0s";
 			cb = 5;
 		}
+		mainBeneficios[0].style.transition = "0s";
 		verificarBeneficios();
 	}
 	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
