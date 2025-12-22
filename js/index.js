@@ -743,7 +743,9 @@ function rotacionBeneficios() {
 }
 function asignarAltoMensaje() {
 	let mensajeTexto = document.getElementById("areaTexto");
+	mensajeTexto.innerText = consulta.value;
 }
+consulta.addEventListener("input", asignarAltoMensaje);
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
 	function quitarValidacionNombre(e) {
