@@ -3085,7 +3085,8 @@ img {
         font-size:15.4pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:18pt;
     }
     section#contacto>main>form input {
