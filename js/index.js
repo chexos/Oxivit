@@ -742,7 +742,7 @@ function rotacionBeneficios() {
 	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
 }
 function asignarAltoMensaje() {
-	
+	let mensajeTexto = document.getElementById("areaTexto");
 }
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
