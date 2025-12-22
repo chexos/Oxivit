@@ -602,7 +602,10 @@ function cambiarBeneficio() {
 	});
 	circulosBeneficio[4].addEventListener("click", function() {
 		verificarTransicionBenficio();
-		cb = 5;
+		if (cb == 3 || cb == 4)
+			cb = 5;
+		else if (cb == 1 || cb == 2)
+			cb = 0;
 		cirb = 4;
 		verificarBeneficios();
 		reiniciarRotacionBeneficios();
