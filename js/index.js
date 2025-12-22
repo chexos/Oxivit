@@ -743,21 +743,10 @@ function rotacionBeneficios() {
 }
 function formulario() {
 	let mensajeTexto = document.getElementById("areaTexto");
-	function asignarAltoMensaje() {/*
-		mensajeTexto.innerText = consulta.value;
-		console.log(window.getComputedStyle(mensajeTexto).height);
-		consulta.style.height = window.getComputedStyle(mensajeTexto).height;*/
+	function asignarAltoMensaje() {
 		consulta.style.height = consulta.scrollHeight + "px";
 	}
 	consulta.addEventListener("input", asignarAltoMensaje);
-	
-	/*
-	function asignarRelleno() {
-		let estilo = window.getComputedStyle(consulta);
-		mensajeTexto.style.padding = estilo.padding;
-	}
-	consulta.addEventListener("load", asignarRelleno());
-	consulta.addEventListener("resize", asignarRelleno());*/
 }
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
