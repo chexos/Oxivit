@@ -226,13 +226,11 @@ function rotacion() {
 	sliderPortada.addEventListener("transitionend", function() {
 		if (c == 5) {
 			c = 1;
-			sliderPortada.style.transition = "0s";
-			verificarSlider();
 		} else if (c == 0) {
 			c = 4;
-			sliderPortada.style.transition = "0s";
-			verificarSlider();
 		}
+		sliderPortada.style.transition = "0s";
+		verificarSlider();
 	});
 	sliderPortada.addEventListener("dragstart", dragStart);
 	function dragStart(e) {
