@@ -507,13 +507,11 @@ function cambiarProducto() {
 	function carruselProductosInterminable() {
 		if (cp == 5) {
 			cp = 1;
-			productosOxivit.style.transition = "0s";
-			verificarProducto();
 		} else if (cp == 0) {
 			cp = 4;
-			productosOxivit.style.transition = "0s";
-			verificarProducto();
 		}
+		productosOxivit.style.transition = "0s";
+		verificarProducto();
 	}
 	productosOxivit.addEventListener("transitionend", carruselProductosInterminable);
 }
@@ -525,6 +523,7 @@ function verificarBeneficios() {
 			verificarCB();
 			break;
 		case 1:
+			cirb = 0;
 			mainBeneficios[0].style.right = "14.3%";
 			verificarCB();
 			break;
@@ -618,7 +617,7 @@ function rotacionBeneficios() {
 	cb++;
 	cirb++;
 	if (cb > circulosBeneficio.length) {
-		cb = 1;
+		cb = 0;
 		cirb = 0;
 	}
 	let x;
@@ -733,8 +732,8 @@ function rotacionBeneficios() {
 	function carruselBeneficiosInterminable() {
 		if (cb == 6) {
 			cb = 1;
-		} else if (cb == 0) {
-			cb = 5;
+		} else if (cb == 5) {
+			cb = 0;
 		}
 		mainBeneficios[0].style.transition = "0s";
 		verificarBeneficios();
