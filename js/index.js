@@ -566,7 +566,10 @@ function verificarCB() {
 }
 function cambiarBeneficio() {
 	circulosBeneficio[0].addEventListener("click", function() {
-		cb = 1;
+		if (c == 2 || c == 3)
+			cb = 1;
+		else if (c == 4 || c == 5)
+			cb = 6;
 		cirb = 0;
 		verificarBeneficios();
 		verificarCB();
