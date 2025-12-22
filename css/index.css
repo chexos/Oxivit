@@ -684,13 +684,6 @@ section#contacto>main>form textarea {
     color:rgb(60,60,60);
 }
 
-section#contacto>main>form p {
-    font-family: "Hurme";
-    padding:1% 2%;
-    color:rgb(60,60,60);
-    opacity:0;
-}
-
 section#contacto>main>form input,
 section#contacto>main>form textarea {
     margin:0 0 5.05%;
@@ -711,7 +704,6 @@ section#contacto>main>form label {
 
 section#contacto>main>form input,
 section#contacto>main>form textarea,
-section#contacto>main>form p,
 section#contacto>main>form button,
 section#contacto>p#mensajeIndex {
     font-size:6pt;
@@ -1066,7 +1058,6 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
-    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:6.2pt;
@@ -1152,7 +1143,6 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
-    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         margin:0 0 4.3%;
@@ -1242,7 +1232,6 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
-    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:7pt;
@@ -1310,7 +1299,6 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
-    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:8pt;
@@ -1403,7 +1391,6 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
-    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:9pt;
@@ -1471,7 +1458,6 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
-    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:9.5pt;
