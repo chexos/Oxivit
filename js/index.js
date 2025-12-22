@@ -616,7 +616,7 @@ function rotacionBeneficios() {
 	verificarTransicionBenficio();
 	cb++;
 	cirb++;
-	if (cb >= circulosBeneficio.length) {
+	if (cb > circulosBeneficio.length) {
 		cb = 1;
 		cirb = 0;
 	}
