@@ -613,7 +613,7 @@ function cambiarBeneficio() {
 }
 function reiniciarRotacionBeneficios() {
 	clearTimeout(rotarBeneficios);
-	//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+	rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 }
 function rotacionBeneficios() {
 	cb++;
@@ -623,7 +623,7 @@ function rotacionBeneficios() {
 	let x2;
 	let x3;
 	verificarBeneficios();
-	//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+	rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 	if (index.clientWidth >= 595) {
 		clearTimeout(rotarBeneficios);
 	}
@@ -723,7 +723,7 @@ function rotacionBeneficios() {
 			}
 			mainBeneficios[0].style.transition = "1s all";
 			verificarBeneficios();
-			//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+			rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 			event.stopImmediatePropagation();
 		}
 	}
