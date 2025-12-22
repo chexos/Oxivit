@@ -571,9 +571,9 @@ function verificarTransicionBenficio() {
 function cambiarBeneficio() {
 	circulosBeneficio[0].addEventListener("click", function() {
 		verificarTransicionBenficio();
-		if (c == 2 || c == 3)
+		if (cb == 2 || cb == 3)
 			cb = 1;
-		else if (c == 4 || c == 5)
+		else if (cb == 4 || cb == 5)
 			cb = 6;
 		cirb = 0;
 		verificarBeneficios();
