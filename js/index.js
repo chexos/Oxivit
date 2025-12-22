@@ -519,6 +519,7 @@ function cambiarProducto() {
 function verificarBeneficios() {
 	switch (cb) {
 		case 0:
+			cirb = 4;
 			mainBeneficios[0].style.right = "0%";
 			verificarCB();
 			break;
@@ -543,6 +544,7 @@ function verificarBeneficios() {
 			verificarCB();
 			break;
 		case 6:
+			cirb = 0;
 			mainBeneficios[0].style.right = "85.7%";
 			verificarCB();
 			break;
@@ -611,9 +613,13 @@ function reiniciarRotacionBeneficios() {
 	rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 }
 function rotacionBeneficios() {
+	verificarTransicionBenficio();
 	cb++;
 	cirb++;
-	if (cirb >= circulosBeneficio.length) cb = 0;
+	if (cb >= circulosBeneficio.length) {
+		cb = 1;
+		cirb = 0;
+	}
 	let x;
 	let x2;
 	let x3;
