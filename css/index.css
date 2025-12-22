@@ -1396,6 +1396,7 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
+    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:9pt;
