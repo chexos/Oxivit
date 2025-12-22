@@ -2103,7 +2103,8 @@ img {
         font-size:8.7pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:10.2pt;
     }
     footer#pie {
