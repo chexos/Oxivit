@@ -741,8 +741,20 @@ function rotacionBeneficios() {
 	}
 	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
 }
-function asignarAltoMensaje() {
-	
+function formulario() {
+	let mensajeTexto = document.getElementById("areaTexto");
+	function asignarAltoMensaje() {
+		mensajeTexto.innerText = consulta.value;
+		console.log(window.getComputedStyle(mensajeTexto).height);
+		consulta.style.height = window.getComputedStyle(mensajeTexto).height;
+	}
+	consulta.addEventListener("input", asignarAltoMensaje);/*
+	function asignarRelleno() {
+		let estilo = window.getComputedStyle(consulta);
+		mensajeTexto.style.padding = estilo.padding;
+	}
+	consulta.addEventListener("load", asignarRelleno());
+	consulta.addEventListener("resize", asignarRelleno());*/
 }
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
@@ -865,6 +877,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	cambiarPortada();
 	mensajeCorreo();
 	focusMenuMovil();
+	formulario();
 	validarInputs();
 	if (index.clientWidth <= 594) {
 		rotacionBeneficios();
