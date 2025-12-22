@@ -752,6 +752,7 @@ function formulario() {
 		mensajeTexto.style.padding = estilo.padding;
 	}
 	consulta.addEventListener("load", asignarRelleno());
+	consulta.addEventListener("resize", asignarRelleno());
 }
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
