@@ -1877,7 +1877,8 @@ img {
         font-size:6.5pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:8pt;
     }
     footer#pie {
