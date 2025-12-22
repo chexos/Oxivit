@@ -786,8 +786,8 @@ textarea:hover {
 }
 
 section#contacto>main>form textarea {
-    min-height:74.9702px !important;
-    width:100% !important;
+    min-height:74.9702px;
+    resize:none;
 }
 
 section#contacto>main>form aside {

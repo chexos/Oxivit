@@ -226,16 +226,11 @@ function rotacion() {
 	sliderPortada.addEventListener("transitionend", function() {
 		if (c == 5) {
 			c = 1;
-			sliderPortada.style.transition = "0s";
-			verificarSlider();
 		} else if (c == 0) {
 			c = 4;
-			sliderPortada.style.transition = "0s";
-			verificarSlider();
 		}
-		sliderPortada.addEventListener("touchstart", touchStart);
-		sliderPortada.addEventListener("touchmove", touchMove);
-		sliderPortada.addEventListener("touchend", touchEnd);
+		sliderPortada.style.transition = "0s";
+		verificarSlider();
 	});
 	sliderPortada.addEventListener("dragstart", dragStart);
 	function dragStart(e) {
@@ -385,7 +380,8 @@ function focusNebulizacion() {
 	}
 }
 function verificarProducto() {
-	let index = document.getElementById("index").clientWidth;
+	let index = window.innerWidth;
+	console.log(index);
 	if (cp == 0) {
 		productosOxivit.style.transform = "translateX(0px)";
 	} else if (cp == 1) {
@@ -524,6 +520,7 @@ function cambiarProducto() {
 function verificarBeneficios() {
 	switch (cb) {
 		case 0:
+			cirb = 4;
 			mainBeneficios[0].style.right = "0%";
 			verificarCB();
 			break;
@@ -548,6 +545,7 @@ function verificarBeneficios() {
 			verificarCB();
 			break;
 		case 6:
+			cirb = 0;
 			mainBeneficios[0].style.right = "85.7%";
 			verificarCB();
 			break;
@@ -564,56 +562,70 @@ function verificarCB() {
 		}
 	}
 }
+function verificarTransicionBenficio() {
+	if (mainBeneficios[0].style.transition == "0s" || mainBeneficios[0].style.transition == "all")
+		mainBeneficios[0].style.transition = "1s all";
+}
 function cambiarBeneficio() {
 	circulosBeneficio[0].addEventListener("click", function() {
-		cb = 1;
+		verificarTransicionBenficio();
+		if (cb == 2 || cb == 3)
+			cb = 1;
+		else if (cb == 4 || cb == 5)
+			cb = 6;
 		cirb = 0;
 		verificarBeneficios();
-		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[1].addEventListener("click", function() {
+		verificarTransicionBenficio();
 		cb = 2;
 		cirb = 1;
 		verificarBeneficios();
-		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[2].addEventListener("click", function() {
+		verificarTransicionBenficio();
 		cb = 3;
 		cirb = 2;
 		verificarBeneficios();
-		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[3].addEventListener("click", function() {
+		verificarTransicionBenficio();
 		cb = 4;
 		cirb = 3;
 		verificarBeneficios();
-		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[4].addEventListener("click", function() {
-		cb = 5;
+		verificarTransicionBenficio();
+		if (cb == 3 || cb == 4)
+			cb = 5;
+		else if (cb == 1 || cb == 2)
+			cb = 0;
 		cirb = 4;
 		verificarBeneficios();
-		verificarCB();
 		reiniciarRotacionBeneficios();
 	});
 }
 function reiniciarRotacionBeneficios() {
 	clearTimeout(rotarBeneficios);
-	//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+	rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 }
 function rotacionBeneficios() {
+	verificarTransicionBenficio();
 	cb++;
 	cirb++;
-	if (cirb >= circulosBeneficio.length) cb = 0;
+	if (cb > circulosBeneficio.length) {
+		cb = 1;
+		cirb = 0;
+	}
 	let x;
 	let x2;
 	let x3;
 	verificarBeneficios();
-	//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+	rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 	if (index.clientWidth >= 595) {
 		clearTimeout(rotarBeneficios);
 	}
@@ -713,19 +725,18 @@ function rotacionBeneficios() {
 			}
 			mainBeneficios[0].style.transition = "1s all";
 			verificarBeneficios();
-			//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+			rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 			event.stopImmediatePropagation();
 		}
 	}
 	mainBeneficios[0].addEventListener("touchend", touchEndBeneficio);
 	function carruselBeneficiosInterminable() {
 		if (cb == 6) {
-			mainBeneficios[0].style.transition = "0s";
 			cb = 1;
 		} else if (cb == 0) {
-			mainBeneficios[0].style.transition = "0s";
 			cb = 5;
 		}
+		mainBeneficios[0].style.transition = "0s";
 		verificarBeneficios();
 	}
 	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
