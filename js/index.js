@@ -745,14 +745,16 @@ function formulario() {
 	let mensajeTexto = document.getElementById("areaTexto");
 	function asignarAltoMensaje() {
 		mensajeTexto.innerText = consulta.value;
+		console.log(window.getComputedStyle(mensajeTexto).height);
+		consulta.style.height = window.getComputedStyle(mensajeTexto).height;
 	}
-	consulta.addEventListener("input", asignarAltoMensaje);
+	consulta.addEventListener("input", asignarAltoMensaje);/*
 	function asignarRelleno() {
 		let estilo = window.getComputedStyle(consulta);
 		mensajeTexto.style.padding = estilo.padding;
 	}
 	consulta.addEventListener("load", asignarRelleno());
-	consulta.addEventListener("resize", asignarRelleno());
+	consulta.addEventListener("resize", asignarRelleno());*/
 }
 function validarInputs() {
 	nombre.addEventListener("input", quitarValidacionNombre);
