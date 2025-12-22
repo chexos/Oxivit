@@ -507,13 +507,11 @@ function cambiarProducto() {
 	function carruselProductosInterminable() {
 		if (cp == 5) {
 			cp = 1;
-			productosOxivit.style.transition = "0s";
-			verificarProducto();
 		} else if (cp == 0) {
 			cp = 4;
-			productosOxivit.style.transition = "0s";
-			verificarProducto();
 		}
+		productosOxivit.style.transition = "0s";
+		verificarProducto();
 	}
 	productosOxivit.addEventListener("transitionend", carruselProductosInterminable);
 }
