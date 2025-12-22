@@ -1704,7 +1704,8 @@ img {
         margin:0;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:7pt;
     }
     section#contacto>main>aside>picture>img {
