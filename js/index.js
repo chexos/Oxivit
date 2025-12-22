@@ -570,6 +570,7 @@ function verificarTransicionBenficio() {
 }
 function cambiarBeneficio() {
 	circulosBeneficio[0].addEventListener("click", function() {
+		verificarTransicionBenficio();
 		if (c == 2 || c == 3)
 			cb = 1;
 		else if (c == 4 || c == 5)
@@ -579,24 +580,28 @@ function cambiarBeneficio() {
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[1].addEventListener("click", function() {
+		verificarTransicionBenficio();
 		cb = 2;
 		cirb = 1;
 		verificarBeneficios();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[2].addEventListener("click", function() {
+		verificarTransicionBenficio();
 		cb = 3;
 		cirb = 2;
 		verificarBeneficios();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[3].addEventListener("click", function() {
+		verificarTransicionBenficio();
 		cb = 4;
 		cirb = 3;
 		verificarBeneficios();
 		reiniciarRotacionBeneficios();
 	});
 	circulosBeneficio[4].addEventListener("click", function() {
+		verificarTransicionBenficio();
 		cb = 5;
 		cirb = 4;
 		verificarBeneficios();
