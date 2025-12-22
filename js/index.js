@@ -564,6 +564,10 @@ function verificarCB() {
 		}
 	}
 }
+function verificarTransicionBenficio() {
+	if (mainBeneficios[0].style.transition == "0s" || mainBeneficios[0].style.transition == "all")
+		mainBeneficios[0].style.transition == "1s all"
+}
 function cambiarBeneficio() {
 	circulosBeneficio[0].addEventListener("click", function() {
 		if (c == 2 || c == 3)
