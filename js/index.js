@@ -742,7 +742,6 @@ function rotacionBeneficios() {
 	mainBeneficios[0].addEventListener("transitionend", carruselBeneficiosInterminable);
 }
 function formulario() {
-	let mensajeTexto = document.getElementById("areaTexto");
 	function asignarAltoMensaje() {
 		consulta.style.height = consulta.scrollHeight + "px";
 	}
