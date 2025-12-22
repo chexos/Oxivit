@@ -790,6 +790,9 @@ section#contacto>main>form textarea {
     resize:none;
     width:100%;
 }
+section#contacto>main>form p {
+    position:absolute;
+}
 
 section#contacto>main>form aside {
     display: flex;
