@@ -233,9 +233,6 @@ function rotacion() {
 			sliderPortada.style.transition = "0s";
 			verificarSlider();
 		}
-		sliderPortada.addEventListener("touchstart", touchStart);
-		sliderPortada.addEventListener("touchmove", touchMove);
-		sliderPortada.addEventListener("touchend", touchEnd);
 	});
 	sliderPortada.addEventListener("dragstart", dragStart);
 	function dragStart(e) {
