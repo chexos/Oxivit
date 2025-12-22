@@ -733,8 +733,8 @@ function rotacionBeneficios() {
 	function carruselBeneficiosInterminable() {
 		if (cb == 6) {
 			cb = 1;
-		} else if (cb == 0) {
-			cb = 5;
+		} else if (cb == 5) {
+			cb = 0;
 		}
 		mainBeneficios[0].style.transition = "0s";
 		verificarBeneficios();
