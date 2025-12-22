@@ -535,9 +535,12 @@
                     </div>
                     <div>
                         <label for="consulta">CONSULTA</label>
-                        <textarea placeholder="Consulta" id="consulta" 
-                    		name="txtConsulta" minlength="3" maxlength="1500" required
-                    		pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]{10,1500}"></textarea>
+                        <div>
+                            <textarea placeholder="Consulta" id="consulta" 
+                                name="txtConsulta" minlength="3" maxlength="1500" required
+                                pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]{10,1500}"></textarea>
+                            <p id="areaTexto"></p>
+                        </div>
                     </div>
                     <aside>
                         <button type="submit" name="opcion" value="cor" id="enviar">

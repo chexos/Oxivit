@@ -704,6 +704,7 @@ section#contacto>main>form label {
 
 section#contacto>main>form input,
 section#contacto>main>form textarea,
+section#contacto>main>form p,
 section#contacto>main>form button,
 section#contacto>p#mensajeIndex {
     font-size:6pt;
@@ -788,6 +789,14 @@ textarea:hover {
 section#contacto>main>form textarea {
     min-height:74.9702px;
     resize:none;
+    width:100%;
+}
+section#contacto>main>form>div>div {
+    position:relative;
+}
+section#contacto>main>form p {
+    position:absolute;
+    top:0%;
 }
 
 section#contacto>main>form aside {
@@ -1050,6 +1059,7 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
+    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:6.2pt;
@@ -1135,6 +1145,7 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
+    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         margin:0 0 4.3%;
@@ -1224,6 +1235,7 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
+    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:7pt;
@@ -1291,6 +1303,7 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
+    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:8pt;
@@ -1383,6 +1396,7 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
+    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:9pt;
@@ -1450,6 +1464,7 @@ img {
     }
     section#contacto>main>form input,
     section#contacto>main>form textarea,
+    section#contacto>main>form p,
     section#contacto>main>form button,
 	section#contacto>p#mensajeIndex {
         font-size:9.5pt;
@@ -1689,7 +1704,8 @@ img {
         margin:0;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:7pt;
     }
     section#contacto>main>aside>picture>img {
@@ -1861,7 +1877,8 @@ img {
         font-size:6.5pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:8pt;
     }
     footer#pie {
@@ -1969,7 +1986,8 @@ img {
         font-size:7.5pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:9.3pt;
     }
     footer#pie {
@@ -2085,7 +2103,8 @@ img {
         font-size:8.7pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:10.2pt;
     }
     footer#pie {
@@ -2193,7 +2212,8 @@ img {
         font-size:5.9775pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:11pt;
     }
     footer#pie {
@@ -2301,7 +2321,8 @@ img {
         font-size:9.6pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:11.5pt;
     }
     footer h4 {
@@ -2401,7 +2422,8 @@ img {
         font-size:10.3pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:12pt;
     }
     section#contacto>main>form input {
@@ -2505,7 +2527,8 @@ img {
         font-size:10.5pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:12.5pt;
     }
     section#contacto>main>form input {
@@ -2613,7 +2636,8 @@ img {
         font-size:11.4pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:13.5pt;
     }
     section#contacto>main>form input {
@@ -2726,7 +2750,8 @@ img {
         font-size:12.5pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:15pt;
     }
     section#contacto>main>form input {
@@ -2839,7 +2864,8 @@ img {
         font-size:13.6pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:16pt;
     }
     section#contacto>main>form input {
@@ -2945,7 +2971,8 @@ img {
         font-size:14.5pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:17pt;
     }
     section#contacto>main>form input {
@@ -3058,7 +3085,8 @@ img {
         font-size:15.4pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:18pt;
     }
     section#contacto>main>form input {
@@ -3167,7 +3195,8 @@ img {
         font-size:16pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:19pt;
     }
     section#contacto>main>form input {
@@ -3280,7 +3309,8 @@ img {
         font-size:17pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:20pt;
     }
     section#contacto>main>form input {
@@ -3385,7 +3415,8 @@ img {
         font-size:18pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:21pt;
     }
     section#contacto>main>form input {
@@ -3491,7 +3522,8 @@ img {
         font-size:19pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:22pt;
     }
     section#contacto>main>form input {
@@ -3597,7 +3629,8 @@ img {
         font-size:20pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:23.5pt;
     }
     section#contacto>main>form input {
@@ -4058,7 +4091,8 @@ img {
         font-size:22pt;
     }
     section#contacto>main>form input,
-    section#contacto>main>form textarea {
+    section#contacto>main>form textarea,
+    section#contacto>main>form p {
         font-size:26.65pt;
     }
 
