@@ -742,6 +742,7 @@ function rotacionBeneficios() {
 }
 function formulario() {
 	function asignarAltoMensaje() {
+		consulta.style.height = "auto";
 		consulta.style.height = consulta.scrollHeight + "px";
 	}
 	consulta.addEventListener("input", asignarAltoMensaje);
