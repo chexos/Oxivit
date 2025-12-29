@@ -610,7 +610,7 @@ function cambiarBeneficio() {
 }
 function reiniciarRotacionBeneficios() {
 	clearTimeout(rotarBeneficios);
-	rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+	//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 }
 function rotacionBeneficios() {
 	verificarTransicionBenficio();
@@ -624,7 +624,7 @@ function rotacionBeneficios() {
 	let x2;
 	let x3;
 	verificarBeneficios();
-	rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+	//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 	if (index.clientWidth >= 595) {
 		clearTimeout(rotarBeneficios);
 	}
@@ -724,7 +724,7 @@ function rotacionBeneficios() {
 			}
 			mainBeneficios[0].style.transition = "1s all";
 			verificarBeneficios();
-			rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
+			//rotarBeneficios = setTimeout("rotacionBeneficios()", 3000);
 			event.stopImmediatePropagation();
 		}
 	}
@@ -732,8 +732,8 @@ function rotacionBeneficios() {
 	function carruselBeneficiosInterminable() {
 		if (cb == 6) {
 			cb = 1;
-		} else if (cb == 5) {
-			cb = 0;
+		} else if (cb == 0) {
+			cb = 5;
 		}
 		mainBeneficios[0].style.transition = "0s";
 		verificarBeneficios();
